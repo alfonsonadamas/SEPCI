@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
 
-
 .carousel {
   height: 550px;
 }
@@ -88,8 +87,6 @@
   display: block;
 }
 
-
-
 .titul {
   position: relative;
   width: 60%;
@@ -108,7 +105,6 @@
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
-
 }
 .titul h2 {
   font-family: "Roboto", sans-serif;
@@ -118,9 +114,7 @@
   font-size: 40px;
   width: 60%;
   text-transform: uppercase;
- 
 }
-
 
 .recuadro-1 {
   position: absolute;
@@ -149,12 +143,12 @@
   width: 100%;
   height: 23px;
   bottom: 15px;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 23px;
-  color: #FFFFFF;
+  color: #ffffff;
   text-align: center;
   z-index: 0;
 }
@@ -186,11 +180,11 @@
 }
 
 .recuadro1 {
-  background-color: #1B396A;
+  background-color: #1b396a;
 }
 
 .recuadro2 {
-  background-color: #1B396A;
+  background-color: #1b396a;
 }
 
 .recuadro3 {
@@ -220,13 +214,11 @@
   width: 100%;
   margin: 0;
   padding: 10px;
-  color: #FFF;
+  color: #fff;
   /* Fondo semitransparente para el texto */
   font-size: 18px;
   text-align: center;
 }
-
-
 
 /* Estilos para la imagen dentro del recuadro */
 .imagen-recuadro1 {
@@ -245,12 +237,12 @@
   width: 100%;
   height: 23px;
   bottom: 15px;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 23px;
-  color: #FFFFFF;
+  color: #ffffff;
   text-align: center;
   z-index: 0;
 }
@@ -262,8 +254,6 @@
   max-width: 100%; /* Ancho máximo de la fila */
   margin: 0% auto 0; /* Centrar la fila horizontalmente y agregar margen superior */
 }
-
-
 
 .fila-recuadros-2 {
   display: flex;
@@ -278,9 +268,8 @@
   width: 260px;
   height: 171px;
   margin-bottom: 10px; /* Espacio entre los recuadros */
-  background-color: #BE9650; /* Cambio del color de fondo */
+  background-color: #be9650; /* Cambio del color de fondo */
 }
-
 
 .contenedor-titulo {
   position: relative;
@@ -296,19 +285,16 @@
   left: 50%;
   transform: translateX(-50%);
   top: 20%; /* Altura en relación al contenedor */
-  
-  font-family: 'Roboto';
+
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
   font-size: 40px; /* Tamaño de fuente responsive */
   line-height: 40px; /* Espaciado entre líneas */
-  
+
   color: #741731;
   text-align: center;
 }
-
-
-
 
 .contenedor-pdfs {
   position: relative;
@@ -344,7 +330,7 @@
 .pdf h3 {
   position: absolute;
   bottom: -40px;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 550;
   font-size: 14px;
@@ -356,7 +342,6 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
 
 .pdf:nth-child(1) {
   left: 5%;
@@ -381,5 +366,3 @@
   top: 50%;
   transform: translate(-50%, -50%);
 }
-
-

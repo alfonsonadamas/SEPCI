@@ -47,8 +47,11 @@ if ($sesion) {
                                 Buzón de denuncias
                             </a>
                             <div class="sb-sidenav-menu-heading">Inicio</div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-                                data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <a class="nav-link" href="Carrusel.php">
+                                <div class="sb-nav-link-icon"></div>
+                                Editar Carrusel
+                            </a>
+                            <a class="nav-link" href="QuienesSomos.php">
                                 <div class="sb-nav-link-icon"></div>
                                 Editar ¿Quiénes somos?
                             </a>

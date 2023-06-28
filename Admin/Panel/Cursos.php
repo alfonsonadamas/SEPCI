@@ -14,14 +14,14 @@ if ($sesion) {
         <title>SEPCI</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
-        <link rel="stylesheet" href="css/EditMienbros.css" />
+        <!-- <link rel="stylesheet" href="css/DocumentosIndex.css" /> -->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
 
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.php">SEPCI</a>
+            <a class="navbar-brand ps-3" href="index.html">SEPCI</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
                     class="fas fa-bars"></i></button>
@@ -55,17 +55,17 @@ if ($sesion) {
                                 <div class="sb-nav-link-icon"></div>
                                 Editar ¿Quiénes somos?
                             </a>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages"
-                                aria-expanded="false" aria-controls="collapsePages">
+                            <a class="nav-link" href="Miembros.php">
                                 <div class="sb-nav-link-icon"></div>
                                 Editar Miembros
                             </a>
-                            <a class="nav-link" href="EditarDocumentos.php">
+                            <a class="nav-link collapsed" href="EditarDocumentos.php" data-bs-toggle="collapse"
+                                data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                                 <div class="sb-nav-link-icon"></div>
                                 Editar Documentos
                             </a>
                             <div class="sb-sidenav-menu-heading">Cursos</div>
-                            <a class="nav-link" href="charts.html">
+                            <a class="nav-link" href="EditarCursos.php">
                                 <div class="sb-nav-link-icon"></div>
                                 Editar Cursos
                             </a>
@@ -79,46 +79,47 @@ if ($sesion) {
             </div>
             <div id="layoutSidenav_content">
                 <main>
-                    <div class="container-fluid px-4 ">
-                        <h1 class="mt-4">Editar Miembros</h1>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">Editar Cursos</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Inicio/Editar Miembros</li>
+                            <li class="breadcrumb-item active">Inicio/Editar Cursos</li>
                         </ol>
-                        <div >
-                            <div class="container ">
-                                <?php
-                                include_once '../../php/DBManager/endPointMembers.php';
-                                while ($row = $data->fetch_assoc()) {
-                                    ?>
-                                    <div class="card">
-                                        <img src="usu.png" alt="">
-                                        <div class="contenido">
-                                            <h3>
-                                                <?php echo $row['rol'] ?>
-                                            </h3>
-                                            <h5>
-                                                <?php echo $row['names'];
-                                                echo ' ';
-                                                echo $row['middle_name'];
-                                                echo ' ';
-                                                echo $row['last_name'] ?>
-                                            </h5>
-                                            <div class="button-container">
-                                                <a
-                                                    href='../../Admin/Panel/EditarMienbros.php?id=<?php echo $row['id_members'] ?>'>Editar</a>
-                                            </div>
-                                        </div>
+                        <div class="card mb-4">
+                            
+                            <?php
+
+                            ?>
+                            <div class=" d-flex m-3 border-bottom pb-2">
+                                <img  src="../../img/pdf.png" alt="" width="150" height="150"> 
+                                <div class="d-flex flex-row align-items-center justify-content-between w-100">
+                                    <div class=" p-1 ms-3 me-3">
+                                        <h3>Curso</h3>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit nostrum excepturi ullam libero voluptate, et in dignissimos voluptas error similique temporibus magnam quaerat dolorem at qui itaque nulla accusamus. Amet.</p>
                                     </div>
-                                <?php
-                                }
-                                ?>
+                                    <div class="d-flex">
+                                        <a href="" class="btn btn-warning me-3">Editar</a>
+                                        <a href="" class="btn btn-danger">Eliminar</a>
+                                    </div>
+                                    
+                                </div>
+
                             </div>
+                            
+                            <div class="d-flex justify-content-center mb-4">
+                                <a href="" class="btn btn-success">Añadir</a>
+                            </div>
+                            
                         </div>
+                        <?php
+
+                        ?>
                     </div>
-                </main>
-                <footer class="py-4 bg-light mt-auto">
-                </footer>
             </div>
+        </div>
+        </main>
+        <footer class="py-4 bg-light mt-auto">
+        </footer>
+        </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
             crossorigin="anonymous"></script>
@@ -132,7 +133,7 @@ if ($sesion) {
     </body>
 
     </html>
-<?php
+    <?php
 } else {
     header('Location: ../login.php');
 }
