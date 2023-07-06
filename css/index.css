@@ -90,13 +90,12 @@
 
 
 
-.titul {
+.titul0 {
   position: relative;
-  width: 60%;
-  max-width: 1000px;
   margin: -7% auto;
   height: auto;
-  padding: 60px 0 0; /* Agregamos un padding superior */
+  padding: 60px 0 0;
+  /* Agregamos un padding superior */
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: bold;
@@ -110,6 +109,7 @@
   text-transform: uppercase;
 
 }
+
 .titul h2 {
   font-family: "Roboto", sans-serif;
   color: #741731;
@@ -118,197 +118,212 @@
   font-size: 40px;
   width: 60%;
   text-transform: uppercase;
- 
+
 }
 
 
-.recuadro-1 {
-  position: absolute;
-  width: 364px;
-  height: 169px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(27, 57, 106, 0.9);
-  margin-bottom: 30px;
-  margin-top: -13%; /* Agregamos un margen superior */
-  z-index: 0;
-}
 
-.imagen-recuadro {
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 0;
-}
-
-.texto-recuadro {
-  position: absolute;
-  width: 100%;
-  height: 23px;
-  bottom: 15px;
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 23px;
-  color: #FFFFFF;
-  text-align: center;
-  z-index: 0;
-}
 
 .imagen-recuadrov {
   display: block;
-  width: 50px; /* Elige el tamaño que prefieras */
-  height: auto; /* Para mantener la proporción de la imagen */
+  width: 50px;
+  /* Elige el tamaño que prefieras */
+  height: auto;
+  /* Para mantener la proporción de la imagen */
   margin: 0;
   padding: 0;
   float: left;
 }
 
-/* Estilos para la fila de recuadros */
 
-.fila-recuadros {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  max-width: 100%; /* Ancho máximo de la fila */
-  margin: 35% auto 0; /* Centrar la fila horizontalmente y agregar margen superior */
-}
-/* Estilos para los recuadros */
-.recuadro {
-  position: relative;
-  width: 260px;
-  height: 171px;
-  margin-bottom: 40px; /* Espacio entre los recuadros */
-}
+/* ---------------------------------------------------------------------------------------------------- */
 
-.recuadro1 {
-  background-color: #1B396A;
-}
-
-.recuadro2 {
-  background-color: #1B396A;
-}
-
-.recuadro3 {
-  background-color: #741731;
-}
-
-.recuadro4 {
-  background-color: #741731;
-}
-
-.recuadro5 {
-  background-color: #741731;
-}
-
-/* Estilos para las imágenes */
-.imagen-recuadro1 {
+/*  Nuevo de miembros   */
+.container1 {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Estilos para los títulos */
-.texto-recuadro1 {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  margin: 0;
-  padding: 10px;
-  color: #FFF;
-  /* Fondo semitransparente para el texto */
-  font-size: 18px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  justify-content: center;
   text-align: center;
+  margin: auto;
+  position: relative;
 }
 
+.container1 a {
+  text-decoration: none;
+}
 
-
-/* Estilos para la imagen dentro del recuadro */
-.imagen-recuadro1 {
+.container1 .carta img {
+  padding-top: 18px;
   width: 100px;
   height: 100px;
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 0;
+  border-radius: 50%;
+  /* hace que el contenedor tenga forma de círculo */
+  overflow: hidden;
+
 }
 
-/* Estilos para el texto dentro del recuadro */
-.texto-recuadro1 {
-  position: absolute;
-  width: 100%;
-  height: 23px;
-  bottom: 15px;
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
+.container1 .carta {
+  width: 300px;
+  height: 250px;
+  border: #000 solid;
+  background-color: rgba(27, 57, 106, 0.9);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 10px;
+  text-align: center;
+  color: #fff;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.container1 .carta .Nombres {
+  font-family: "Roboto", sans-serif;
   font-size: 20px;
-  line-height: 23px;
-  color: #FFFFFF;
-  text-align: center;
-  z-index: 0;
+  padding-top: 5px;
 }
 
-.fila-recuadros-1 {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  max-width: 100%; /* Ancho máximo de la fila */
-  margin: 0% auto 0; /* Centrar la fila horizontalmente y agregar margen superior */
+.container1 .carta .Nombres2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
 }
 
-
-
-.fila-recuadros-2 {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  max-width: 56%; /* Ancho máximo de la fila */
-  margin: 0% auto 0; /* Centrar la fila horizontalmente y agregar margen superior */
-}
-
-.recuadro-recuadro2 {
-  position: relative;
-  width: 260px;
-  height: 171px;
-  margin-bottom: 10px; /* Espacio entre los recuadros */
-  background-color: #BE9650; /* Cambio del color de fondo */
-}
-
-
-.contenedor-titulo {
-  position: relative;
+/*  Secretarios y Miembros  */
+.container_Medio {
   width: 100%;
-  padding-top: 30%; /* Proporción para hacer el contenedor responsive */
-}
-
-.titulo-11 {
-  position: absolute;
-  width: 100%;
-  max-width: 563px; /* Ancho máximo del título */
-  height: 56px;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 20%; /* Altura en relación al contenedor */
-  
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 40px; /* Tamaño de fuente responsive */
-  line-height: 40px; /* Espaciado entre líneas */
-  
-  color: #741731;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  justify-content: center;
+  max-width: 1200px;
+  height: 170px;
   text-align: center;
+  margin: auto;
+  margin-top: 20px;
+  padding-top: 20px;
 }
 
 
+.container_Medio .card_Medio img {
+  padding-top: 18px;
+  width: 70px;
+  height: 70px;
+}
 
+.container_Medio .card_Medio {
+  width: 250px;
+  height: 160px;
+  border-radius: 8px;
+  box-shadow: 0 2px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  margin: 10px;
+  text-align: center;
+  transition: all 0.25s;
+  background-color: rgba(27, 57, 106, 0.9);
+  color: #fff;
+}
+
+.container_Medio .card_Medio h3 {
+  font-family: "Roboto", sans-serif;
+
+}
+
+.container_Medio .card_Medio.miembro {
+  background-color: rgba(116, 23, 49, 1);
+  /* Cambia el color aquí */
+}
+
+/* Secretarios y Miembros Suplentes  */
+
+.container_Medio_Supl {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  justify-content: center;
+  max-width: 1200px;
+  height: 170px;
+  text-align: center;
+  margin: auto;
+  margin-top: 20px;
+  padding-top: 5px;
+}
+
+
+.container_Medio_Supl .card_Medio_Supl img {
+  padding-top: 18px;
+  width: 70px;
+  height: 70px;
+}
+
+.container_Medio_Supl .card_Medio_Supl {
+  width: 250px;
+  height: 160px;
+  border-radius: 8px;
+  box-shadow: 0 2px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  margin: 10px;
+  text-align: center;
+  transition: all 0.25s;
+  background-color: rgba(46, 72, 116);
+  color: #fff;
+}
+
+.container_Medio_Supl .card_Medio_Supl h3 {
+  font-family: "Roboto", sans-serif;
+
+}
+
+.container_Medio_Supl .card_Medio_Supl.miembro {
+  background-color: rgba(126, 42, 66);
+  /* Cambia el color aquí */
+}
+
+/* Personas Extras   */
+
+.container_Final {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 27ññ0px;
+  justify-content: center;
+  align-items: baseline;
+  max-width: 1200px;
+  height: 170px;
+  text-align: center;
+  margin: auto;
+  margin-top: 20px;
+  padding-top: 5px;
+  margin-bottom: 20px;
+
+}
+
+
+.container_Final .card_Final img {
+  padding-top: 18px;
+  width: 70px;
+  height: 70px;
+}
+
+.container_Final .card_Final {
+  width: 250px;
+  height: 160px;
+  border-radius: 8px;
+  box-shadow: 0 2px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  margin: 10px;
+  /* Ajuste en margin */
+  text-align: center;
+  transition: all 0.25s;
+  background-color: rgba(46, 72, 116);
+  color: #fff;
+}
+
+.container_Final .card_Final h3 {
+  font-family: "Roboto", sans-serif;
+
+}
+
+
+/*  PDFS   */
 
 .contenedor-pdfs {
   position: relative;
@@ -381,5 +396,3 @@
   top: 50%;
   transform: translate(-50%, -50%);
 }
-
-

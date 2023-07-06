@@ -90,7 +90,7 @@ if ($sesion) {
                                             </div>
                                             <div class="columna">
                                                 <label for="name">Titulo:</label>
-                                                <input type="text" name="titulo" id="document-name" value="<?php echo $_REQUEST['titulo']; ?>">
+                                                <input type="text" name="titulo" id="document-name" required>
                                             </div>
                                             <div class="archivos">
                                                 <p class="text">Archivo:</p>
@@ -99,12 +99,12 @@ if ($sesion) {
                                                         Arrastra y suelta un archivo aquí o haz clic para seleccionar
                                                         uno.
                                                     </p>
-                                                    <input type="file" id="archivo" name="archivo">
+                                                    <input type="file" id="archivo" name="archivo" accept=".pdf" required>
                                                 </div>
                                             </div>
                                             <div class="columna">
-                                                <input type="hidden" name="id" value="<?php echo $_REQUEST['id'] ?>">
-                                                <button type="submit" class="btn_send" name="Editar" value="guardar">Guardar</button>
+                                                <button type="submit" class="btn_send" name="Agregar"
+                                                    value="Agregar">Agregar</button>
                                             </div>
                                         </div>
                                     </div>

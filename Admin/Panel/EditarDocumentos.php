@@ -76,31 +76,40 @@ if ($sesion) {
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Editar Miembros</h1>
+                        <h1 class="mt-4">Editar Documentos Inicio</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Inicio/Editar Miembros</li>
+                            <li class="breadcrumb-item active">Inicio/Editar Documentos</li>
                         </ol>
                         <div class="card mb-4">
                             <div class="container">
                                 <?php
-
+                                    include_once '../../php/DBManager/endPointDocuments.php';
+                                    while ($row = $data->fetch_assoc()) {
                                 ?>
                                 <div class="card">
-                                    <img src="../../img/pdf.png" alt="">
+                                    <a class="archivo" target="_blank" href="<?php echo '../../pdf/Inicio/'.$row['root']; ?>">
+                                        <img src="../../img/pdf.png" width="48px" height="48px">
+                                    </a>
+                                    <!--<img src="../../img/pdf.png" width="48px" height="48px"> -->
                                     <div class="contenido">
-                                        <h3>Documento</h3>
+                                        <h3><?php echo $row['name']; ?></h3>
                                         <div class="botones">
                                             <div class="button-container">
-                                                <a href='DocumentosIndex.php'>Editar</a>
+                                                <a href='DocumentosIndex.php?id=<?php echo $row['id_file']; ?>&titulo=<?php echo $row['name']; ?>'>Editar</a>
                                             </div>
                                             <div class="button-container">
-                                                <a href='#'>Borrar</a>
+                                                <a href='../../php/DBManager/actionDocuments.php?id=<?php echo $row['id_file']; ?>&Eliminar=1'>Eliminar</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card2">
-                                    <img src="../../img/Add.png" alt="">
+                                <?php
+                                    }
+                                ?>
+                                <div class="card2"> <!--Mandar al form de añadir-->
+                                    <a href="AñadirDocumento.php">
+                                        <img src="../../img/Add.png" alt="">
+                                    </a>
                                 </div>
                             </div>
                         </div>

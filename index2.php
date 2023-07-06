@@ -3,13 +3,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/css/bootstrap.min.css"
   integrity="sha512-NZCf0L2aVGRiFW/XR0X9st8YzmMv7vHwqon5r5rzhUNlO/Tgdy/4G22l3LxH2OzNfDgYOKhcSihIpg24OvJ0dA=="
   crossorigin="anonymous" referrerpolicy="no-referrer" />
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/js/bootstrap.min.js"
   integrity="sha512-2cc7Vwfuw07US+13vZ8bLcRi9ZxHx1FtKNp8YgP/m5a3HtNCgIvE8NIVW9C9N/HlhOjNHCOv+8kNSYr5r5q3zA=="
   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="js/Index.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
 
 <head>
   <meta charset="UTF-8" />
@@ -103,67 +99,167 @@
       <img src="img/logo-SEPCI.png" alt="" />
     </div>
   </div>
-  <div class="titulo">
+  <div class="tituloM">
     <h2>Directorio de Miembros SEPCI</h2>
   </div>
   <main>
-    <div class="miembrosImpr">
-      <div class="container1">
-        <?php
-        include_once 'php/DBManager/endPointMembersFrom.php';
-        while ($row = $data->fetch_assoc()) {
-          ?>
-          <a href="#" data-bs-toggle="modal" data-bs-target="#myModal"
-            data-nombre="<?php echo $row['names'] . ' ' . $row['middle_name'] . ' ' . $row['last_name']; ?>"
-            data-cargo="<?php echo $row['rol']; ?>" data-correo="<?php echo $row['mail']; ?>">
+    <div class="container1">
+      <a href="#" data-bs-toggle="modal" data-bs-target="#myModal">
+        <div class="card">
+          <img src="usu.png" alt="">
 
-            <div class="carta">
-              <img src="img/usu.png" alt="">
-              <br>
-              <div class="Nombres">
-                <h3>
-                  <?php echo $row['names'];
-                  echo ' ';
-                  echo $row['middle_name'];
-                  echo ' ';
-                  echo $row['last_name']; ?>
-                </h3>
-              </div>
-              <div class="Nombres2">
-                <h5>
-                  <?php echo $row['rol']; ?>
-                </h5>
-              </div>
-            </div>
-          </a>
+          <div class="contenido">
+            <h3>Presidencia</h3>
+          </div>
+        </div>
+      </a>
+      <a href="#" data-bs-toggle="modal" data-bs-target="#myModal">
+        <div class="card">
+          <img src="usu.png" alt="">
 
-          <?php
-        }
-        ?>
-      </div>
+          <div class="contenido">
+            <h3>Presidencia (Suplente)</h3>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="container_Medio">
+      <a href="#" data-bs-toggle="modal" data-bs-target="#myModal">
+        <div class="card_Medio">
+          <img src="img/usu.png" alt="">
+
+          <div class="contenido_Medio">
+            <h3>Secretaria Ejecutiva</h3>
+          </div>
+        </div>
+      </a>
+      <a href="#" data-bs-toggle="modal" data-bs-target="#myModal">
+        <div class="card_Medio">
+          <img src="img/usu.png" alt="">
+
+          <div class="contenido_Medio">
+            <h3>Secretaria Técnica</h3>
+          </div>
+        </div>
+      </a>
+      <a href="#" data-bs-toggle="modal" data-bs-target="#myModal">
+        <div class="card_Medio miembro">
+          <img src="img/usu.png" alt="">
+
+          <div class="contenido_Medio">
+            <h3>Miembro 1</h3>
+          </div>
+        </div>
+      </a>
+      <a href="#" data-bs-toggle="modal" data-bs-target="#myModal">
+        <div class="card_Medio miembro">
+          <img src="img/usu.png" alt="">
+
+          <div class="contenido_Medio">
+            <h3>Miembro 2</h3>
+          </div>
+        </div>
+      </a>
+      <a href="#" data-bs-toggle="modal" data-bs-target="#myModal">
+        <div class="card_Medio miembro">
+          <img src="img/usu.png" alt="">
+
+          <div class="contenido_Medio">
+            <h3>Miembro 3</h3>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="container_Medio_Supl">
+      <a href="#" data-bs-toggle="modal" data-bs-target="#myModal">
+        <div class="card_Medio_Supl">
+          <img src="img/usu.png" alt="">
+
+          <div class="contenido_Medio_Supl">
+            <h3>Secretaria Ejecutiva (Suplente)</h3>
+          </div>
+        </div>
+      </a>
+      <a href="#" data-bs-toggle="modal" data-bs-target="#myModal">
+        <div class="card_Medio_Supl">
+          <img src="img/usu.png" alt="">
+
+          <div class="contenido_Medio_Supl">
+            <h3>Secretaria Técnica (Suplente)</h3>
+          </div>
+        </div>
+      </a>
+      <a href="#" data-bs-toggle="modal" data-bs-target="#myModal">
+        <div class="card_Medio_Supl miembro">
+          <img src="img/usu.png" alt="">
+
+          <div class="contenido_Medio_Supl">
+            <h3>Miembro 1 (Suplente)</h3>
+          </div>
+        </div>
+      </a>
+      <a href="#" data-bs-toggle="modal" data-bs-target="#myModal">
+        <div class="card_Medio_Supl miembro">
+          <img src="img/usu.png" alt="">
+
+          <div class="contenido_Medio_Supl">
+            <h3>Miembro 2 (Suplente)</h3>
+          </div>
+        </div>
+      </a>
+      <a href="#" data-bs-toggle="modal" data-bs-target="#myModal">
+        <div class="card_Medio_Supl miembro">
+          <img src="img/usu.png" alt="">
+
+          <div class="contenido_Medio_Supl">
+            <h3>Miembro 3 (Suplente)</h3>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="container_Final">
+      <a href="#" data-bs-toggle="modal" data-bs-target="#myModal">
+        <div class="card_Final">
+          <img src="img/usu.png" alt="">
+
+          <div class="contenido_Final">
+            <h3>Secretaria Ejecutiva (Suplente)</h3>
+          </div>
+        </div>
+      </a>
+      <a href="#" data-bs-toggle="modal" data-bs-target="#myModal">
+        <div class="card_Final">
+          <img src="img/usu.png" alt="">
+
+          <div class="contenido_Final">
+            <h3>Secretaria Técnica (Suplente)</h3>
+          </div>
+        </div>
+      </a>
     </div>
   </main>
 
-  <div class="titulo">
-    <h2>DOCUMENTOS DEL SEPCI</h2>
+  <div class="contenedor-titulo">
+    <h1 class="titulo-11">DOCUMENTOS DEL SEPCI</h1>
   </div>
 
 
-  <!-- <div class="contenedor-pdfs">
-    <?php /*
-include_once 'php/DBManager/endPointDocuments.php';
-while ($row = $data->fetch_assoc()) { */
-    ?>
-    <a href="#<?php // echo 'pdf/Inicio/' . $row['root']; ?>" class="pdf">
-      <img src="img/pdf.png" alt="PDF 1">
-      <h3>
-        <?php // echo $row['name']; ?>
-      </h3>
-    </a>
+  <div class="contenedor-pdfs">
     <?php
-    // }
+    include_once 'php/DBManager/endPointDocuments.php';
+    while ($row = $data->fetch_assoc()) {
+      ?>
+      <a href="<?php echo 'pdf/Inicio/' . $row['root']; ?>" class="pdf">
+        <img src="img/pdf.png" alt="PDF 1">
+        <h3>
+          <?php echo $row['name']; ?>
+        </h3>
+      </a>
+      <?php
+    }
     ?>
-  </div> -->
+  </div>
   <footer class="footer">
     <div class="container">
       <div class="text">
@@ -181,7 +277,7 @@ while ($row = $data->fetch_assoc()) { */
       <div class="text">
         <p>
           <strong>Enlaces</strong><br />
-          <a href="inex.php">Inicio</a><br />
+          <a href="Inicio.html">Inicio</a><br />
           <a href="Capacitate.html">Capacitate</a><br />
           <a href="Documentos.html">Documentos</a><br />
           <a href="Buzon-de-atencion.html">Buzon de atencion</a><br />
@@ -201,9 +297,11 @@ while ($row = $data->fetch_assoc()) { */
       </p>
     </div>
   </footer>
+  </main>
+  
 </body>
 
-<!-- Ventana Modal -->
+<!-- Ventana emergente -->
 <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -214,25 +312,25 @@ while ($row = $data->fetch_assoc()) { */
       <div class="modal-body">
         <div class="row">
           <div class="col-2">
-            <img class="imagen-recuadrov" src="img/usu.png" alt="Director">
+            <img class="imagen-recuadrov" src="usu.png" alt="Director">
           </div>
         </div>
         <form>
           <div class="mb-3">
             <label for="nombre" class="form-label">Nombre:</label>
-            <p id="nombre"></p>
+            <p id="nombre">Nombre del sujeto</p>
           </div>
           <div class="mb-3">
             <label for="apellido" class="form-label">Figura:</label>
-            <p id="apellido"></p>
+            <p id="apellido">Figura del empleado</p>
           </div>
           <div class="mb-3">
-            <label for="cargo" class="form-label">Cargo:</label>
-            <p id="cargo"></p>
+            <label for="cargo" class="form-label">correo:</label>
+            <p id="cargo">Correo electronico</p>
           </div>
           <div class="mb-3">
-            <label for="correo" class="form-label">Correo:</label>
-            <p id="correo"></p>
+            <label for="correo" class="form-label">Funcion en SEPCI:</label>
+            <p id="correo">Funcion en SEPCI</p>
           </div>
         </form>
       </div>
@@ -242,7 +340,8 @@ while ($row = $data->fetch_assoc()) { */
     </div>
   </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 
 </html>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>

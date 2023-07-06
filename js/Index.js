@@ -1,6 +1,15 @@
-<div class="recuadro" style="top: 1560px;">
-  <img class="imagen-recuadro" src="img/usu.png" alt="Director">
-  <h2 class="texto-recuadro">Presidencia</h2>
-  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Abrir ventana emergente</button>
-</div>
+$(document).ready(function () {
+  $('#myModal').on('show.bs.modal', function (event) {
+    var enlace = $(event.relatedTarget); // Enlace que activó la ventana modal
+    var nombre = enlace.data('nombre');
+    var cargo = enlace.data('cargo');
+    var correo = enlace.data('correo');
+
+    var modal = $(this);
+    modal.find('#nombre').text(nombre);
+    modal.find('#cargo').text(cargo);
+    modal.find('#correo').text(correo);
+  });
+});
+
 

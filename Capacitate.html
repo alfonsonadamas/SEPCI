@@ -16,7 +16,6 @@
       crossorigin="anonymous"
     ></script>
   </head>
-
   <body>
     <section class="Main_header">
       <header>
