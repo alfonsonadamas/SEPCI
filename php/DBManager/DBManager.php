@@ -55,6 +55,8 @@ class DBManager
         return $id;
     }
 
+
+
     //////////////////////    --------> READ querys <--------  //////////////////////
     public function login($name, $password)
     {

@@ -188,162 +188,24 @@
   font-size: 15px;
 }
 
-/*  Secretarios y Miembros  */
-.container_Medio {
-  width: 100%;
-  display: grid;
-  grid-template-columns: auto auto auto auto auto;
-  justify-content: center;
-  max-width: 1200px;
-  height: 170px;
-  text-align: center;
-  margin: auto;
-  margin-top: 20px;
-  padding-top: 20px;
-}
-
-
-.container_Medio .card_Medio img {
-  padding-top: 18px;
-  width: 70px;
-  height: 70px;
-}
-
-.container_Medio .card_Medio {
-  width: 250px;
-  height: 160px;
-  border-radius: 8px;
-  box-shadow: 0 2px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  margin: 10px;
-  text-align: center;
-  transition: all 0.25s;
-  background-color: rgba(27, 57, 106, 0.9);
-  color: #fff;
-}
-
-.container_Medio .card_Medio h3 {
-  font-family: "Roboto", sans-serif;
-
-}
-
-.container_Medio .card_Medio.miembro {
-  background-color: rgba(116, 23, 49, 1);
-  /* Cambia el color aquí */
-}
-
-/* Secretarios y Miembros Suplentes  */
-
-.container_Medio_Supl {
-  width: 100%;
-  display: grid;
-  grid-template-columns: auto auto auto auto auto;
-  justify-content: center;
-  max-width: 1200px;
-  height: 170px;
-  text-align: center;
-  margin: auto;
-  margin-top: 20px;
-  padding-top: 5px;
-}
-
-
-.container_Medio_Supl .card_Medio_Supl img {
-  padding-top: 18px;
-  width: 70px;
-  height: 70px;
-}
-
-.container_Medio_Supl .card_Medio_Supl {
-  width: 250px;
-  height: 160px;
-  border-radius: 8px;
-  box-shadow: 0 2px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  margin: 10px;
-  text-align: center;
-  transition: all 0.25s;
-  background-color: rgba(46, 72, 116);
-  color: #fff;
-}
-
-.container_Medio_Supl .card_Medio_Supl h3 {
-  font-family: "Roboto", sans-serif;
-
-}
-
-.container_Medio_Supl .card_Medio_Supl.miembro {
-  background-color: rgba(126, 42, 66);
-  /* Cambia el color aquí */
-}
-
-/* Personas Extras   */
-
-.container_Final {
-  width: 100%;
-  display: grid;
-  grid-template-columns: auto auto;
-  gap: 27ññ0px;
-  justify-content: center;
-  align-items: baseline;
-  max-width: 1200px;
-  height: 170px;
-  text-align: center;
-  margin: auto;
-  margin-top: 20px;
-  padding-top: 5px;
-  margin-bottom: 20px;
-
-}
-
-
-.container_Final .card_Final img {
-  padding-top: 18px;
-  width: 70px;
-  height: 70px;
-}
-
-.container_Final .card_Final {
-  width: 250px;
-  height: 160px;
-  border-radius: 8px;
-  box-shadow: 0 2px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  margin: 10px;
-  /* Ajuste en margin */
-  text-align: center;
-  transition: all 0.25s;
-  background-color: rgba(46, 72, 116);
-  color: #fff;
-}
-
-.container_Final .card_Final h3 {
-  font-family: "Roboto", sans-serif;
-
-}
-
-
 /*  PDFS   */
 
 .contenedor-pdfs {
-  position: relative;
   width: 100%;
-  max-width: 1200px;
   margin: 10% auto;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin-top: -12%;
+  display: grid;
+  grid-template-columns: auto, auto, auto, auto, auto;
+  justify-content: center;
 }
 
 .pdf {
-  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 94px;
   height: 94px;
   transition: all 0.2s ease-in-out;
+  text-decoration: none;
 }
 
 .pdf:hover h3 {
@@ -357,19 +219,17 @@
 }
 
 .pdf h3 {
-  position: absolute;
-  bottom: -40px;
+  padding-top: 15px;
   font-family: 'Roboto';
   font-style: normal;
-  font-weight: 550;
   font-size: 14px;
   line-height: 16px;
   text-align: center;
   color: #000000;
   transition: all 0.2s ease-in-out;
   white-space: nowrap;
-  overflow: hidden;
   text-overflow: ellipsis;
+
 }
 
 

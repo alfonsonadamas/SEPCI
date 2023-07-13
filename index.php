@@ -149,21 +149,29 @@
   </div>
 
 
-  <!-- <div class="contenedor-pdfs">
+  <div class="contenedor-pdfs">
     <?php /*
 include_once 'php/DBManager/endPointDocuments.php';
 while ($row = $data->fetch_assoc()) { */
     ?>
     <a href="#<?php // echo 'pdf/Inicio/' . $row['root']; ?>" class="pdf">
       <img src="img/pdf.png" alt="PDF 1">
-      <h3>
+      <h3> HOLA
         <?php // echo $row['name']; ?>
       </h3>
     </a>
     <?php
     // }
     ?>
-  </div> -->
+  </div>
+  <div class="contenedor-pdfs">
+
+    <a href="#" class="pdf">
+      <img src="img/pdf.png" alt="PDF 1">
+      <h3> HOLA
+      </h3>
+    </a>
+  </div>
   <footer class="footer">
     <div class="container">
       <div class="text">
