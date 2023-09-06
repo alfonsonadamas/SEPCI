@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
 
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -112,12 +113,30 @@
         <?php
         include_once 'php/DBManager/endPointMembersFrom.php';
         while ($row = $data->fetch_assoc()) {
+          $color = '';
+
+          switch ($row['rol']) {
+            case 'Presidencia':
+              $color = '#1b396a'; // Color para 'Precidencia'
+              break;
+            case 'Presidencia (Suplente)':
+              $color = '#1b396a'; // Color para 'Precidencia'
+              break;
+            case 'Persona Asesora':
+              $color = '#be9650'; // Color para 'Persona Asesora'
+              break;
+            case 'Persona Consejera':
+              $color = '#be9650'; // Color para 'Persona Consejera'
+              break;
+            default:
+              $color = '#741731'; // Color predeterminado para miembros
+          }
           ?>
           <a href="#" data-bs-toggle="modal" data-bs-target="#myModal"
             data-nombre="<?php echo $row['names'] . ' ' . $row['middle_name'] . ' ' . $row['last_name']; ?>"
             data-cargo="<?php echo $row['rol']; ?>" data-correo="<?php echo $row['mail']; ?>">
 
-            <div class="carta">
+            <div class="carta" style="background-color: <?php echo $color; ?>;">
               <img src="img/usu.png" alt="">
               <br>
               <div class="Nombres">
@@ -229,10 +248,6 @@ while ($row = $data->fetch_assoc()) { */
           <div class="mb-3">
             <label for="nombre" class="form-label">Nombre:</label>
             <p id="nombre"></p>
-          </div>
-          <div class="mb-3">
-            <label for="apellido" class="form-label">Figura:</label>
-            <p id="apellido"></p>
           </div>
           <div class="mb-3">
             <label for="cargo" class="form-label">Cargo:</label>
