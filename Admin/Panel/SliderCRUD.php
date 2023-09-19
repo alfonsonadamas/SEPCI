@@ -14,6 +14,7 @@ if ($sesion) {
         <title>SEPCI</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
+        <link rel="stylesheet" href="css/Carrusel.css" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
 
@@ -41,7 +42,7 @@ if ($sesion) {
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Denuncias</div>
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="index.php">
                                 <div class="sb-nav-link-icon"></div>
                                 Buzón de denuncias
                             </a>
@@ -50,15 +51,12 @@ if ($sesion) {
                                 <div class="sb-nav-link-icon"></div>
                                 Editar ¿Quiénes somos?
                             </a>
-                            <a class="nav-link" href="SliderCRUD.php">
-                                <div class="sb-nav-link-icon"></div>
-                                Carrusel
-                            </a>
                             <a class="nav-link" href="Miembros.php">
                                 <div class="sb-nav-link-icon"></div>
                                 Editar Miembros
                             </a>
-                            <a class="nav-link" href="EditarDocumentos.php">
+                            <a class="nav-link collapsed" href="EditarDocumentos.php" data-bs-toggle="collapse"
+                                data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                                 <div class="sb-nav-link-icon"></div>
                                 Editar Documentos
                             </a>
@@ -78,72 +76,49 @@ if ($sesion) {
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Buzón de denuncias</h1>
+                        <h1 class="mt-4">Editar Carrusel</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Denuncias/Buzón de denuncias</li>
+                            <li class="breadcrumb-item active">Inicio/Editar Miembros</li>
                         </ol>
                         <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-table me-1"></i>
-                                Denuncias
-                            </div>
-                            <div class="card-body">
-                                <table id="datatablesSimple" style="text-align:center">
-                                    <thead>
-                                        <tr>
-                                            <th>Nombre</th>
-                                            <th>Correo</th>
-                                            <th>Telefono</th>
-                                            <th>Nombre del acusado</th>
-                                            <th>Cargo del acusado</th>
-                                            <th>Sucinto</th>
-                                            <th>Evidencia</th>
-                                            <th>Fecha de la denuncia</th>
-                                            <th>Dar seguimiento</th>
-                                            <th>Rechazar</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Nombre</th>
-                                            <th>Correo</th>
-                                            <th>Telefono</th>
-                                            <th>Nombre del acusado</th>
-                                            <th>Cargo del acusado</th>
-                                            <th>Sucinto</th>
-                                            <th>Evidencia</th>
-                                            <th>Fecha de la denuncia</th>
-                                            <th>Dar seguimiento</th>
-                                            <th>Rechazar</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        <tr>
-                                            <td>Anita Ape1 Ape2</td>
-                                            <td>Anita@gmail.com</td>
-                                            <td>4598653487</td>
-                                            <td>Pedro Ape1 Ape2</td>
-                                            <td>Maestro</td>
-                                            <td>Incinua cosas</td>
-                                            <td>
-                                                <a target="_blank" href="">
-                                                    <img src="../../img/pdf.png" width="48px" height="48px">
-                                                </a>
-                                            </td>
-                                            <td>11/05/2023</td>
-                                            <td>
-                                                <a style="cursor: pointer" href="">
-                                                    <img src="../../img/aceptar.png">
-                                                </a>
-                                            </td>
-                                            <td>
-                                                <a style="cursor: pointer" href="">
-                                                    <img src="../../img/cancelar.png">
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <div class="container">
+                                <?php
+
+                                ?>
+                                <a href="#">
+                                    <div class="addSlider">
+                                        <img src="../../img/Add.png" alt="">
+                                        <div class="txt">
+                                            <h3>Agregar</h3>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="container1">
+                                    <div class="card2">
+                                        <img src="../../img/pdf.png" alt="">
+                                        <div class="botones">
+                                            <a class="button-container" href='#'>Editar</a>
+                                            <a class="button-container" href='#'>Borrar</a>
+                                        </div>
+                                    </div>
+                                    <div class="card2">
+                                        <img src="../../img/pdf.png" alt="">
+                                        <div class="botones">
+                                            <a class="button-container" href='#'>Editar</a>
+                                            <a class="button-container" href='#'>Borrar</a>
+                                        </div>
+                                    </div>
+                                    <div class="card2">
+                                        <img src="../../img/pdf.png" alt="">
+                                        <div class="botones">
+                                            <a class="button-container" href='#'>Editar</a>
+                                            <a class="button-container" href='#'>Borrar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php
+
+                                ?>
                             </div>
                         </div>
                     </div>
@@ -164,7 +139,7 @@ if ($sesion) {
     </body>
 
     </html>
-<?php
+    <?php
 } else {
     header('Location: ../login.php');
 }
