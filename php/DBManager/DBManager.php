@@ -188,6 +188,20 @@ class DBManager
         $this->close($link);
     }
 
+    // Editar miembros desde el Administrador
+    public function updateEditMembers($id, $name, $middle_name, $last_name, $mail, $rol)
+    {
+        $link = $this->open();
+
+        $sql = "UPDATE members SET names=?, middle_name=?, last_name=?, mail=? WHERE id_members=?";
+
+        $query = mysqli_prepare($link, $sql) or die("Error at update info about us");
+        $query->bind_param("ssssss", $name, $middle_name, $last_name, $mail, $id);
+        $query->execute();
+
+        $this->close($link);
+    }
+
     public function updateInicioTwo($id_file, $title)
     {
         $link = $this->open();

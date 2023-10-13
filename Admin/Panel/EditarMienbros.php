@@ -1,9 +1,10 @@
 <?php
-    include ("../../php/DBManager/open.php");
-    if($sesion){
-?>
-<!DOCTYPE html>
-<html lang="es">
+include("../../php/DBManager/open.php");
+if ($sesion) {
+    ?>
+    <!DOCTYPE html>
+    <html lang="es">
+
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -16,16 +17,19 @@
         <link rel="stylesheet" href="css/EditMienbros.css" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
+
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
             <a class="navbar-brand ps-3" href="index.html">SEPCI</a>
             <!-- Sidebar Toggle-->
-            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
+                    class="fas fa-bars"></i></button>
             <!-- Navbar-->
             <ul class="navbar-nav ms-auto ms-md-8 me-3 me-lg-4">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="../../php/DBManager/close.php">Cerrar sesión</a></li>
                     </ul>
@@ -69,70 +73,82 @@
                 </nav>
             </div>
             <div id="layoutSidenav_content">
-            <main>
-        <div class="container-fluid px-4">
-            <h1 class="mt-4">Editar Miembros</h1>
-            <ol class="breadcrumb mb-4">
-                <li class="breadcrumb-item active">Inicio/Editar Miembros</li>
-            </ol>
-            <div class="card mb-4">
-                <section class="seccion">
-                <?php 
-                    include_once '../../php/DBManager/endPointEachMembers.php';  
-                    $obj = new member(); 
-                    $data= $obj->showMember($_REQUEST['id']); 
-                    $row = $data->fetch_row(); 
-                ?>
-                    <div class="contenedor">
-                        <div class="conten_input">
-                            <div class="columna">
-                                <label for="name">Nombre: </label>
-                                <input type="text" name="name" id="celdaTexto" placeholder="<?php echo $row[0]; ?>"/>
-                            </div>
-                            <div class="columna">
-                                <label for="phone">Apellido Paterno: </label>
-                                <input type="text" name="phone" placeholder="<?php echo $row[1]; ?>"/>
-                            </div>
-                            <div class="columna">
-                                <label for="name_Denounced">Apellido Materno: </label>
-                                <input type="text" name="name_Denounced" placeholder="<?php echo $row[2]; ?>"/>
-                            </div>
-                            <div class="columna">
-                                <label for="email">Correo Electronico: </label>
-                                <input type="text" name="email" id="celdaTexto2" placeholder="<?php echo $row[3]; ?>"/>
-                            </div>
-                            <div class="columna">
-                                <label for="email">Rol: </label>
-                                <input type="text" name="rol" disabled="disabled" id="celdaTexto2" placeholder="<?php echo $row[4]; ?>"/>
-                            </div>
-                            <div class="columna">
-                                <label for="post_Denounced">Imagen: </label>
-                                <input type="text" name="post_Denounced" placeholder="<?php echo $row[5]; ?>"></input>
-                            </div>
-                            <div class="columna">
-                                <button type="submit" class="btn_send">Enviar</button>
-                            </div>
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">Editar Miembros</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active">Inicio/Editar Miembros</li>
+                        </ol>
+                        <div class="card mb-4">
+                            <section class="seccion">
+                                <?php
+                                include_once '../../php/DBManager/endPointEachMembers.php';
+                                $obj = new member();
+                                $data = $obj->showMember($_REQUEST['id']);
+                                $row = $data->fetch_row();
+                                ?>
+                                <form method="POST" enctype="multipart/form-data" role="form"
+                                    action="../../php/DBManager/actionEditMembers.php?id=<?php echo $_REQUEST['id'] ?>">
+                                    <div class="contenedor">
+                                        <div class="conten_input">
+                                            <div class="columna">
+                                                <label for="name">Nombre: </label>
+                                                <input type="text" name="name" id="celdaTexto"
+                                                    placeholder="<?php echo $row[0]; ?>" />
+                                            </div>
+                                            <div class="columna">
+                                                <label for="phone">Apellido Paterno: </label>
+                                                <input type="text" name="middle" placeholder="<?php echo $row[1]; ?>" />
+                                            </div>
+                                            <div class="columna">
+                                                <label for="name_Denounced">Apellido Materno: </label>
+                                                <input type="text" name="last" placeholder="<?php echo $row[2]; ?>" />
+                                            </div>
+                                            <div class="columna">
+                                                <label for="email">Correo Electronico: </label>
+                                                <input type="text" name="mail" id="celdaTexto2"
+                                                    placeholder="<?php echo $row[3]; ?>" />
+                                            </div>
+                                            <div class="columna">
+                                                <label for="email">Rol: </label>
+                                                <input type="text" name="rol" disabled="disabled" id="celdaTexto2"
+                                                    placeholder="<?php echo $row[4]; ?>" />
+                                            </div>
+                                            <div class="columna">
+                                                <label for="post_Denounced">Imagen: </label>
+                                                <input type="text" name="image"
+                                                    placeholder="<?php echo $row[5]; ?>"></input>
+                                            </div>
+                                            <div class="columna">
+                                                <button type="submit" class="btn_send">Enviar</button>
+                                                <!-- <input class="btn_send" type="submit" value="Editar"> -->
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </form>
+                                </seccion>
                         </div>
                     </div>
-                </seccion>
-            </div>    
-        </div>
-    </main>
+                </main>
                 <footer class="py-4 bg-light mt-auto">
                 </footer>
             </div>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
         <script src="assets/demo/chart-area-demo.js"></script>
         <script src="assets/demo/chart-bar-demo.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
+            crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
     </body>
-</html>
-<?php 
-  }else{
+
+    </html>
+    <?php
+} else {
     header('Location: ../login.php');
-  }
+}
 ?>
