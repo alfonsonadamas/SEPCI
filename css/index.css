@@ -200,8 +200,6 @@
 }
 
 .pdfs {
-  display: flex;
-  flex-direction: column;
   align-items: center;
   width: 94px;
   height: 94px;

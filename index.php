@@ -163,6 +163,7 @@
     </div>
   </main>
 
+  <br>
   <div class="titulo">
     <h2>DOCUMENTOS DEL SEPCI</h2>
   </div>
@@ -256,6 +257,10 @@ while ($row = $data->fetch_assoc()) { */
           <div class="mb-3">
             <label for="correo" class="form-label">Correo:</label>
             <p id="correo"></p>
+          </div>
+          <div class="mb-3">
+            <label for="funcion" class="form-label">Función:</label>
+            <p id="funcion">Aqui van las funciones de cada uno de los miembros</p>
           </div>
         </form>
       </div>
