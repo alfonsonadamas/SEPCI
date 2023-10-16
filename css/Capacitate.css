@@ -4,6 +4,10 @@
   font-family: "Roboto", sans-serif;
 }
 
+.cursos {
+  margin-top: 50px;
+}
+
 .contenedor {
   display: flex;
   justify-content: space-between;
@@ -11,6 +15,9 @@
   padding-right: 200px;
   padding-top: 20px;
   padding-bottom: 20px;
+}
+.curso {
+  margin-bottom: 90px;
 }
 .cursos h1 {
   color: #741731;

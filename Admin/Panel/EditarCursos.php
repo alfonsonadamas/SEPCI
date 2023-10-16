@@ -61,7 +61,7 @@ if ($sesion) {
                                 Editar Documentos
                             </a>
                             <div class="sb-sidenav-menu-heading">Cursos</div>
-                            <a class="nav-link" href="EditarCursos.php">
+                            <a class="nav-link" href="Cursos.php">
                                 <div class="sb-nav-link-icon"></div>
                                 Editar Cursos
                             </a>
@@ -78,35 +78,33 @@ if ($sesion) {
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Editar Cursos</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Inicio/Editar Cursos</li>
+                            <li class="breadcrumb-item active">Inicio/Editar Cursos/Editar Curso</li>
                         </ol>
-                        <div class="card mb-4">
+                        <?php 
+                            include_once '../../php/DBManager/endPointCourse.php';  
+                            $obj = new Course(); 
+                            $data= $obj->showCourse($_REQUEST['id_curso']); 
+                            $row = $data->fetch_row(); 
+                        ?>
+                        
+                        <div class="card">
                             <div class="container">
-                                <?php
-
-                                ?>
-                                <div class="card">
-                                    <img src="../../img/pdf.png" alt="">
-                                    <div class="contenido">
-                                        <h3>Documento</h3>
-                                        <div class="botones">
-                                            <div class="button-container">
-                                                <a href='DocumentosIndex.php'>Editar</a>
-                                            </div>
-                                            <div class="button-container">
-                                                <a href='#'>Borrar</a>
-                                            </div>
-                                        </div>
+                                <div>
+                                    <h4 class="mb-4">Previsualización de icono</h4>
+                                    <img class="border border-2 border-secondary p-1" id="imgPreview" width="120" height="120" src="../../pdf/Courses/<?php echo $row[3] ?>">
+                                </div>
+                                <form  method="POST" enctype="multipart/form-data" role="form" action="../../php/DBManager/actionCourse.php?id_curso=<?php echo $row[0] ?>">
+                                    <div class="d-flex flex-column">
+                                        <input type="text" id="titulo" name="titulo" class="w-100 mb-4" placeholder="Titulo" value="<?php echo $row[1] ?>">
+                                        <textarea class="mb-4 p-2" name="descripcion" id="descrip" cols="30" rows="10" style="resize: none;" placeholder="Descripción"><?php echo $row[2] ?></textarea>
+                                        <input class="mb-4" type="file" name="archivo" accept="image/*" onchange="previewImage(event, '#imgPreview')">
+                                        <input type="submit" class="w-25 btn btn-success" value="Editar">
                                     </div>
-                                </div>
-                                <div class="card2">
-                                    <img src="../../img/Add.png" alt="">
-                                </div>
+                                    
+                                </form>
+
                             </div>
                         </div>
-                        <?php
-
-                        ?>
                     </div>
             </div>
         </div>
@@ -124,6 +122,7 @@ if ($sesion) {
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
             crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
+        <script src="../Panel/js/scripts.js"></script>
     </body>
 
     </html>

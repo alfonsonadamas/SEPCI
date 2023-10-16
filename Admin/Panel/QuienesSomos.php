@@ -93,7 +93,7 @@ if ($sesion) {
                                             <?php include_once '../../php/DBManager/endPointAboutUs.php';
                                             $row = $data->fetch_row(); ?>
                                             <textarea name="descripcion" class="form-control" aria-label="With textarea"
-                                                placeholder="Introduce La Descripción De La Refacción" required
+                                                placeholder="" required
                                                 style="height: 450px;"><?php echo $row[1]; ?>
                                                 </textarea>
                                         </div>

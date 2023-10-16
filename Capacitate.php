@@ -41,44 +41,33 @@
     <div class="cursos">
       <h1>CURSOS SUGERIDOS</h1>
     </div>
-    <div class="contenedor">
+    <div class="curso">
+    <?php 
+          include_once 'php/DBManager/endPointEachCourses.php';
+          while ($row = $data->fetch_assoc()) {
+        ?>
+    
+            <div class="contenedor">
       <div class="imagen">
-        <img src="img/Cursos.PNG" />
+        <img src="../../pdf/Courses/<?php echo $row['root_course']; ?>" />
       </div>
       <div class="inf_curso">
-        <h2>Austeridad en el ejercicio del servicio público</h2>
+        <h2><?php echo $row['course_name'] ?></h2>
         <hr />
         <h3>Descripcion</h3>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non
-          porttitor massa. Nunc molestie mauris id est fringilla tincidunt.
-          Mauris diam lacus, fringilla ac maximus nec, rhoncus sodales orci. In
-          non libero sit amet odio dapibus maximus. Phasellus a volutpat ex, eu
-          vulputate felis.
+          <?php echo $row['course_descrip'] ?>
         </p>
         <button>Ver mas</button>
         <!-- <a href="" class="btn">Ver mas</a> -->
       </div>
     </div>
-    <div class="contenedor">
-      <div class="imagen">
-        <img src="img/Cursos.PNG" />
-      </div>
-      <div class="inf_curso">
-        <h2>Austeridad en el ejercicio del servicio público</h2>
-        <hr />
-        <h4>Descripcion</h4>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non
-          porttitor massa. Nunc molestie mauris id est fringilla tincidunt.
-          Mauris diam lacus, fringilla ac maximus nec, rhoncus sodales orci. In
-          non libero sit amet odio dapibus maximus. Phasellus a volutpat ex, eu
-          vulputate felis.
-        </p>
-        <button>Ver mas</button>
-      </div>
-    </div>
-
+    
+    
+    <?php
+          }
+    ?>
+</div>
     <footer class="footer">
       <div class="container">
         <div class="text">

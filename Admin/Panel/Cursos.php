@@ -65,7 +65,7 @@ if ($sesion) {
                                 Editar Documentos
                             </a>
                             <div class="sb-sidenav-menu-heading">Cursos</div>
-                            <a class="nav-link" href="EditarCursos.php">
+                            <a class="nav-link" href="Cursos.php">
                                 <div class="sb-nav-link-icon"></div>
                                 Editar Cursos
                             </a>
@@ -87,32 +87,36 @@ if ($sesion) {
                         <div class="card mb-4">
                             
                             <?php
-
+                                include_once '../../php/DBManager/endPointEachCourses.php';
+                                while ($row = $data->fetch_assoc() ) {
                             ?>
                             <div class=" d-flex m-3 border-bottom pb-2">
-                                <img  src="../../img/pdf.png" alt="" width="150" height="150"> 
+                                <img  src=" ../../pdf/Courses/<?php echo $row['root_course']; ?>"  alt="" width="120" height="120"> 
                                 <div class="d-flex flex-row align-items-center justify-content-between w-100">
                                     <div class=" p-1 ms-3 me-3">
-                                        <h3>Curso</h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit nostrum excepturi ullam libero voluptate, et in dignissimos voluptas error similique temporibus magnam quaerat dolorem at qui itaque nulla accusamus. Amet.</p>
+                                        <h3><?php echo $row['course_name'] ?></h3>
+                                        <p><?php echo $row['course_descrip']  ?></p>
                                     </div>
                                     <div class="d-flex">
-                                        <a href="" class="btn btn-warning me-3">Editar</a>
-                                        <a href="" class="btn btn-danger">Eliminar</a>
+                                        <a href="../Panel/EditarCursos.php?id_curso=<?php echo $row['id_course'] ?>" class="btn btn-warning me-3">Editar</a>
+                                        <a href="../../php/DBManager/deleteCourse.php?id_curso=<?php echo $row['id_course'] ?>" class="btn btn-danger">Eliminar</a>
                                     </div>
                                     
                                 </div>
 
                             </div>
                             
+                        <?php
+                            }
+                            
+                        ?>
+                            
                             <div class="d-flex justify-content-center mb-4">
-                                <a href="" class="btn btn-success">Añadir</a>
+                                <a href="../Panel/AñadirCurso.php" class="btn btn-success">+ | Añadir</a>
                             </div>
                             
                         </div>
-                        <?php
-
-                        ?>
+                        
                     </div>
             </div>
         </div>
