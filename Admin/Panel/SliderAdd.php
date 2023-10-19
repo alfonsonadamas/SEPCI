@@ -76,29 +76,31 @@ if ($sesion) {
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Agregar Carrusel</h1>
+                        <h1 class="mt-4">Editar Carrusel</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Inicio/Agregar Carrusel</li>
+                            <li class="breadcrumb-item active">Inicio/Editar Carrusel</li>
                         </ol>
                         <div class="card mb-4">
                             <div class="contenedor">
                                 <div class="conten_input">
-                                    <div class="image">
-                                        <img src="../../img/carrusel.png" alt="">
-                                    </div>
-                                    <div class="archivos">
-                                        <h4 class="text">Imagen: </h4>
-                                        <div id="dropzone">
-                                            <p>
-                                                Arrastra y suelta un archivo aquí o haz clic para seleccionar
-                                                uno.
-                                            </p>
-                                            <input type="file" id="archivo" name="archivo">
+                                    <form method="POST" enctype="multipart/form-data" role="form" action="../../php/DBManager/actionSlider.php">
+                                        <div class="image">
+                                            <img src="../../img/carrusel.png" alt="">
                                         </div>
-                                    </div>
-                                    <div class="columna">
-                                        <button type="submit" class="btn_send">Agregar</button>
-                                    </div>
+                                        <div class="archivos">
+                                            <h4 class="text">Imagen: </h4>
+                                            <div id="dropzone">
+                                                <p>
+                                                    Arrastra y suelta un archivo aquí o haz clic para seleccionar
+                                                    uno.
+                                                </p>
+                                                <input type="file" id="archivo" name="archivo" accept="image/png, image/jpg, image/jpeg" required>
+                                            </div>
+                                        </div>
+                                        <div class="columna">
+                                            <button type="submit" class="btn_send"  name="Agregar" value="Agregar">Agregar</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                             <?php

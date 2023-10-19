@@ -15,9 +15,31 @@ class DBManager
 
     //////////////////////    --------> CREATE querys <--------  //////////////////////
 
+    ///// Insert an image on the slider with tmp root /////
+    public function insertImage()
+    {
+        $link = $this->open();
+
+        try {
+            $link->set_charset('utf8');
+
+            $sql = "INSERT INTO slider (root_sliderimage) VALUES ('tmp')";
+
+            mysqli_query($link, $sql) or die("Error at inserting image");
+            $id_insert = mysqli_insert_id($link);
+
+            $link->commit();
+            $this->close($link);
+
+            return $id_insert;
+        } catch (mysqli_sql_exception $exception) {
+            $link->rollback();
+            throw $exception;
+        }
+    }
+
     public function signFileInicio($title)
     {
-        // Inserta un producto.
         $link = $this->open();
 
         try {
@@ -74,6 +96,19 @@ class DBManager
             header("location: ../../Admin/login.php");
         }
     }
+
+    public function showImagesSlider()
+    {
+        $link = $this->open();
+
+        $query = "SELECT * FROM slider";
+        $result = $link->query($query);
+
+        $this->close($link);
+
+        return $result;
+    }
+
     public function showAboutUs()
     {
         $link = $this->open();
@@ -149,6 +184,23 @@ class DBManager
         $row = $result->fetch_row();
         return $row[0];
     }
+
+    public function showRootImageSlider($id_img)
+    {
+        $link = $this->open();
+
+        $query = "SELECT root_sliderimage FROM slider WHERE id_slider=?";
+        $sql = mysqli_prepare($link, $query) or die("Error at showing root");
+        $sql->bind_param("s", $id_img);
+        $sql->execute();
+
+        $result = mysqli_stmt_get_result($sql);
+
+        $this->close($link);
+
+        $row = $result->fetch_row();
+        return $row[0];
+    }
     //////////////////////    --------> UPDATE querys <--------  //////////////////////
     public function updateAboutUs($id, $info, $root)
     {
@@ -158,6 +210,19 @@ class DBManager
 
         $query = mysqli_prepare($link, $sql) or die("Error at update info about us");
         $query->bind_param("sss", $info, $root, $id);
+        $query->execute();
+
+        $this->close($link);
+    }
+    // Editar miembros desde el Administrador
+    public function updateEditMembers($id, $name, $middle_name, $last_name, $mail)
+    {
+        $link = $this->open();
+
+        $sql = "UPDATE members SET names=?, middle_name=?, last_name=?, mail=? WHERE id_members=?";
+
+        $query = mysqli_prepare($link, $sql) or die("Error at update info about us");
+        $query->bind_param("sssss", $name, $middle_name, $last_name, $mail, $id);
         $query->execute();
 
         $this->close($link);
@@ -188,20 +253,6 @@ class DBManager
         $this->close($link);
     }
 
-    // Editar miembros desde el Administrador
-    public function updateEditMembers($id, $name, $middle_name, $last_name, $mail, $rol)
-    {
-        $link = $this->open();
-
-        $sql = "UPDATE members SET names=?, middle_name=?, last_name=?, mail=? WHERE id_members=?";
-
-        $query = mysqli_prepare($link, $sql) or die("Error at update info about us");
-        $query->bind_param("ssssss", $name, $middle_name, $last_name, $mail, $id);
-        $query->execute();
-
-        $this->close($link);
-    }
-
     public function updateInicioTwo($id_file, $title)
     {
         $link = $this->open();
@@ -210,6 +261,19 @@ class DBManager
 
         $query = mysqli_prepare($link, $sql) or die("Error at update document in index");
         $query->bind_param("ss", $title, $id_file);
+        $query->execute();
+
+        $this->close($link);
+    }
+
+    public function updateImageSlider($id_img, $root)
+    {
+        $link = $this->open();
+
+        $sql = "UPDATE slider SET root_sliderimage=? WHERE id_slider=?";
+
+        $query = mysqli_prepare($link, $sql) or die("Error at update image in slider");
+        $query->bind_param("ss", $root, $id_img);
         $query->execute();
 
         $this->close($link);
@@ -223,6 +287,19 @@ class DBManager
         $query = "DELETE FROM files WHERE id_file=?";
 
         $sql = mysqli_prepare($link, $query) or die("Error at deleting file");
+        $sql->bind_param("s", $id_file);
+        $sql->execute();
+
+        $this->close($link);
+    }
+
+    public function deleteImageSlider($id_file)
+    {
+        $link = $this->open();
+
+        $query = "DELETE FROM slider WHERE id_slider=?";
+
+        $sql = mysqli_prepare($link, $query) or die("Error at deleting image");
         $sql->bind_param("s", $id_file);
         $sql->execute();
 

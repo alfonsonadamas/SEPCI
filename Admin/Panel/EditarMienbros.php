@@ -147,7 +147,7 @@ if ($sesion) {
     </body>
 
     </html>
-    <?php
+<?php
 } else {
     header('Location: ../login.php');
 }

@@ -1,8 +1,8 @@
 <?php
 
-require 'DBManager.php';
+//require 'DBManager.php';
 
-$db = new DBMAnager();
+//$db = new DBMAnager();
 
 $info = $_POST['descripcion'];
 

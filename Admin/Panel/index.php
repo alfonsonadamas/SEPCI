@@ -20,7 +20,7 @@ if ($sesion) {
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.html">SEPCI</a>
+            <a class="navbar-brand ps-3" href="index.php">SEPCI</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
                     class="fas fa-bars"></i></button>
@@ -41,18 +41,18 @@ if ($sesion) {
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Denuncias</div>
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="index.php">
                                 <div class="sb-nav-link-icon"></div>
                                 Buzón de denuncias
                             </a>
                             <div class="sb-sidenav-menu-heading">Inicio</div>
-                            <a class="nav-link" href="QuienesSomos.php">
-                                <div class="sb-nav-link-icon"></div>
-                                Editar ¿Quiénes somos?
-                            </a>
                             <a class="nav-link" href="SliderCRUD.php">
                                 <div class="sb-nav-link-icon"></div>
                                 Carrusel
+                            </a>
+                            <a class="nav-link" href="QuienesSomos.php">
+                                <div class="sb-nav-link-icon"></div>
+                                Editar ¿Quiénes somos?
                             </a>
                             <a class="nav-link" href="Miembros.php">
                                 <div class="sb-nav-link-icon"></div>

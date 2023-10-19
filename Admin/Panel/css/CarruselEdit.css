@@ -39,7 +39,7 @@
     margin-bottom: 15px;
 }
 
-.container .card a {
+.container .card input {
     text-decoration: none;
     display: inline-block;
     width: 100px;

@@ -47,6 +47,10 @@ if ($sesion) {
                                 Buzón de denuncias
                             </a>
                             <div class="sb-sidenav-menu-heading">Inicio</div>
+                            <a class="nav-link" href="SliderCRUD.php">
+                                <div class="sb-nav-link-icon"></div>
+                                Carrusel
+                            </a>
                             <a class="nav-link" href="QuienesSomos.php">
                                 <div class="sb-nav-link-icon"></div>
                                 Editar ¿Quiénes somos?
@@ -82,10 +86,7 @@ if ($sesion) {
                         </ol>
                         <div class="card mb-4">
                             <div class="container">
-                                <?php
-
-                                ?>
-                                <a href="#">
+                                <a href='SliderAdd.php'>
                                     <div class="addSlider">
                                         <img src="../../img/Add.png" alt="">
                                         <div class="txt">
@@ -94,31 +95,23 @@ if ($sesion) {
                                     </div>
                                 </a>
                                 <div class="container1">
-                                    <div class="card2">
-                                        <img src="../../img/pdf.png" alt="">
-                                        <div class="botones">
-                                            <a class="button-container" href='#'>Editar</a>
-                                            <a class="button-container" href='#'>Borrar</a>
-                                        </div>
-                                    </div>
-                                    <div class="card2">
-                                        <img src="../../img/pdf.png" alt="">
-                                        <div class="botones">
-                                            <a class="button-container" href='#'>Editar</a>
-                                            <a class="button-container" href='#'>Borrar</a>
-                                        </div>
-                                    </div>
-                                    <div class="card2">
-                                        <img src="../../img/pdf.png" alt="">
-                                        <div class="botones">
-                                            <a class="button-container" href='#'>Editar</a>
-                                            <a class="button-container" href='#'>Borrar</a>
-                                        </div>
-                                    </div>
-                                </div>
                                 <?php
-
+                                    include_once '../../php/DBManager/endPointSlider.php';
+                                    while ($row = $data->fetch_assoc()) {
                                 ?>
+                                    <form action="../../php/DBManager/actionSlider.php?id=<?php echo $row['id_slider']; ?>" method="POST" enctype="multipart/form-data">
+                                        <div class="card2">
+                                            <img src="<?php echo '../../img/Carrusel/' . $row['root_sliderImage']; ?>" alt="">
+                                            <div class="botones">
+                                                <a href="SliderEdit.php?root=<?php echo $row['root_sliderImage']; ?>&id=<?php echo $row['id_slider']; ?>">Editar</a>
+                                                <input class="button-container" type="submit" name="Eliminar" value="Eliminar" onclick="Elimina()">
+                                            </div>
+                                        </div>
+                                    </form>
+                                <?php
+                                    }    
+                                ?>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -136,6 +129,14 @@ if ($sesion) {
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
             crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
+        <script>
+            function Elimina(){
+                if (!confirm("¿Estas seguro que quieres eliminar este producto?")) {
+                event.preventDefault();
+                return false;
+                }
+            }
+        </script>
     </body>
 
     </html>

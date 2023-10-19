@@ -47,6 +47,10 @@ if ($sesion) {
                                 Buzón de denuncias
                             </a>
                             <div class="sb-sidenav-menu-heading">Inicio</div>
+                            <a class="nav-link" href="SliderCRUD.php">
+                                <div class="sb-nav-link-icon"></div>
+                                Carrusel
+                            </a>
                             <a class="nav-link" href="QuienesSomos.php">
                                 <div class="sb-nav-link-icon"></div>
                                 Editar ¿Quiénes somos?

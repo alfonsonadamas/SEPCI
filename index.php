@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/css/bootstrap.min.css"
   integrity="sha512-NZCf0L2aVGRiFW/XR0X9st8YzmMv7vHwqon5r5rzhUNlO/Tgdy/4G22l3LxH2OzNfDgYOKhcSihIpg24OvJ0dA=="
   crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -60,15 +60,16 @@
         aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="img/carrusel.png" class="d-block w-100" alt="..." />
-      </div>
-      <div class="carousel-item">
-        <img src="img/carrusel.png" class="d-block w-100" alt="..." />
-      </div>
-      <div class="carousel-item">
-        <img src="img/carrusel.png" class="d-block w-100" alt="..." />
-      </div>
+      <?php
+      include_once 'php/DBManager/endPointSlider.php';
+      while ($row = $data->fetch_assoc()) {
+        ?>
+        <div class="carousel-item active">
+          <img src="<?php echo 'img/Carrusel/' . $row['root_sliderImage']; ?>" class="d-block w-100" alt="..." />
+        </div>
+        <?php
+      }
+      ?>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
       data-bs-slide="prev">
@@ -163,35 +164,27 @@
     </div>
   </main>
 
-  <br>
   <div class="titulo">
     <h2>DOCUMENTOS DEL SEPCI</h2>
   </div>
 
 
-  <div class="container_pdf">
-    <?php /*
-include_once 'php/DBManager/endPointDocuments.php';
-while ($row = $data->fetch_assoc()) { */
-    ?>
-    <a href="#<?php // echo 'pdf/Inicio/' . $row['root']; ?>" class="pdfs">
-      <img src="img/pdf.png" alt="">
-      <h3> HOLA
-        <?php // echo $row['name']; ?>
-      </h3>
-    </a>
+  <div class="contenedor-pdfs">
     <?php
-    // }
+    include_once 'php/DBManager/endPointDocuments.php';
+    while ($row = $data->fetch_assoc()) {
+      ?>
+      <a href="#<?php echo 'pdf/Inicio/' . $row['root']; ?>" class="pdf">
+        <img src="img/pdf.png" alt="PDF 1">
+        <h3>
+          <?php echo $row['name']; ?>
+        </h3>
+      </a>
+      <?php
+    }
     ?>
   </div>
-  <div class="container_pdf">
 
-    <a href="#" class="pdfs">
-      <img src="img/pdf.png" alt="">
-      <h3> HOLA
-      </h3>
-    </a>
-  </div>
   <footer class="footer">
     <div class="container">
       <div class="text">
