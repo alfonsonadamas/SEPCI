@@ -14,7 +14,7 @@ if ($sesion) {
         <title>SEPCI</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
-        <link rel="stylesheet" href="css/EditMienbros.css" />
+        <link rel="stylesheet" href="css/Carrusel.css" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
 
@@ -47,6 +47,10 @@ if ($sesion) {
                                 Buzón de denuncias
                             </a>
                             <div class="sb-sidenav-menu-heading">Inicio</div>
+                            <a class="nav-link" href="SliderCRUD.php">
+                                <div class="sb-nav-link-icon"></div>
+                                Carrusel
+                            </a>
                             <a class="nav-link" href="QuienesSomos.php">
                                 <div class="sb-nav-link-icon"></div>
                                 Editar ¿Quiénes somos?
@@ -55,7 +59,8 @@ if ($sesion) {
                                 <div class="sb-nav-link-icon"></div>
                                 Editar Miembros
                             </a>
-                            <a class="nav-link" href="EditarDocumentos.php">
+                            <a class="nav-link collapsed" href="EditarDocumentos.php" data-bs-toggle="collapse"
+                                data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                                 <div class="sb-nav-link-icon"></div>
                                 Editar Documentos
                             </a>
@@ -75,59 +80,39 @@ if ($sesion) {
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Editar Miembros</h1>
+                        <h1 class="mt-4">Editar Carrusel</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">Inicio/Editar Miembros</li>
                         </ol>
                         <div class="card mb-4">
-                            <section class="seccion">
+                            <div class="container">
+                                <a href='SliderAdd.php'>
+                                    <div class="addSlider">
+                                        <img src="../../img/Add.png" alt="">
+                                        <div class="txt">
+                                            <h3>Agregar</h3>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="container1">
                                 <?php
-                                include_once '../../php/DBManager/endPointEachMembers.php';
-                                $obj = new member();
-                                $data = $obj->showMember($_REQUEST['id']);
-                                $row = $data->fetch_row();
+                                    include_once '../../php/DBManager/endPointSlider.php';
+                                    while ($row = $data->fetch_assoc()) {
                                 ?>
-                                <form method="POST" enctype="multipart/form-data" role="form"
-                                    action="../../php/DBManager/actionEditMembers.php?id=<?php echo $_REQUEST['id'] ?>">
-                                    <div class="contenedor">
-                                        <div class="conten_input">
-                                            <div class="columna">
-                                                <label for="name">Nombre: </label>
-                                                <input type="text" name="name" id="celdaTexto"
-                                                    placeholder="<?php echo $row[0]; ?>" />
-                                            </div>
-                                            <div class="columna">
-                                                <label for="phone">Apellido Paterno: </label>
-                                                <input type="text" name="middle" placeholder="<?php echo $row[1]; ?>" />
-                                            </div>
-                                            <div class="columna">
-                                                <label for="name_Denounced">Apellido Materno: </label>
-                                                <input type="text" name="last" placeholder="<?php echo $row[2]; ?>" />
-                                            </div>
-                                            <div class="columna">
-                                                <label for="email">Correo Electronico: </label>
-                                                <input type="text" name="mail" id="celdaTexto2"
-                                                    placeholder="<?php echo $row[3]; ?>" />
-                                            </div>
-                                            <div class="columna">
-                                                <label for="email">Rol: </label>
-                                                <input type="text" name="rol" disabled="disabled" id="celdaTexto2"
-                                                    placeholder="<?php echo $row[4]; ?>" />
-                                            </div>
-                                            <div class="columna">
-                                                <label for="post_Denounced">Imagen: </label>
-                                                <input type="text" name="image"
-                                                    placeholder="<?php echo $row[5]; ?>"></input>
-                                            </div>
-                                            <div class="columna">
-                                                <button type="submit" class="btn_send">Enviar</button>
-                                                <!-- <input class="btn_send" type="submit" value="Editar"> -->
+                                    <form action="../../php/DBManager/actionSlider.php?id=<?php echo $row['id_slider']; ?>" method="POST" enctype="multipart/form-data">
+                                        <div class="card2">
+                                            <img src="<?php echo '../../img/Carrusel/' . $row['root_sliderImage']; ?>" alt="">
+                                            <div class="botones">
+                                                <a href="SliderEdit.php?root=<?php echo $row['root_sliderImage']; ?>&id=<?php echo $row['id_slider']; ?>">Editar</a>
+                                                <input class="button-container" type="submit" name="Eliminar" value="Eliminar" onclick="Elimina()">
                                             </div>
                                         </div>
-
-                                    </div>
-                                </form>
-                                </seccion>
+                                    </form>
+                                <?php
+                                    }    
+                                ?>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </main>
@@ -144,10 +129,18 @@ if ($sesion) {
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
             crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
+        <script>
+            function Elimina(){
+                if (!confirm("¿Estas seguro que quieres eliminar este producto?")) {
+                event.preventDefault();
+                return false;
+                }
+            }
+        </script>
     </body>
 
     </html>
-<?php
+    <?php
 } else {
     header('Location: ../login.php');
 }

@@ -87,13 +87,12 @@
   display: block;
 }
 
-.titul {
+.titul0 {
   position: relative;
-  width: 60%;
-  max-width: 1000px;
   margin: -7% auto;
   height: auto;
-  padding: 60px 0 0; /* Agregamos un padding superior */
+  padding: 60px 0 0;
+  /* Agregamos un padding superior */
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: bold;
@@ -106,6 +105,7 @@
   align-items: center;
   text-transform: uppercase;
 }
+
 .titul h2 {
   font-family: "Roboto", sans-serif;
   color: #741731;
@@ -155,126 +155,58 @@
 
 .imagen-recuadrov {
   display: block;
-  width: 50px; /* Elige el tamaño que prefieras */
-  height: auto; /* Para mantener la proporción de la imagen */
+  width: 50px;
+  /* Elige el tamaño que prefieras */
+  height: auto;
+  /* Para mantener la proporción de la imagen */
   margin: 0;
   padding: 0;
   float: left;
 }
 
-/* Estilos para la fila de recuadros */
+/* ---------------------------------------------------------------------------------------------------- */
 
-.fila-recuadros {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  max-width: 100%; /* Ancho máximo de la fila */
-  margin: 35% auto 0; /* Centrar la fila horizontalmente y agregar margen superior */
-}
-/* Estilos para los recuadros */
-.recuadro {
-  position: relative;
-  width: 260px;
-  height: 171px;
-  margin-bottom: 40px; /* Espacio entre los recuadros */
-}
-
-.recuadro1 {
-  background-color: #1b396a;
-}
-
-.recuadro2 {
-  background-color: #1b396a;
-}
-
-.recuadro3 {
-  background-color: #741731;
-}
-
-.recuadro4 {
-  background-color: #741731;
-}
-
-.recuadro5 {
-  background-color: #741731;
-}
-
-/* Estilos para las imágenes */
-.imagen-recuadro1 {
+/*  Nuevo de miembros   */
+.container1 {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Estilos para los títulos */
-.texto-recuadro1 {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  margin: 0;
-  padding: 10px;
-  color: #fff;
-  /* Fondo semitransparente para el texto */
-  font-size: 18px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  justify-content: center;
   text-align: center;
+  margin: auto;
+  position: relative;
 }
 
-/* Estilos para la imagen dentro del recuadro */
-.imagen-recuadro1 {
+.container1 a {
+  text-decoration: none;
+}
+
+.container1 .carta img {
+  padding-top: 18px;
   width: 100px;
   height: 100px;
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 0;
+  border-radius: 50%;
+  /* hace que el contenedor tenga forma de círculo */
+  overflow: hidden;
 }
 
-/* Estilos para el texto dentro del recuadro */
-.texto-recuadro1 {
-  position: absolute;
-  width: 100%;
-  height: 23px;
-  bottom: 15px;
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 23px;
-  color: #ffffff;
+.container1 .carta {
+  width: 300px;
+  height: 250px;
+  /* background-color: rgba(27, 57, 106, 0.9); */
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 10px;
   text-align: center;
-  z-index: 0;
+  color: #fff;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
-.fila-recuadros-1 {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  max-width: 100%; /* Ancho máximo de la fila */
-  margin: 0% auto 0; /* Centrar la fila horizontalmente y agregar margen superior */
-}
-
-.fila-recuadros-2 {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  max-width: 56%; /* Ancho máximo de la fila */
-  margin: 0% auto 0; /* Centrar la fila horizontalmente y agregar margen superior */
-}
-
-.recuadro-recuadro2 {
-  position: relative;
-  width: 260px;
-  height: 171px;
-  margin-bottom: 10px; /* Espacio entre los recuadros */
-  background-color: #be9650; /* Cambio del color de fondo */
-}
-
-.contenedor-titulo {
-  position: relative;
-  width: 100%;
-  padding-top: 30%; /* Proporción para hacer el contenedor responsive */
+.container1 .carta .Nombres {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  padding-top: 5px;
 }
 
 .titulo-11 {
@@ -297,24 +229,21 @@
 }
 
 .contenedor-pdfs {
-  position: relative;
   width: 100%;
-  max-width: 1200px;
   margin: 10% auto;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin-top: -12%;
+  display: grid;
+  grid-template-columns: auto, auto, auto, auto, auto;
+  justify-content: center;
 }
 
 .pdf {
-  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 94px;
   height: 94px;
   transition: all 0.2s ease-in-out;
+  text-decoration: none;
 }
 
 .pdf:hover h3 {
@@ -332,14 +261,12 @@
   bottom: -40px;
   font-family: "Roboto";
   font-style: normal;
-  font-weight: 550;
   font-size: 14px;
   line-height: 16px;
   text-align: center;
   color: #000000;
   transition: all 0.2s ease-in-out;
   white-space: nowrap;
-  overflow: hidden;
   text-overflow: ellipsis;
 }
 

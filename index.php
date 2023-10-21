@@ -1,290 +1,270 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/css/bootstrap.min.css"
-  integrity="sha512-NZCf0L2aVGRiFW/XR0X9st8YzmMv7vHwqon5r5rzhUNlO/Tgdy/4G22l3LxH2OzNfDgYOKhcSihIpg24OvJ0dA=="
-  crossorigin="anonymous" referrerpolicy="no-referrer" />
+    integrity="sha512-NZCf0L2aVGRiFW/XR0X9st8YzmMv7vHwqon5r5rzhUNlO/Tgdy/4G22l3LxH2OzNfDgYOKhcSihIpg24OvJ0dA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/js/bootstrap.min.js"
-  integrity="sha512-2cc7Vwfuw07US+13vZ8bLcRi9ZxHx1FtKNp8YgP/m5a3HtNCgIvE8NIVW9C9N/HlhOjNHCOv+8kNSYr5r5q3zA=="
-  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    integrity="sha512-2cc7Vwfuw07US+13vZ8bLcRi9ZxHx1FtKNp8YgP/m5a3HtNCgIvE8NIVW9C9N/HlhOjNHCOv+8kNSYr5r5q3zA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="js/Index.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
+
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Subcomite de Etica y de Prevencion de Conflictos de Interes</title>
-  <link rel="icon" href="img/logo-SEPCI.png" />
-  <link rel="shortcut icon" href="img/logo-SEPCI.jpg" type="image/x-icon" />
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/normalize.css" />
-  <link rel="stylesheet" href="css/index.css" />
-  <link rel="stylesheet" href="css/footer.css" />
-  <link rel="stylesheet" href="css/nav.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
+    <title>Subcomite de Etica y de Prevencion de Conflictos de Interes</title>
+    <link rel="icon" href="img/logo-SEPCI.png" />
+    <link rel="shortcut icon" href="img/logo-SEPCI.jpg" type="image/x-icon" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
 </head>
 
 <body>
-  <section class="Main_header">
-    <header>
-      <img src="img/logoEducacion.png" class="img1" />
-      <img src="img/Logo-TecNM.png" class="img2" />
-      <img src="img/logo-Itmorelia.png" class="img3" />
-      <img src="img/logo-SEPCI.png" alt="sepci" class="img4" />
-    </header>
-    <header class="Menu">
-      <div class="contenedor_menu">
-        <nav>
-          <a class="active" href="index.html">Inicio</a>
-          <a href="Capacitate.html">Capacitate</a>
-          <a href="Documentos.html">Documentos</a>
-          <a href="Buzon-de-atencion.html">Buzón de Atención</a>
-          <a href="Contacto.html">Contacto</a>
-        </nav>
-      </div>
-    </header>
-  </section>
+    <section class="Main_header">
+        <header>
+            <img src="img/logoEducacion.png" class="img1" />
+            <img src="img/Logo-TecNM.png" class="img2" />
+            <img src="img/logo-Itmorelia.png" class="img3" />
+            <img src="img/logo-SEPCI.png" alt="sepci" class="img4" />
+        </header>
+        <header class="Menu">
+            <div class="contenedor_menu">
+                <nav>
+                    <a class="active" href="index.php">Inicio</a>
+                    <a href="Capacitate.html">Capacitate</a>
+                    <a href="Documentos.html">Documentos</a>
+                    <a href="Buzon-de-atencion.html">Buzón de Atención</a>
+                    <a href="Contacto.html">Contacto</a>
+                </nav>
+            </div>
+        </header>
+    </section>
 
-  <div id="carouselExampleIndicators" class="carousel slide">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-        aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-        aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-        aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="img/carrusel.png" class="d-block w-100" alt="..." />
-      </div>
-      <div class="carousel-item">
-        <img src="img/carrusel.png" class="d-block w-100" alt="..." />
-      </div>
-      <div class="carousel-item">
-        <img src="img/carrusel.png" class="d-block w-100" alt="..." />
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-      data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-      data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-  <div class="titulo">
-    <h2>Subcomite de Etica y de Prevencion de Conflictos de Interes</h2>
-  </div>
-
-  <div class="qsomos">
-    <div class="qsomos_text">
-      <h3>¿Quienes somos?</h3>
-      <div class="sub"></div>
-      <div class="qsomos_info">
-        <?php 
-          include_once 'php/DBManager/endPointAboutUs.php';
-          $row = $data->fetch_row();
-          echo $row[1]; 
+    <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <?php
+      include_once 'php/DBManager/endPointSlider.php';
+      while ($row = $data->fetch_assoc()) {
         ?>
-      </div>
-      <div class="qsomos_boton">
-        <a href="<?php echo 'pdf/About Us/'.$row[2]; ?>" target="_blank">Ver Mas</a>
-      </div>
+            <div class="carousel-item active">
+                <img src="<?php echo 'img/Carrusel/' . $row['root_sliderImage']; ?>" class="d-block w-100" alt="..." />
+            </div>
+            <?php
+      }
+      ?>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
-    <div class="qsomos_img">
-      <img src="img/logo-SEPCI.png" alt="" />
+    <div class="titulo">
+        <h2>Subcomite de Etica y de Prevencion de Conflictos de Interes</h2>
     </div>
-  </div>
-  <div class="titul">
-    <h2>Directorio de Miembros SEPCI</h2>
-  </div>
-  <a href="#" class="recuadro-1" style="top: 1560px;" data-bs-toggle="modal" data-bs-target="#myModal">
-    <img class="imagen-recuadro" src="img/usu.png" alt="Director">
-    <h2 class="texto-recuadro">Presidencia</h2>
-  </a>
-  <a href="#" class="recuadro-1" style="top: 1748px;" data-bs-toggle="modal" data-bs-target="#myModal">
-    <img class="imagen-recuadro" src="img/usu.png" alt="Logo">
-    <h2 class="texto-recuadro">Presidencia (Suplente)</h2>
-  </a>
 
-
-
-
-
-  <div class="fila-recuadros">
-    <a href="#" class="recuadro recuadro1" data-bs-toggle="modal" data-bs-target="#myModal">
-      <img class="imagen-recuadro1" src="img/usu.png" alt="Logo">
-      <h2 class="texto-recuadro1">Presidencia (Suplente)</h2>
-    </a>
-    <a href="#" class="recuadro recuadro2" data-bs-toggle="modal" data-bs-target="#myModal">
-      <img class="imagen-recuadro1" src="img/usu.png" alt="Logo">
-      <h2 class="texto-recuadro1">Recuadro 2</h2>
-    </a>
-    <a href="#" class="recuadro recuadro3" data-bs-toggle="modal" data-bs-target="#myModal">
-      <img class="imagen-recuadro1" src="img/usu.png" alt="Logo">
-      <h2 class="texto-recuadro1">Recuadro 3</h2>
-    </a>
-    <a href="#" class="recuadro recuadro4" data-bs-toggle="modal" data-bs-target="#myModal">
-      <img class="imagen-recuadro1" src="img/usu.png" alt="Logo">
-      <h2 class="texto-recuadro1">Recuadro 4</h2>
-    </a>
-    <a href="#" class="recuadro recuadro5" data-bs-toggle="modal" data-bs-target="#myModal">
-      <img class="imagen-recuadro1" src="img/usu.png" alt="Logo">
-      <h2 class="texto-recuadro1">Recuadro 5</h2>
-    </a>
-  </div>
-
-
-
-  <div class="fila-recuadros-1">
-    <a href="#" class="recuadro recuadro1" data-bs-toggle="modal" data-bs-target="#myModal">
-      <img class="imagen-recuadro1" src="img/usu.png" alt="Logo">
-      <h2 class="texto-recuadro1">Presidencia (Suplente)</h2>
-    </a>
-    <a href="#" class="recuadro recuadro2" data-bs-toggle="modal" data-bs-target="#myModal">
-      <img class="imagen-recuadro1" src="img/usu.png" alt="Logo">
-      <h2 class="texto-recuadro1">Recuadro 2</h2>
-    </a>
-    <a href="#" class="recuadro recuadro3" data-bs-toggle="modal" data-bs-target="#myModal">
-      <img class="imagen-recuadro1" src="img/usu.png" alt="Logo">
-      <h2 class="texto-recuadro1">Recuadro 3</h2>
-    </a>
-    <a href="#" class="recuadro recuadro4" data-bs-toggle="modal" data-bs-target="#myModal">
-      <img class="imagen-recuadro1" src="img/usu.png" alt="Logo">
-      <h2 class="texto-recuadro1">Recuadro 4</h2>
-    </a>
-    <a href="#" class="recuadro recuadro5" data-bs-toggle="modal" data-bs-target="#myModal">
-      <img class="imagen-recuadro1" src="img/usu.png" alt="Logo">
-      <h2 class="texto-recuadro1">Recuadro 5</h2>
-    </a>
-  </div>
-
-
-
-
-  <div class="fila-recuadros-2">
-
-    <a href="#" class="recuadro-recuadro2" data-bs-toggle="modal" data-bs-target="#myModal">
-      <img class="imagen-recuadro1" src="img/usu.png" alt="Logo">
-      <h2 class="texto-recuadro1">Recuadro 2</h2>
-    </a>
-
-    <a href="#" class="recuadro-recuadro2" data-bs-toggle="modal" data-bs-target="#myModal">
-      <img class="imagen-recuadro1" src="img/usu.png" alt="Logo">
-      <h2 class="texto-recuadro1">Recuadro 4</h2>
-    </a>
-
-  </div>
-
-
-
-  <div class="contenedor-titulo">
-    <h1 class="titulo-11">DOCUMENTOS DEL SEPCI</h1>
-  </div>
-
-
-  <div class="contenedor-pdfs">
-    <a href="#" class="pdf">
-      <img src="img/pdf.png" alt="PDF 1">
-      <h3>Acta de Instalacion</h3>
-    </a>
-    <a href="#" class="pdf">
-      <img src="img/pdf.png" alt="PDF 2">
-      <h3>Bases para Organizacion y funcionamiento del SEPCI</h3>
-    </a>
-    <a href="#" class="pdf">
-      <img src="img/pdf.png" alt="PDF 3">
-      <h3>Informe Anual de Actividades</h3>
-    </a>
-    <a href="#" class="pdf">
-      <img src="img/pdf.png" alt="PDF 4">
-      <h3>Programa Anual de Trabajo</h3>
-    </a>
-  </div>
-
-  
-  <footer class="footer">
-    <div class="container">
-      <div class="text">
-        <p>
-          <strong>Contacto</strong> <br />Email: <br />
-          cero.tolerancia@itmorelia.edu.mx
-          <br />
-          <br />
-          <strong>Dirección:</strong>
-          <br />
-          Av Morelos Nte 2550, Santiaguito, <br />
-          58110 Morelia, Mich.
-        </p>
-      </div>
-      <div class="text">
-        <p>
-          <strong>Enlaces</strong><br />
-          <a href="Inicio.html">Inicio</a><br />
-          <a href="Capacitate.html">Capacitate</a><br />
-          <a href="Documentos.html">Documentos</a><br />
-          <a href="Buzon-de-atencion.html">Buzon de atencion</a><br />
-          <a href="Contacto.html">Contacto</a>
-        </p>
-      </div>
-      <div class="contenedor__contac">
-        <iframe
-          src="https://maps.google.com/maps?q=Instituto Tecnológico de Morelia&t=&z=16&ie=UTF8&iwloc=&output=embed"
-          width="600" height="200" style="border: 0" allowfullscreen=""></iframe>
-      </div>
+    <div class="qsomos">
+        <div class="qsomos_text">
+            <h3>¿Quienes somos?</h3>
+            <div class="sub"></div>
+            <div class="qsomos_info">
+                <?php
+        include_once 'php/DBManager/endPointAboutUs.php';
+        $row = $data->fetch_row();
+        echo $row[1];
+        ?>
+            </div>
+            <div class="qsomos_boton">
+                <a href="<?php echo 'pdf/About Us/' . $row[2]; ?>" target="_blank">Ver Mas</a>
+            </div>
+        </div>
+        <div class="qsomos_img">
+            <img src="img/logo-SEPCI.png" alt="" />
+        </div>
     </div>
-    <div class="texto">
-      <p>
-        &copy; Copyright 2023 TecNM Campus Morelia - Todos los Derechos
-        Reservados
-      </p>
+    <div class="titulo">
+        <h2>Directorio de Miembros SEPCI</h2>
     </div>
-  </footer>
+    <main>
+        <div class="miembrosImpr">
+            <div class="container1">
+                <?php
+        include_once 'php/DBManager/endPointMembersFrom.php';
+        while ($row = $data->fetch_assoc()) {
+          $color = '';
+
+          switch ($row['rol']) {
+            case 'Presidencia':
+              $color = '#1b396a'; // Color para 'Precidencia'
+              break;
+            case 'Presidencia (Suplente)':
+              $color = '#1b396a'; // Color para 'Precidencia'
+              break;
+            case 'Persona Asesora':
+              $color = '#be9650'; // Color para 'Persona Asesora'
+              break;
+            case 'Persona Consejera':
+              $color = '#be9650'; // Color para 'Persona Consejera'
+              break;
+            default:
+              $color = '#741731'; // Color predeterminado para miembros
+          }
+          ?>
+                <a href="#" data-bs-toggle="modal" data-bs-target="#myModal"
+                    data-nombre="<?php echo $row['names'] . ' ' . $row['middle_name'] . ' ' . $row['last_name']; ?>"
+                    data-cargo="<?php echo $row['rol']; ?>" data-correo="<?php echo $row['mail']; ?>">
+
+                    <div class="carta" style="background-color: <?php echo $color; ?>;">
+                        <img src="img/usu.png" alt="">
+                        <br>
+                        <div class="Nombres">
+                            <h3>
+                                <?php echo $row['names'];
+                  echo ' ';
+                  echo $row['middle_name'];
+                  echo ' ';
+                  echo $row['last_name']; ?>
+                            </h3>
+                        </div>
+                        <div class="Nombres2">
+                            <h5>
+                                <?php echo $row['rol']; ?>
+                            </h5>
+                        </div>
+                    </div>
+                </a>
+
+                <?php
+        }
+        ?>
+            </div>
+        </div>
+    </main>
+
+    <div class="titulo">
+        <h2>DOCUMENTOS DEL SEPCI</h2>
+    </div>
+
+
+    <div class="contenedor-pdfs">
+        <?php
+    include_once 'php/DBManager/endPointDocuments.php';
+    while ($row = $data->fetch_assoc()) {
+      ?>
+        <a href="#<?php echo 'pdf/Inicio/' . $row['root']; ?>" class="pdf">
+            <img src="img/pdf.png" alt="PDF 1">
+            <h3>
+                <?php echo $row['name']; ?>
+            </h3>
+        </a>
+        <?php
+    }
+    ?>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="text">
+                <p>
+                    <strong>Contacto</strong> <br />Email: <br />
+                    cero.tolerancia@itmorelia.edu.mx
+                    <br />
+                    <br />
+                    <strong>Dirección:</strong>
+                    <br />
+                    Av Morelos Nte 2550, Santiaguito, <br />
+                    58110 Morelia, Mich.
+                </p>
+            </div>
+            <div class="text">
+                <p>
+                    <strong>Enlaces</strong><br />
+                    <a href="inex.php">Inicio</a><br />
+                    <a href="Capacitate.html">Capacitate</a><br />
+                    <a href="Documentos.html">Documentos</a><br />
+                    <a href="Buzon-de-atencion.html">Buzon de atencion</a><br />
+                    <a href="Contacto.html">Contacto</a>
+                </p>
+            </div>
+            <div class="contenedor__contac">
+                <iframe
+                    src="https://maps.google.com/maps?q=Instituto Tecnológico de Morelia&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                    width="600" height="200" style="border: 0" allowfullscreen=""></iframe>
+            </div>
+        </div>
+        <div class="texto">
+            <p>
+                &copy; Copyright 2023 TecNM Campus Morelia - Todos los Derechos
+                Reservados
+            </p>
+        </div>
+    </footer>
 </body>
 
-<!-- Ventana emergente -->
+<!-- Ventana Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="myModalLabel">Ventana emergente</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-          <div class="col-2">
-            <img class="imagen-recuadrov" src="img/usu.png" alt="Director">
-          </div>
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="myModalLabel">Ventana emergente</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-2">
+                        <img class="imagen-recuadrov" src="img/usu.png" alt="Director">
+                    </div>
+                </div>
+                <form>
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre:</label>
+                        <p id="nombre"></p>
+                    </div>
+                    <div class="mb-3">
+                        <label for="cargo" class="form-label">Cargo:</label>
+                        <p id="cargo"></p>
+                    </div>
+                    <div class="mb-3">
+                        <label for="correo" class="form-label">Correo:</label>
+                        <p id="correo"></p>
+                    </div>
+                    <div class="mb-3">
+                        <label for="funcion" class="form-label">Función:</label>
+                        <p id="funcion">Aqui van las funciones de cada uno de los miembros</p>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
         </div>
-        <form>
-          <div class="mb-3">
-            <label for="nombre" class="form-label">Nombre:</label>
-            <p id="nombre">Nombre del sujeto</p>
-          </div>
-          <div class="mb-3">
-            <label for="apellido" class="form-label">Figura:</label>
-            <p id="apellido">Figura del empleado</p>
-          </div>
-          <div class="mb-3">
-            <label for="cargo" class="form-label">correo:</label>
-            <p id="cargo">Correo electronico</p>
-          </div>
-          <div class="mb-3">
-            <label for="correo" class="form-label">Funcion en SEPCI:</label>
-            <p id="correo">Funcion en SEPCI</p>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-      </div>
     </div>
-  </div>
 </div>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
+</script>
+
+</html>

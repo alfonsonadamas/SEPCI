@@ -14,7 +14,7 @@ if ($sesion) {
         <title>SEPCI</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
-        <link rel="stylesheet" href="css/EditMienbros.css" />
+        <link rel="stylesheet" href="css/EditDocumetos.css" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
 
@@ -75,59 +75,41 @@ if ($sesion) {
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Editar Miembros</h1>
+                        <h1 class="mt-4">Editar Documentos</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Inicio/Editar Miembros</li>
+                            <li class="breadcrumb-item active">Inicio/Editar Documentos</li>
                         </ol>
                         <div class="card mb-4">
                             <section class="seccion">
-                                <?php
-                                include_once '../../php/DBManager/endPointEachMembers.php';
-                                $obj = new member();
-                                $data = $obj->showMember($_REQUEST['id']);
-                                $row = $data->fetch_row();
-                                ?>
                                 <form method="POST" enctype="multipart/form-data" role="form"
-                                    action="../../php/DBManager/actionEditMembers.php?id=<?php echo $_REQUEST['id'] ?>">
+                                    action="../../php/DBManager/actionDocuments.php">
                                     <div class="contenedor">
                                         <div class="conten_input">
-                                            <div class="columna">
-                                                <label for="name">Nombre: </label>
-                                                <input type="text" name="name" id="celdaTexto"
-                                                    placeholder="<?php echo $row[0]; ?>" />
+                                            <div class="titulo">
+                                                <h3>Documentos</h3>
                                             </div>
                                             <div class="columna">
-                                                <label for="phone">Apellido Paterno: </label>
-                                                <input type="text" name="middle" placeholder="<?php echo $row[1]; ?>" />
+                                                <label for="name">Titulo:</label>
+                                                <input type="text" name="titulo" id="document-name" required>
+                                            </div>
+                                            <div class="archivos">
+                                                <p class="text">Archivo:</p>
+                                                <div id="dropzone">
+                                                    <p>
+                                                        Arrastra y suelta un archivo aquí o haz clic para seleccionar
+                                                        uno.
+                                                    </p>
+                                                    <input type="file" id="archivo" name="archivo" accept=".pdf" required>
+                                                </div>
                                             </div>
                                             <div class="columna">
-                                                <label for="name_Denounced">Apellido Materno: </label>
-                                                <input type="text" name="last" placeholder="<?php echo $row[2]; ?>" />
-                                            </div>
-                                            <div class="columna">
-                                                <label for="email">Correo Electronico: </label>
-                                                <input type="text" name="mail" id="celdaTexto2"
-                                                    placeholder="<?php echo $row[3]; ?>" />
-                                            </div>
-                                            <div class="columna">
-                                                <label for="email">Rol: </label>
-                                                <input type="text" name="rol" disabled="disabled" id="celdaTexto2"
-                                                    placeholder="<?php echo $row[4]; ?>" />
-                                            </div>
-                                            <div class="columna">
-                                                <label for="post_Denounced">Imagen: </label>
-                                                <input type="text" name="image"
-                                                    placeholder="<?php echo $row[5]; ?>"></input>
-                                            </div>
-                                            <div class="columna">
-                                                <button type="submit" class="btn_send">Enviar</button>
-                                                <!-- <input class="btn_send" type="submit" value="Editar"> -->
+                                                <button type="submit" class="btn_send" name="Agregar"
+                                                    value="Agregar">Agregar</button>
                                             </div>
                                         </div>
-
                                     </div>
                                 </form>
-                                </seccion>
+                            </seccion>
                         </div>
                     </div>
                 </main>
@@ -138,6 +120,7 @@ if ($sesion) {
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
             crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
+        <script src="js/EditarDocumentos.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
         <script src="assets/demo/chart-area-demo.js"></script>
         <script src="assets/demo/chart-bar-demo.js"></script>
@@ -147,7 +130,7 @@ if ($sesion) {
     </body>
 
     </html>
-<?php
+    <?php
 } else {
     header('Location: ../login.php');
 }

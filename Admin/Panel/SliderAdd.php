@@ -14,7 +14,7 @@ if ($sesion) {
         <title>SEPCI</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
-        <link rel="stylesheet" href="css/EditMienbros.css" />
+        <link rel="stylesheet" href="css/CarruselEdit.css" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
 
@@ -55,7 +55,8 @@ if ($sesion) {
                                 <div class="sb-nav-link-icon"></div>
                                 Editar Miembros
                             </a>
-                            <a class="nav-link" href="EditarDocumentos.php">
+                            <a class="nav-link collapsed" href="EditarDocumentos.php" data-bs-toggle="collapse"
+                                data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                                 <div class="sb-nav-link-icon"></div>
                                 Editar Documentos
                             </a>
@@ -75,65 +76,43 @@ if ($sesion) {
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Editar Miembros</h1>
+                        <h1 class="mt-4">Editar Carrusel</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Inicio/Editar Miembros</li>
+                            <li class="breadcrumb-item active">Inicio/Editar Carrusel</li>
                         </ol>
                         <div class="card mb-4">
-                            <section class="seccion">
-                                <?php
-                                include_once '../../php/DBManager/endPointEachMembers.php';
-                                $obj = new member();
-                                $data = $obj->showMember($_REQUEST['id']);
-                                $row = $data->fetch_row();
-                                ?>
-                                <form method="POST" enctype="multipart/form-data" role="form"
-                                    action="../../php/DBManager/actionEditMembers.php?id=<?php echo $_REQUEST['id'] ?>">
-                                    <div class="contenedor">
-                                        <div class="conten_input">
-                                            <div class="columna">
-                                                <label for="name">Nombre: </label>
-                                                <input type="text" name="name" id="celdaTexto"
-                                                    placeholder="<?php echo $row[0]; ?>" />
-                                            </div>
-                                            <div class="columna">
-                                                <label for="phone">Apellido Paterno: </label>
-                                                <input type="text" name="middle" placeholder="<?php echo $row[1]; ?>" />
-                                            </div>
-                                            <div class="columna">
-                                                <label for="name_Denounced">Apellido Materno: </label>
-                                                <input type="text" name="last" placeholder="<?php echo $row[2]; ?>" />
-                                            </div>
-                                            <div class="columna">
-                                                <label for="email">Correo Electronico: </label>
-                                                <input type="text" name="mail" id="celdaTexto2"
-                                                    placeholder="<?php echo $row[3]; ?>" />
-                                            </div>
-                                            <div class="columna">
-                                                <label for="email">Rol: </label>
-                                                <input type="text" name="rol" disabled="disabled" id="celdaTexto2"
-                                                    placeholder="<?php echo $row[4]; ?>" />
-                                            </div>
-                                            <div class="columna">
-                                                <label for="post_Denounced">Imagen: </label>
-                                                <input type="text" name="image"
-                                                    placeholder="<?php echo $row[5]; ?>"></input>
-                                            </div>
-                                            <div class="columna">
-                                                <button type="submit" class="btn_send">Enviar</button>
-                                                <!-- <input class="btn_send" type="submit" value="Editar"> -->
+                            <div class="contenedor">
+                                <div class="conten_input">
+                                    <form method="POST" enctype="multipart/form-data" role="form" action="../../php/DBManager/actionSlider.php">
+                                        <div class="image">
+                                            <img src="../../img/carrusel.png" alt="">
+                                        </div>
+                                        <div class="archivos">
+                                            <h4 class="text">Imagen: </h4>
+                                            <div id="dropzone">
+                                                <p>
+                                                    Arrastra y suelta un archivo aquí o haz clic para seleccionar
+                                                    uno.
+                                                </p>
+                                                <input type="file" id="archivo" name="archivo" accept="image/png, image/jpg, image/jpeg" required>
                                             </div>
                                         </div>
+                                        <div class="columna">
+                                            <button type="submit" class="btn_send"  name="Agregar" value="Agregar">Agregar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <?php
 
-                                    </div>
-                                </form>
-                                </seccion>
+                            ?>
                         </div>
                     </div>
-                </main>
-                <footer class="py-4 bg-light mt-auto">
-                </footer>
             </div>
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+            </footer>
+        </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
             crossorigin="anonymous"></script>
@@ -147,7 +126,7 @@ if ($sesion) {
     </body>
 
     </html>
-<?php
+    <?php
 } else {
     header('Location: ../login.php');
 }

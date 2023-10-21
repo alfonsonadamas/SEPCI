@@ -85,31 +85,35 @@ if ($sesion) {
                         </ol>
                         <div class="card mb-4">
                             <section class="seccion">
-                                <div class="contenedor">
-                                    <div class="conten_input">
-                                        <div class="titulo">
-                                            <h3>Documentos</h3>
-                                        </div>
-                                        <div class="columna">
-                                            <label for="name">Titulo: </label>
-                                            <input type="text" name="name" id="document-name" />
-                                        </div>
-                                        <div class="archivos">
-                                            <p class="text">Archivo:</p>
-                                            <div id="dropzone">
-                                                <p>
-                                                    Arrastra y suelta un archivo aquí o haz clic para seleccionar
-                                                    uno.
-                                                </p>
-                                                <input type="file" id="archivo" name="archivo" multiple />
+                                <form method="POST" enctype="multipart/form-data" role="form"
+                                    action="../../php/DBManager/actionDocuments.php">
+                                    <div class="contenedor">
+                                        <div class="conten_input">
+                                            <div class="titulo">
+                                                <h3>Documentos</h3>
+                                            </div>
+                                            <div class="columna">
+                                                <label for="name">Titulo:</label>
+                                                <input type="text" name="titulo" id="document-name" value="<?php echo $_REQUEST['titulo']; ?>">
+                                            </div>
+                                            <div class="archivos">
+                                                <p class="text">Archivo:</p>
+                                                <div id="dropzone">
+                                                    <p>
+                                                        Arrastra y suelta un archivo aquí o haz clic para seleccionar
+                                                        uno.
+                                                    </p>
+                                                    <input type="file" id="archivo" name="archivo">
+                                                </div>
+                                            </div>
+                                            <div class="columna">
+                                                <input type="hidden" name="id" value="<?php echo $_REQUEST['id'] ?>">
+                                                <button type="submit" class="btn_send" name="Editar" value="guardar">Guardar</button>
                                             </div>
                                         </div>
-                                        <div class="columna">
-                                            <button type="submit" class="btn_send">Enviar</button>
-                                        </div>
                                     </div>
-                                </div>
-                                </seccion>
+                                </form>
+                            </seccion>
                         </div>
                     </div>
                 </main>
