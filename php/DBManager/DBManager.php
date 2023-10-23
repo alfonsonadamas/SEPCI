@@ -79,18 +79,6 @@ class DBManager
 
 
 
-        public function addCourse($nombre, $desc, $root, $tipo, $contenido){
-            $link = $this->open();
-            $sql = "INSERT INTO courses (course_name, course_descrip, root_course, tipo, contenido) VALUES ( ?, ?, ?, ?, ?);";
-            $query = mysqli_prepare($link, $sql) or die("Error at login");
-            $query -> bind_param("sssss", $nombre, $desc, $root, $tipo, $contenido);
-            $query -> execute();
-
-            $this->close($link);
-        
-        
-        }
-
     //////////////////////    --------> READ querys <--------  //////////////////////
     public function login($name, $password)
     {
@@ -129,8 +117,8 @@ class DBManager
 
         $result = $link->query($sql);
 
-            return $result;
-        }
+        return $result;
+    }
 
     public function showMembers()
     {
@@ -147,11 +135,11 @@ class DBManager
     {
         $link = $this->open();
 
-            $sql = "SELECT names, middle_name, last_name, mail, rol, root_image FROM members WHERE id_members=?";
-            $query = mysqli_prepare($link, $sql) or die("Error at login");
-            $query -> bind_param("s", $id);
-            $query -> execute();
-            $result = mysqli_stmt_get_result($query);
+        $sql = "SELECT names, middle_name, last_name, mail, rol, root_image FROM members WHERE id_members=?";
+        $query = mysqli_prepare($link, $sql) or die("Error at login");
+        $query->bind_param("s", $id);
+        $query->execute();
+        $result = mysqli_stmt_get_result($query);
 
         return $result;
     }
@@ -160,10 +148,55 @@ class DBManager
     {
         $link = $this->open();
 
-            $query="SELECT root_about_us FROM about_us_info";
-            $result = $link -> query($query);
+        $query = "SELECT root_about_us FROM about_us_info";
+        $result = $link->query($query);
 
-            $this -> close($link);
+        $this->close($link);
+
+        $row = $result->fetch_row();
+        return $row[0];
+    }
+
+    public function showDocuments()
+    {
+        $link = $this->open();
+
+        $query = "SELECT id_file,name,root FROM files WHERE page_section=1";
+        $result = $link->query($query);
+
+        $this->close($link);
+
+        return $result;
+    }
+
+    public function showFileInicio($id_file)
+    {
+        $link = $this->open();
+
+        $query = "SELECT root FROM files WHERE id_file=?";
+        $sql = mysqli_prepare($link, $query) or die("Error at login");
+        $sql->bind_param("s", $id_file);
+        $sql->execute();
+        $result = mysqli_stmt_get_result($sql);
+
+        $this->close($link);
+
+        $row = $result->fetch_row();
+        return $row[0];
+    }
+
+    public function showRootImageSlider($id_img)
+    {
+        $link = $this->open();
+
+        $query = "SELECT root_sliderimage FROM slider WHERE id_slider=?";
+        $sql = mysqli_prepare($link, $query) or die("Error at showing root");
+        $sql->bind_param("s", $id_img);
+        $sql->execute();
+
+        $result = mysqli_stmt_get_result($sql);
+
+        $this->close($link);
 
         $row = $result->fetch_row();
         return $row[0];
@@ -198,15 +231,79 @@ class DBManager
     {
         $link = $this->open();
 
-            $sql = "UPDATE about_us_info SET information=? WHERE id_aboutus=?";
-            
-            $query = mysqli_prepare($link, $sql) or die("Error at update info about us");
-            $query -> bind_param("ss", $info, $id);
-            $query -> execute();
+        $sql = "UPDATE about_us_info SET information=? WHERE id_aboutus=?";
 
-            $this->close($link);
-        }
-        //////////////////////    --------> DELETE querys <--------  //////////////////////
+        $query = mysqli_prepare($link, $sql) or die("Error at update info about us");
+        $query->bind_param("ss", $info, $id);
+        $query->execute();
 
+        $this->close($link);
     }
+
+    public function updateInicio($id_file, $title, $root)
+    {
+        $link = $this->open();
+
+        $sql = "UPDATE files SET name=?,root=? WHERE id_file=?";
+
+        $query = mysqli_prepare($link, $sql) or die("Error at update document in index");
+        $query->bind_param("sss", $title, $root, $id_file);
+        $query->execute();
+
+        $this->close($link);
+    }
+
+    public function updateInicioTwo($id_file, $title)
+    {
+        $link = $this->open();
+
+        $sql = "UPDATE files SET name=? WHERE id_file=?";
+
+        $query = mysqli_prepare($link, $sql) or die("Error at update document in index");
+        $query->bind_param("ss", $title, $id_file);
+        $query->execute();
+
+        $this->close($link);
+    }
+
+    public function updateImageSlider($id_img, $root)
+    {
+        $link = $this->open();
+
+        $sql = "UPDATE slider SET root_sliderimage=? WHERE id_slider=?";
+
+        $query = mysqli_prepare($link, $sql) or die("Error at update image in slider");
+        $query->bind_param("ss", $root, $id_img);
+        $query->execute();
+
+        $this->close($link);
+    }
+    //////////////////////    --------> DELETE querys <--------  //////////////////////
+
+    public function deleteFileInicio($id_file)
+    {
+        $link = $this->open();
+
+        $query = "DELETE FROM files WHERE id_file=?";
+
+        $sql = mysqli_prepare($link, $query) or die("Error at deleting file");
+        $sql->bind_param("s", $id_file);
+        $sql->execute();
+
+        $this->close($link);
+    }
+
+    public function deleteImageSlider($id_file)
+    {
+        $link = $this->open();
+
+        $query = "DELETE FROM slider WHERE id_slider=?";
+
+        $sql = mysqli_prepare($link, $query) or die("Error at deleting image");
+        $sql->bind_param("s", $id_file);
+        $sql->execute();
+
+        $this->close($link);
+    }
+}
 ?>

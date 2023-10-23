@@ -174,7 +174,7 @@
     include_once 'php/DBManager/endPointDocuments.php';
     while ($row = $data->fetch_assoc()) {
       ?>
-        <a href="#<?php echo 'pdf/Inicio/' . $row['root']; ?>" class="pdf">
+        <a href="<?php echo 'pdf/Inicio/' . $row['root']; ?>" class="pdf" target="_blank">
             <img src="img/pdf.png" alt="PDF 1">
             <h3>
                 <?php echo $row['name']; ?>
