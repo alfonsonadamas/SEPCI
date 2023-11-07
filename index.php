@@ -256,7 +256,7 @@
                     <div class="mb-3">
                         <label for="funcion" class="form-label">Funcion que Ejerce:</label>
                         <div class="button_funcion">
-                            <a href="#" target="_blank">Función</a>
+                            <a href="#" id="redireccionarBtn" target="_blank">Función</a>
                         </div>
                     </div>
                 </form>
