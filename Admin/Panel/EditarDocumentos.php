@@ -65,7 +65,7 @@ if ($sesion) {
                                 Editar Documentos
                             </a>
                             <div class="sb-sidenav-menu-heading">Cursos</div>
-                            <a class="nav-link" href="charts.html">
+                            <a class="nav-link" href="Cursos.php">
                                 <div class="sb-nav-link-icon"></div>
                                 Editar Cursos
                             </a>

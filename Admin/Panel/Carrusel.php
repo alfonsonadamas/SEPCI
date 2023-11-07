@@ -14,13 +14,14 @@ if ($sesion) {
         <title>SEPCI</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
+        <!-- <link rel="stylesheet" href="css/DocumentosIndex.css" /> -->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
 
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.php">SEPCI</a>
+            <a class="navbar-brand ps-3" href="index.html">SEPCI</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
                     class="fas fa-bars"></i></button>
@@ -46,9 +47,9 @@ if ($sesion) {
                                 Buzón de denuncias
                             </a>
                             <div class="sb-sidenav-menu-heading">Inicio</div>
-                            <a class="nav-link" href="SliderCRUD.php">
+                            <a class="nav-link" href="Carrusel.php">
                                 <div class="sb-nav-link-icon"></div>
-                                Carrusel
+                                Editar Carrusel
                             </a>
                             <a class="nav-link" href="QuienesSomos.php">
                                 <div class="sb-nav-link-icon"></div>
@@ -58,11 +59,11 @@ if ($sesion) {
                                 <div class="sb-nav-link-icon"></div>
                                 Editar Miembros
                             </a>
-                            <a class="nav-link" href="EditarDocumentos.php">
+                            <a class="nav-link collapsed" href="EditarDocumentos.php" data-bs-toggle="collapse"
+                                data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                                 <div class="sb-nav-link-icon"></div>
                                 Editar Documentos
                             </a>
-                            
                             <div class="sb-sidenav-menu-heading">Cursos</div>
                             <a class="nav-link" href="Cursos.php">
                                 <div class="sb-nav-link-icon"></div>
@@ -79,79 +80,46 @@ if ($sesion) {
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Buzón de denuncias</h1>
+                        <h1 class="mt-4">Editar Carrusel</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Denuncias/Buzón de denuncias</li>
+                            <li class="breadcrumb-item active">Inicio/Editar Carrusel</li>
                         </ol>
                         <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-table me-1"></i>
-                                Denuncias
+                            
+                            <?php
+
+                            ?>
+                            <div class=" d-flex flex-column align-items-center w-100 mt-5 border-bottom">
+                                <img class="img-fluid"  src="../../img/carrusel.png" alt="" > 
+                                <div class=" d-flex flex-column align-items-center justify-content-between mb-3">
+                                    <div class=" p-1 ms-3 me-3">
+                                        <h3>Imagen 1</h3>
+                                        
+                                    </div>
+                                    <div class="d-flex">
+                                        <a href="" class="btn btn-warning me-3">Editar</a>
+                                        <a href="" class="btn btn-danger">Eliminar</a>
+                                    </div>
+                                    
+                                </div>
+
                             </div>
-                            <div class="card-body">
-                                <table id="datatablesSimple" style="text-align:center">
-                                    <thead>
-                                        <tr>
-                                            <th>Nombre</th>
-                                            <th>Correo</th>
-                                            <th>Telefono</th>
-                                            <th>Nombre del acusado</th>
-                                            <th>Cargo del acusado</th>
-                                            <th>Sucinto</th>
-                                            <th>Evidencia</th>
-                                            <th>Fecha de la denuncia</th>
-                                            <th>Dar seguimiento</th>
-                                            <th>Rechazar</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Nombre</th>
-                                            <th>Correo</th>
-                                            <th>Telefono</th>
-                                            <th>Nombre del acusado</th>
-                                            <th>Cargo del acusado</th>
-                                            <th>Sucinto</th>
-                                            <th>Evidencia</th>
-                                            <th>Fecha de la denuncia</th>
-                                            <th>Dar seguimiento</th>
-                                            <th>Rechazar</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        <tr>
-                                            <td>Anita Ape1 Ape2</td>
-                                            <td>Anita@gmail.com</td>
-                                            <td>4598653487</td>
-                                            <td>Pedro Ape1 Ape2</td>
-                                            <td>Maestro</td>
-                                            <td>Incinua cosas</td>
-                                            <td>
-                                                <a target="_blank" href="">
-                                                    <img src="../../img/pdf.png" width="48px" height="48px">
-                                                </a>
-                                            </td>
-                                            <td>11/05/2023</td>
-                                            <td>
-                                                <a style="cursor: pointer" href="">
-                                                    <img src="../../img/aceptar.png">
-                                                </a>
-                                            </td>
-                                            <td>
-                                                <a style="cursor: pointer" href="">
-                                                    <img src="../../img/cancelar.png">
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            
+                            <div class="d-flex justify-content-center mt-5 mb-5">
+                                <a href="" class="btn btn-success">Añadir | +</a>
                             </div>
+                            
                         </div>
+                        <?php
+
+                        ?>
                     </div>
-                </main>
-                <footer class="py-4 bg-light mt-auto">
-                </footer>
             </div>
+        </div>
+        </main>
+        <footer class="py-4 bg-light mt-auto">
+        </footer>
+        </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
             crossorigin="anonymous"></script>
@@ -165,7 +133,7 @@ if ($sesion) {
     </body>
 
     </html>
-<?php
+    <?php
 } else {
     header('Location: ../login.php');
 }
