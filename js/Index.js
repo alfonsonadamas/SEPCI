@@ -14,17 +14,17 @@ $(document).ready(function () {
     modal.find('#redireccionarBtn').on('click', function () {
       // Redirigir según el rol
       if (cargo === "Presidencia" || cargo === "Presidencia (Suplente)") {
-        window.location.href = "FuncionPresidente.php";
+        window.location.href = "pdf/Funciones/Precidencia.pdf";
       } else if (cargo === "Miembro Propietario" || cargo === "Miembro (Suplente)") {
-        window.location.href = "FuncionMiembro.php";
+        window.location.href = "pdf/Funciones/Miembros.pdf";
       } else if (cargo === "Secretaría Ejecutiva" || cargo === "Secretaría Ejecutiva (Suplente)") {
-        window.location.href = "FuncionSecretariaEjecutiva.php";
+        window.location.href = "pdf/Funciones/Secretaria Ejecutiva.pdf";
       } else if (cargo === "Secretaría Técnica" || cargo === "Secretaría Técnica (Suplente)") {
-        window.location.href = "FuncionSecretariaTecnica.php";
+        window.location.href = "pdf/Funciones/Secretaria Tecnica.pdf";
       } else if (cargo === "Persona Asesora") {
-        window.location.href = "FuncionAsesora.php";
+        window.location.href = "pdf/Funciones/Persona Asesora.pdf";
       } else if (cargo === "Persona Consejera") {
-        window.location.href = "FuncionConsejera.php";
+        window.location.href = "pdf/Funciones/Persona Consejera.pdf";
       } else {
         window.location.href = "index.php";
       }
