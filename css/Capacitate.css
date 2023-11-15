@@ -10,14 +10,14 @@
 
 .contenedor {
   display: flex;
-  justify-content: space-between;
-  padding-left: 200px;
-  padding-right: 200px;
+  justify-content: center;
   padding-top: 20px;
   padding-bottom: 20px;
+  width: 100%;
 }
 .curso {
   margin-bottom: 90px;
+  width: 100%;
 }
 .cursos h1 {
   color: #741731;
@@ -39,6 +39,7 @@
 }
 .inf_curso {
   font-family: "Roboto", sans-serif;
+  width: 70%;
 }
 
 .inf_curso button {

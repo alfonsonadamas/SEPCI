@@ -4,7 +4,7 @@ class DBManager
 
     private function open()
     {
-        $link = mysqli_connect("127.0.0.1", "root", null, "sepci") or die('Error connecting to Data Base');
+        $link = mysqli_connect("127.0.0.1", "root", null, "sepci_copia") or die('Error connecting to Data Base');
         return $link;
     }
 
@@ -37,6 +37,18 @@ class DBManager
             throw $exception;
         }
     }
+
+    public function addCourse($nombre, $desc, $root, $tipo, $contenido){
+            $link = $this->open();
+            $sql = "INSERT INTO courses (course_name, course_descrip, root_course, tipo, contenido) VALUES ( ?, ?, ?, ?, ?);";
+            $query = mysqli_prepare($link, $sql) or die("Error at login");
+            $query -> bind_param("sssss", $nombre, $desc, $root, $tipo, $contenido);
+            $query -> execute();
+
+            $this->close($link);
+        
+        
+        }
 
     public function signFileInicio($title)
     {
@@ -102,6 +114,18 @@ class DBManager
         $link = $this->open();
 
         $query = "SELECT * FROM slider";
+        $result = $link->query($query);
+
+        $this->close($link);
+
+        return $result;
+    }
+
+    public function showCourses()
+    {
+        $link = $this->open();
+
+        $query = "SELECT * FROM courses";
         $result = $link->query($query);
 
         $this->close($link);

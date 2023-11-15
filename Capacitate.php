@@ -57,7 +57,17 @@
         <p>
           <?php echo $row['course_descrip'] ?>
         </p>
-        <button>Ver mas</button>
+        <?php
+          if ($row['tipo'] == 'link') {
+            ?>
+          <a href=<?php echo $row['contenido'] ?>></a>
+        <?php
+          }else{
+        ?>
+          <a href=<?php echo $row['contenido'] ?>></a>
+        <?php
+          }
+        ?>
         <!-- <a href="" class="btn">Ver mas</a> -->
       </div>
     </div>
