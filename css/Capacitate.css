@@ -16,8 +16,14 @@
   padding-top: 20px;
   padding-bottom: 20px;
 }
-.curso {
+.curso_info {
   margin-bottom: 90px;
+}
+.curso_info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 .cursos h1 {
   color: #741731;
@@ -50,11 +56,28 @@
   transition: transform 0.3s ease;
 }
 .btn {
-  text-decoration: none;
-  font-size: 1.5rem;
-  position: absolute;
   background: #741731;
   color: #fff;
+  font-family: "Roboto", sans-serif;
+  padding: 5px 20px;
   border-radius: 50px;
   transition: transform 0.3s ease;
+  text-decoration: none;
+  margin-top: 40px;
+}
+
+.curso_desc {
+  width: 40%;
+  margin-left: 40px;
+}
+
+.curso_desc h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 48px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid black;
+}
+
+.curso_desc h3 {
+  font-weight: bold;
 }

@@ -121,6 +121,58 @@ class DBManager
         return $result;
     }
 
+    public function showCourses()
+    {
+        $link = $this->open();
+
+        $query = "SELECT * FROM courses";
+        $result = $link->query($query);
+
+        $this->close($link);
+
+        return $result;
+    }
+
+    public function showCourse($id)
+    {
+        $link = $this->open();
+
+        $query = "SELECT * FROM courses WHERE id_course = $id";
+        $result = $link->query($query);
+
+        $this->close($link);
+
+        return $result;
+    }
+
+
+
+    public function showCouseIcon($id)
+    {
+        $link = $this -> open();
+
+            $query="SELECT root_course FROM courses WHERE id_course = $id";
+            $result = $link -> query($query);
+
+            $this -> close($link);
+
+            $row = $result->fetch_row();
+            return $row[0];
+    }
+
+    public function showCourseFile($id)
+    {
+        $link = $this -> open();
+
+            $query="SELECT contenido FROM courses WHERE id_course = $id";
+            $result = $link -> query($query);
+
+            $this -> close($link);
+
+            $row = $result->fetch_row();
+            return $row[0];
+    }
+
     public function showAboutUs()
     {
         $link = $this->open();
@@ -206,7 +258,41 @@ class DBManager
 
             $this->close($link);
         }
-        //////////////////////    --------> DELETE querys <--------  //////////////////////
+
+    public function updateCourse($id, $nombre, $desc, $root, $tipo, $contenido){
+        $link = $this->open();
+        $sql = "UPDATE courses SET course_name=?, course_descrip=?, root_course=?, tipo=?, contenido=? WHERE id_course=?";
+        $query = mysqli_prepare($link, $sql) or die("Error at login");
+        $query -> bind_param("ssssss", $nombre, $desc, $root, $tipo, $contenido, $id);
+        $query -> execute();
+
+        $this->close($link);
 
     }
+
+    public function updateCourseInfo($id, $nombre, $desc){
+        $link = $this->open();
+        $sql = "UPDATE courses SET course_name=?, course_descrip=? WHERE id_course=?";
+        $query = mysqli_prepare($link, $sql) or die("Error at login");
+        $query -> bind_param("sss", $nombre, $desc, $id);
+        $query -> execute();
+
+        $this->close($link);
+
+    }
+        //////////////////////    --------> DELETE querys <--------  //////////////////////
+
+
+        public function deleteCourse($id){
+            $link = $this->open();
+            $id = $_REQUEST['id_curso'];
+            $sql = "DELETE FROM courses WHERE id_course = $id";
+            $query = mysqli_prepare($link, $sql) or die("Error at login");
+            $query -> execute();
+
+            $this->close($link);
+        }
+    }
+
+    
 ?>

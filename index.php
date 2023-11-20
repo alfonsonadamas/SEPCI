@@ -41,7 +41,7 @@
             <div class="contenedor_menu">
                 <nav>
                     <a class="active" href="index.php">Inicio</a>
-                    <a href="Capacitate.html">Capacitate</a>
+                    <a href="Capacitate.php">Capacitate</a>
                     <a href="Documentos.html">Documentos</a>
                     <a href="Buzon-de-atencion.html">Buzón de Atención</a>
                     <a href="Contacto.html">Contacto</a>
