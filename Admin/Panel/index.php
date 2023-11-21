@@ -62,7 +62,7 @@ if ($sesion) {
                                 <div class="sb-nav-link-icon"></div>
                                 Editar Documentos
                             </a>
-                            
+
                             <div class="sb-sidenav-menu-heading">Cursos</div>
                             <a class="nav-link" href="Cursos.php">
                                 <div class="sb-nav-link-icon"></div>
@@ -165,7 +165,7 @@ if ($sesion) {
     </body>
 
     </html>
-<?php
+    <?php
 } else {
     header('Location: ../login.php');
 }

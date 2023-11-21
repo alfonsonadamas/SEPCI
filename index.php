@@ -169,18 +169,19 @@
         <h2>DOCUMENTOS DEL SEPCI</h2>
     </div>
 
-
-    <div class="contenedor-pdfs">
+    <div class="contenedor_pdftodo d-flex ">
         <?php
         include_once 'php/DBManager/endPointDocuments.php';
         while ($row = $data->fetch_assoc()) {
             ?>
-            <a href="<?php echo 'pdf/Inicio/' . $row['root']; ?>" class="pdf" target="_blank">
-                <img src="img/pdf.png" alt="PDF 1">
-                <h3>
-                    <?php echo $row['name']; ?>
-                </h3>
-            </a>
+            <div class="contenedor-pdfs">
+                <a href="<?php echo 'pdf/Inicio/' . $row['root']; ?>" class="pdf" target="_blank">
+                    <img src="img/pdf.png" alt="PDF 1">
+                    <h3>
+                        <?php echo $row['name']; ?>
+                    </h3>
+                </a>
+            </div>
             <?php
         }
         ?>

@@ -61,14 +61,14 @@ class DBManager
         }
     }
 
-    public function insertComplaint($fullName, $mail, $telNumber, $fullNameA, $positionA, $succint, $status)
+    public function insertComplaint($fullName, $mail, $telNumber, $fullNameA, $positionA, $succint)
     {
         $link = $this->open();
 
-        $query = "INSERT INTO complaints (full_name, mail, tel_number, full_nameA, positionA, succint, status) VALUES (?,?,?,?,?,?,?,?)";
+        $query = "INSERT INTO complaints (full_name, mail, tel_number, full_nameA, positionA, succint, date, status) VALUES (?,?,?,?,?,?,curdate(),0)";
 
         $sql = mysqli_prepare($link, $query) or die("Error adding complain");
-        $sql->bind_param("ssssssss", $fullName, $mail, $telNumber, $fullNameA, $positionA, $succint, $evidence);
+        $sql->bind_param("ssssss", $fullName, $mail, $telNumber, $fullNameA, $positionA, $succint);
         $sql->execute();
 
         $id = mysqli_insert_id($link);
@@ -201,6 +201,18 @@ class DBManager
         $row = $result->fetch_row();
         return $row[0];
     }
+
+    public function showComplaints()
+    {
+        $link = $this->open();
+
+        $query = "SELECT full_name, mail, tel_number, full_nameA, positionA, succint, date  FROM complaints WHERE status=0";
+        $result = $link->query($query);
+
+        $this->close($link);
+
+        return $result;
+    }
     //////////////////////    --------> UPDATE querys <--------  //////////////////////
     public function updateAboutUs($id, $info, $root)
     {
@@ -210,6 +222,19 @@ class DBManager
 
         $query = mysqli_prepare($link, $sql) or die("Error at update info about us");
         $query->bind_param("sss", $info, $root, $id);
+        $query->execute();
+
+        $this->close($link);
+    }
+
+    public function updateComplaint($rootEvidence, $id_complaint)
+    {
+        $link = $this->open();
+
+        $sql = "UPDATE complaints SET evidence=? WHERE id_complaint=?";
+
+        $query = mysqli_prepare($link, $sql) or die("Error at update info complaint");
+        $query->bind_param("ss", $rootEvidence, $id_complaint);
         $query->execute();
 
         $this->close($link);
