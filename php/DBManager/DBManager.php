@@ -206,7 +206,7 @@ class DBManager
     {
         $link = $this->open();
 
-        $query = "SELECT full_name, mail, tel_number, full_nameA, positionA, succint, date  FROM complaints WHERE status=0";
+        $query = "SELECT full_name, mail, tel_number, full_nameA, positionA, succint, evidence, date  FROM complaints WHERE status=0";
         $result = $link->query($query);
 
         $this->close($link);

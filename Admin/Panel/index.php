@@ -90,60 +90,83 @@ if ($sesion) {
                             </div>
                             <div class="card-body">
                                 <table id="datatablesSimple" style="text-align:center">
-                                    <thead>
-                                        <tr>
-                                            <th>Nombre</th>
-                                            <th>Correo</th>
-                                            <th>Telefono</th>
-                                            <th>Nombre del acusado</th>
-                                            <th>Cargo del acusado</th>
-                                            <th>Sucinto</th>
-                                            <th>Evidencia</th>
-                                            <th>Fecha de la denuncia</th>
-                                            <th>Dar seguimiento</th>
-                                            <th>Rechazar</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Nombre</th>
-                                            <th>Correo</th>
-                                            <th>Telefono</th>
-                                            <th>Nombre del acusado</th>
-                                            <th>Cargo del acusado</th>
-                                            <th>Sucinto</th>
-                                            <th>Evidencia</th>
-                                            <th>Fecha de la denuncia</th>
-                                            <th>Dar seguimiento</th>
-                                            <th>Rechazar</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        <tr>
-                                            <td>Anita Ape1 Ape2</td>
-                                            <td>Anita@gmail.com</td>
-                                            <td>4598653487</td>
-                                            <td>Pedro Ape1 Ape2</td>
-                                            <td>Maestro</td>
-                                            <td>Incinua cosas</td>
-                                            <td>
-                                                <a target="_blank" href="">
-                                                    <img src="../../img/pdf.png" width="48px" height="48px">
-                                                </a>
-                                            </td>
-                                            <td>11/05/2023</td>
-                                            <td>
-                                                <a style="cursor: pointer" href="">
-                                                    <img src="../../img/aceptar.png">
-                                                </a>
-                                            </td>
-                                            <td>
-                                                <a style="cursor: pointer" href="">
-                                                    <img src="../../img/cancelar.png">
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    </tbody>
+                                    <?php
+                                    include_once '../../php/DBManager/endPointComplain.php';
+                                    while ($row = $data->fetch_assoc()) {
+                                        ?>
+                                        <thead>
+                                            <tr>
+                                                <th>Nombre</th>
+                                                <th>Correo</th>
+                                                <th>Telefono</th>
+                                                <th>Nombre del acusado</th>
+                                                <th>Cargo del acusado</th>
+                                                <th>Sucinto</th>
+                                                <th>Evidencia</th>
+                                                <th>Fecha de la denuncia</th>
+                                                <th>Dar seguimiento</th>
+                                                <th>Rechazar</th>
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                                <th>Nombre</th>
+                                                <th>Correo</th>
+                                                <th>Telefono</th>
+                                                <th>Nombre del acusado</th>
+                                                <th>Cargo del acusado</th>
+                                                <th>Sucinto</th>
+                                                <th>Evidencia</th>
+                                                <th>Fecha de la denuncia</th>
+                                                <th>Dar seguimiento</th>
+                                                <th>Rechazar</th>
+                                            </tr>
+                                        </tfoot>
+
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <?php echo $row['full_name'] ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $row['mail'] ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $row['tel_number'] ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $row['full_nameA'] ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $row['positionA'] ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $row['succint'] ?>
+                                                </td>
+                                                <td>
+                                                    <a target="_blank"
+                                                        href="<?php echo '../../pdf/Complains/' . $row['evidence']; ?>">
+                                                        <img src="../../img/pdf.png" width="48px" height="48px">
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <?php echo $row['date'] ?>
+                                                </td>
+                                                <td>
+                                                    <a style="cursor: pointer" href="">
+                                                        <img src="../../img/aceptar.png">
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a style="cursor: pointer" href="">
+                                                        <img src="../../img/cancelar.png">
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <?php
+                                    }
+                                    ?>
                                 </table>
                             </div>
                         </div>
