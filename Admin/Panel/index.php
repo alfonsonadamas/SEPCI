@@ -90,40 +90,41 @@ if ($sesion) {
                             </div>
                             <div class="card-body">
                                 <table id="datatablesSimple" style="text-align:center">
-                                    <?php
-                                    include_once '../../php/DBManager/endPointComplain.php';
-                                    while ($row = $data->fetch_assoc()) {
-                                        ?>
-                                        <thead>
-                                            <tr>
-                                                <th>Nombre</th>
-                                                <th>Correo</th>
-                                                <th>Telefono</th>
-                                                <th>Nombre del acusado</th>
-                                                <th>Cargo del acusado</th>
-                                                <th>Sucinto</th>
-                                                <th>Evidencia</th>
-                                                <th>Fecha de la denuncia</th>
-                                                <th>Dar seguimiento</th>
-                                                <th>Rechazar</th>
-                                            </tr>
-                                        </thead>
-                                        <tfoot>
-                                            <tr>
-                                                <th>Nombre</th>
-                                                <th>Correo</th>
-                                                <th>Telefono</th>
-                                                <th>Nombre del acusado</th>
-                                                <th>Cargo del acusado</th>
-                                                <th>Sucinto</th>
-                                                <th>Evidencia</th>
-                                                <th>Fecha de la denuncia</th>
-                                                <th>Dar seguimiento</th>
-                                                <th>Rechazar</th>
-                                            </tr>
-                                        </tfoot>
 
-                                        <tbody>
+                                    <thead>
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th>Correo</th>
+                                            <th>Telefono</th>
+                                            <th>Nombre del acusado</th>
+                                            <th>Cargo del acusado</th>
+                                            <th>Sucinto</th>
+                                            <th>Evidencia</th>
+                                            <th>Fecha de la denuncia</th>
+                                            <th>Dar seguimiento</th>
+                                            <th>Rechazar</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th>Correo</th>
+                                            <th>Telefono</th>
+                                            <th>Nombre del acusado</th>
+                                            <th>Cargo del acusado</th>
+                                            <th>Sucinto</th>
+                                            <th>Evidencia</th>
+                                            <th>Fecha de la denuncia</th>
+                                            <th>Dar seguimiento</th>
+                                            <th>Rechazar</th>
+                                        </tr>
+                                    </tfoot>
+
+                                    <tbody>
+                                        <?php
+                                        include_once '../../php/DBManager/endPointComplain.php';
+                                        while ($row = $data->fetch_assoc()) {
+                                            ?>
                                             <tr>
                                                 <td>
                                                     <?php echo $row['full_name'] ?>
@@ -163,10 +164,10 @@ if ($sesion) {
                                                     </a>
                                                 </td>
                                             </tr>
-                                        </tbody>
-                                        <?php
-                                    }
-                                    ?>
+                                            <?php
+                                        }
+                                        ?>
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
