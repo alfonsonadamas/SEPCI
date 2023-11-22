@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-10-2023 a las 20:47:59
--- Versión del servidor: 10.4.27-MariaDB
--- Versión de PHP: 8.0.25
+-- Tiempo de generación: 22-11-2023 a las 01:05:28
+-- Versión del servidor: 10.4.21-MariaDB
+-- Versión de PHP: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,7 +33,7 @@ CREATE TABLE `about_us_info` (
   `id_aboutus` int(11) NOT NULL,
   `information` mediumtext NOT NULL,
   `root_about_us` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `about_us_info`
@@ -59,7 +59,18 @@ CREATE TABLE `complaints` (
   `evidence` varchar(100) DEFAULT NULL,
   `date` date NOT NULL,
   `status` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `complaints`
+--
+
+INSERT INTO `complaints` (`id_complaint`, `full_name`, `mail`, `tel_number`, `full_nameA`, `positionA`, `succint`, `evidence`, `date`, `status`) VALUES
+(1, '', '', '4434730754', 'Servando ', 'Profesor', 'Me dijo tonto', 'rootNueva', '2023-11-21', 0),
+(2, 'Diego Ambriz', 'l20120077@morelia.tecnm.mx', '4434730754', 'Servando ', 'Profesor', 'Me dijo tonto', NULL, '2023-11-21', 0),
+(3, 'Diego Ambriz', 'l20120077@morelia.tecnm.mx', '4434730754', 'Servando ', 'Profesor', 'Me dijo tonto', '3/Abril-Recomendaciones-cinematograficas.pdf', '2023-11-21', 0),
+(4, 'Diego Ambriz', 'l20120077@morelia.tecnm.mx', '4434730754', 'Servando ', 'Profesor', 'tonto', '4/Informe Anual de Actividades 2022.pdf', '2023-11-21', 0),
+(5, 'name', 'mail', 'tel', 'nameA', 'posA', 'succint', 'root', '2023-11-21', 0);
 
 -- --------------------------------------------------------
 
@@ -70,7 +81,7 @@ CREATE TABLE `complaints` (
 CREATE TABLE `document_section` (
   `id_docsec` int(11) NOT NULL,
   `name_section` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `document_section`
@@ -88,7 +99,7 @@ INSERT INTO `document_section` (`id_docsec`, `name_section`) VALUES
 CREATE TABLE `document_type` (
   `id_doctp` int(11) NOT NULL,
   `type` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `document_type`
@@ -112,7 +123,7 @@ CREATE TABLE `files` (
   `root` varchar(100) NOT NULL,
   `page_section` int(11) NOT NULL,
   `document_type` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `files`
@@ -136,7 +147,7 @@ CREATE TABLE `members` (
   `mail` varchar(50) NOT NULL,
   `rol` varchar(50) NOT NULL,
   `root_image` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `members`
@@ -167,7 +178,7 @@ INSERT INTO `members` (`id_members`, `names`, `middle_name`, `last_name`, `mail`
 CREATE TABLE `page_section` (
   `id_pgsection` int(11) NOT NULL,
   `section_name` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `page_section`
@@ -189,7 +200,7 @@ INSERT INTO `page_section` (`id_pgsection`, `section_name`) VALUES
 CREATE TABLE `slider` (
   `id_slider` int(11) NOT NULL,
   `root_sliderImage` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `slider`
@@ -211,7 +222,7 @@ CREATE TABLE `users` (
   `name` varchar(50) NOT NULL,
   `mail` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `users`
@@ -295,7 +306,7 @@ ALTER TABLE `about_us_info`
 -- AUTO_INCREMENT de la tabla `complaints`
 --
 ALTER TABLE `complaints`
-  MODIFY `id_complaint` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_complaint` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `document_section`
