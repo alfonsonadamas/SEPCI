@@ -4,11 +4,14 @@ $(document).ready(function () {
     var nombre = enlace.data('nombre');
     var cargo = enlace.data('cargo');
     var correo = enlace.data('correo');
+    var imagen = enlace.data('imagen'); // Nueva línea para obtener la ruta de la imagen
 
     var modal = $(this);
     modal.find('#nombre').text(nombre);
     modal.find('#cargo').text(cargo);
     modal.find('#correo').text(correo);
+    // Actualiza el atributo src de la imagen en la ventana modal
+    modal.find('.imagen-recuadrov').attr('src', imagen);
 
     // Agrega un manejador de eventos para el botón de redirección // FuncionAsesora
     modal.find('#redireccionarBtn').on('click', function () {

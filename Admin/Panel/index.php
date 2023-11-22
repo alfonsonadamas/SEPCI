@@ -124,6 +124,12 @@ if ($sesion) {
                                         <?php
                                         include_once '../../php/DBManager/endPointComplain.php';
                                         while ($row = $data->fetch_assoc()) {
+                                            /*if ($row['evidence'] != null) {
+                                                $ruta = "#";
+                                            } else {
+                                                $ruta = '../../pdf/Complains/' . $row['evidence'];
+                                                //$img = 
+                                            }*/
                                             ?>
                                             <tr>
                                                 <td>

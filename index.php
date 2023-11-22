@@ -135,11 +135,12 @@
                     ?>
                     <a href="#" data-bs-toggle="modal" data-bs-target="#myModal"
                         data-nombre="<?php echo $row['names'] . ' ' . $row['middle_name'] . ' ' . $row['last_name']; ?>"
-                        data-cargo="<?php echo $row['rol']; ?>" data-correo="<?php echo $row['mail']; ?>">
+                        data-cargo="<?php echo $row['rol']; ?>" data-correo="<?php echo $row['mail']; ?>"
+                        data-imagen="<?php echo "img/Integrantes" . "/" . $row["root_image"]; ?> ">
 
                         <div class="carta" style="background-color: <?php echo $color; ?>;">
                             <br>
-                            <img src="img/Omar Aguilar Garcia.jpg" alt="">
+                            <img src="<?php echo "img/Integrantes" . "/" . $row["root_image"]; ?>" alt="">
                             <br>
                             <div class="Nombres">
                                 <h3>

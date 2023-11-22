@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-11-2023 a las 01:05:28
+-- Tiempo de generación: 22-11-2023 a las 19:43:34
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.28
 
@@ -70,7 +70,8 @@ INSERT INTO `complaints` (`id_complaint`, `full_name`, `mail`, `tel_number`, `fu
 (2, 'Diego Ambriz', 'l20120077@morelia.tecnm.mx', '4434730754', 'Servando ', 'Profesor', 'Me dijo tonto', NULL, '2023-11-21', 0),
 (3, 'Diego Ambriz', 'l20120077@morelia.tecnm.mx', '4434730754', 'Servando ', 'Profesor', 'Me dijo tonto', '3/Abril-Recomendaciones-cinematograficas.pdf', '2023-11-21', 0),
 (4, 'Diego Ambriz', 'l20120077@morelia.tecnm.mx', '4434730754', 'Servando ', 'Profesor', 'tonto', '4/Informe Anual de Actividades 2022.pdf', '2023-11-21', 0),
-(5, 'name', 'mail', 'tel', 'nameA', 'posA', 'succint', 'root', '2023-11-21', 0);
+(5, 'name', 'mail', 'tel', 'nameA', 'posA', 'succint', 'root', '2023-11-21', 0),
+(6, 'name', 'mail', 'tel', 'nameA', 'posA', 'succint', 'root', '2023-11-22', 0);
 
 -- --------------------------------------------------------
 
@@ -154,20 +155,21 @@ CREATE TABLE `members` (
 --
 
 INSERT INTO `members` (`id_members`, `names`, `middle_name`, `last_name`, `mail`, `rol`, `root_image`) VALUES
-(1, 'Omar', 'Agular', 'García', 'Omar@morelia.tecnm.mx', 'Presidencia', 'imagen'),
-(2, 'Carlos Fabián', 'Escudero', 'García', 'CarlosFabian@morelia.tecnm.mx', 'Presidencia (Suplente)', 'Imagen'),
-(3, 'Paulina', 'López', 'López', 'Paulina@morelia.tecnm.mx', 'Secretaría Ejecutiva', 'Imagen'),
-(4, 'Erika', 'Guzmán', 'Cendejas', 'Erika@morelia.tecnm.mx', 'Secretaría Ejecutiva (Suplente)', 'Imagen'),
-(5, 'Margarita', 'López', 'Perea', 'margarita@morelia.tecnm.mx', 'Secretaría Técnica', 'Imagen'),
-(6, 'Luis Antonio', 'Solache', 'Hernádez', 'Luisantonio@morelia.tecnm.mx', 'Secretaría Técnica (Suplente)', 'Imagen'),
-(7, 'Liliana Patricia', 'Ferreyra', 'Herrera', 'Liliana@morelia.tecnm.mx', 'Miembro Propietario', 'Imagen'),
-(8, 'Christian Omar', 'Martínez', 'Cámara', 'Christian@morelia.tecnm.mx', 'Miembro (Suplente)', 'Imagen'),
-(9, 'Yalanda Patricia', 'García', 'Aguirre', 'Yolanda@morelia.tecnm.mx', 'Miembro Propietario', 'Imagen'),
-(10, 'Roberto', 'Young ', 'Peraldi', 'Roberto@morelia.tecnm.mx', 'Miembro (Suplente)', 'Imagen'),
-(11, 'Nancy', 'Becerra', 'Corona', 'Nancy@morelia.tecnm.mx', 'Miembro Propietario', 'Imagen'),
-(12, 'Héctor', 'Suárez', 'Aparicio', 'Hector@morelia.tecnm.mx', 'Miembro (Suplente)', 'Imagen'),
-(13, 'Maria del Lucero', 'Castro', 'García', 'Maria@morelia.tecnm.mx', 'Persona Asesora', 'Imagen'),
-(14, 'Norma Evelina', 'Rodríguez', 'Ferreira', 'Norma@morelia.tecnm.mx', 'Persona Consejera', 'Imagen');
+(1, 'Omar', 'Agular', 'García', 'cero.tolerancia@morelia.tecnm.mx', 'Presidencia', '1/Omar Aguilar Garcia.jpg'),
+(2, 'Carlos Fabián', 'Escudero', 'García', 'cero.tolerancia@morelia.tecnm.mx', 'Presidencia (Suplente)', '2/usu.png'),
+(3, 'Elizabeth Rocío', 'Zavala ', 'Cervantes', 'elizabeth.zc@morelia.tecnm.mx', 'Secretaría Ejecutiva', '3/Elizabeth Rocio Zavala Cervantes.jpg'),
+(4, 'Erika', 'Guzmán', 'Cendejas', 'erika.gc@morelia.tecnm.mx', 'Secretaría Ejecutiva (Suplente)', '4/usu.png'),
+(5, 'Margarita', 'López', 'Perea', 'margarita.lp@morelia.tecnm.mx', 'Secretaría Técnica', '5/Margarita Lopez Perea.jpg'),
+(6, 'José Cuitláhuac ', 'Guzmán ', 'Hernández', 'jose.gh@morelia.tecnm.mx', 'Secretaría Técnica (Suplente)', '6/Jose Cuitlahuac Guzman Hernandez.jpg'),
+(7, 'María Alejandra', 'Vázquez ', 'Zamudio', 'maria.vz@morelia.tecnm.mx', 'Miembro Propietario', '7/Maria Alejandra Vazquez Zamudio.jpg'),
+(8, 'Yolanda Patricia ', 'García ', 'Aguirre', 'yolanda.ga2@morelia.tecnm.mx', 'Miembro Propietario', '8/Yolanda Patricia Garcia Aguirre.jpg'),
+(9, 'Nancy ', 'Barrera ', 'Corona', 'nancy.bc@morelia.tecnm.mx', 'Miembro Propietario', '9/Nancy Barrera Corona.jpg'),
+(10, 'Martha Estefanía ', 'Pérez ', 'Mendoza', 'martha.pm@morelia.tecnm.mx', 'Miembro (Suplente)', '10/Martha Estefania Perez Mendoza.jpg'),
+(11, 'Roberto ', 'Becerra', 'Peraldi', 'roberto.yp@morelia.tecnm.mx', 'Miembro (Suplente)', '11/Roberto Young Peraldi.jpg'),
+(12, 'Héctor', 'Suarez ', 'Aparicio', 'hector.sa@morelia.tecnm.mx', 'Miembro (Suplente)', '12/Hector Suarez Aparicio.jpg'),
+(13, 'Salvador ', 'Pérez ', 'Alcaraz', 'salvador.pa@morelia.tecnm.mx', 'Persona Asesora', '13/Salvador Perez Alcazar.jpg'),
+(14, 'Berenice ', 'Zamilpa ', 'Quiroz', 'berenice.zq@morelia.tecnm.mx', 'Persona Consejera', '14/Berenice Zamilpa Quiroz.jpg'),
+(15, 'Tereza ', 'Villaseñor ', 'Jacuinde', 'tereza.vj@morelia.tecnm.mx', 'Persona Consejera', '15/Tereza Villaseñor Jacuinde.jpg');
 
 -- --------------------------------------------------------
 
@@ -306,7 +308,7 @@ ALTER TABLE `about_us_info`
 -- AUTO_INCREMENT de la tabla `complaints`
 --
 ALTER TABLE `complaints`
-  MODIFY `id_complaint` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_complaint` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `document_section`
@@ -330,7 +332,7 @@ ALTER TABLE `files`
 -- AUTO_INCREMENT de la tabla `members`
 --
 ALTER TABLE `members`
-  MODIFY `id_members` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_members` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `page_section`
