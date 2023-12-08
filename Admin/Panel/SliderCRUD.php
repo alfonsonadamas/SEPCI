@@ -46,6 +46,14 @@ if ($sesion) {
                                 <div class="sb-nav-link-icon"></div>
                                 Buzón de denuncias
                             </a>
+                            <a class="nav-link" href="complaintAcept.php">
+                                <div class="sb-nav-link-icon"></div>
+                                Denuncias Aceptadas
+                            </a>
+                            <a class="nav-link" href="complaintCancel.php">
+                                <div class="sb-nav-link-icon"></div>
+                                Denuncias Canceladas
+                            </a>
                             <div class="sb-sidenav-menu-heading">Inicio</div>
                             <a class="nav-link" href="SliderCRUD.php">
                                 <div class="sb-nav-link-icon"></div>
@@ -95,22 +103,26 @@ if ($sesion) {
                                     </div>
                                 </a>
                                 <div class="container1">
-                                <?php
+                                    <?php
                                     include_once '../../php/DBManager/endPointSlider.php';
                                     while ($row = $data->fetch_assoc()) {
-                                ?>
-                                    <form action="../../php/DBManager/actionSlider.php?id=<?php echo $row['id_slider']; ?>" method="POST" enctype="multipart/form-data">
-                                        <div class="card2">
-                                            <img src="<?php echo '../../img/Carrusel/' . $row['root_sliderImage']; ?>" alt="">
-                                            <div class="botones">
-                                                <a href="SliderEdit.php?root=<?php echo $row['root_sliderImage']; ?>&id=<?php echo $row['id_slider']; ?>">Editar</a>
-                                                <input class="button-container" type="submit" name="Eliminar" value="Eliminar" onclick="Elimina()">
+                                        ?>
+                                        <form action="../../php/DBManager/actionSlider.php?id=<?php echo $row['id_slider']; ?>"
+                                            method="POST" enctype="multipart/form-data">
+                                            <div class="card2">
+                                                <img src="<?php echo '../../img/Carrusel/' . $row['root_sliderImage']; ?>"
+                                                    alt="">
+                                                <div class="botones">
+                                                    <a
+                                                        href="SliderEdit.php?root=<?php echo $row['root_sliderImage']; ?>&id=<?php echo $row['id_slider']; ?>">Editar</a>
+                                                    <input class="button-container" type="submit" name="Eliminar"
+                                                        value="Eliminar" onclick="Elimina()">
+                                                </div>
                                             </div>
-                                        </div>
-                                    </form>
-                                <?php
-                                    }    
-                                ?>
+                                        </form>
+                                        <?php
+                                    }
+                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -130,10 +142,10 @@ if ($sesion) {
             crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
         <script>
-            function Elimina(){
+            function Elimina() {
                 if (!confirm("¿Estas seguro que quieres eliminar este producto?")) {
-                event.preventDefault();
-                return false;
+                    event.preventDefault();
+                    return false;
                 }
             }
         </script>

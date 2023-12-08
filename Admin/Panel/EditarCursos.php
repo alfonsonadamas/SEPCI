@@ -46,6 +46,14 @@ if ($sesion) {
                                 <div class="sb-nav-link-icon"></div>
                                 Buzón de denuncias
                             </a>
+                            <a class="nav-link" href="complaintAcept.php">
+                                <div class="sb-nav-link-icon"></div>
+                                Denuncias Aceptadas
+                            </a>
+                            <a class="nav-link" href="complaintCancel.php">
+                                <div class="sb-nav-link-icon"></div>
+                                Denuncias Canceladas
+                            </a>
                             <div class="sb-sidenav-menu-heading">Inicio</div>
                             <a class="nav-link" href="QuienesSomos.php">
                                 <div class="sb-nav-link-icon"></div>
@@ -80,27 +88,32 @@ if ($sesion) {
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">Inicio/Editar Cursos/Editar Curso</li>
                         </ol>
-                        <?php 
-                            include_once '../../php/DBManager/endPointCourse.php';  
-                            $obj = new Course(); 
-                            $data= $obj->showCourse($_REQUEST['id_curso']); 
-                            $row = $data->fetch_row(); 
+                        <?php
+                        include_once '../../php/DBManager/endPointCourse.php';
+                        $obj = new Course();
+                        $data = $obj->showCourse($_REQUEST['id_curso']);
+                        $row = $data->fetch_row();
                         ?>
-                        
+
                         <div class="card">
                             <div class="container">
                                 <div>
                                     <h4 class="mb-4">Previsualización de icono</h4>
-                                    <img class="border border-2 border-secondary p-1" id="imgPreview" width="120" height="120" src="../../pdf/Courses/<?php echo $row[3] ?>">
+                                    <img class="border border-2 border-secondary p-1" id="imgPreview" width="120"
+                                        height="120" src="../../pdf/Courses/<?php echo $row[3] ?>">
                                 </div>
-                                <form  method="POST" enctype="multipart/form-data" role="form" action="../../php/DBManager/actionCourse.php?id_curso=<?php echo $row[0] ?>">
+                                <form method="POST" enctype="multipart/form-data" role="form"
+                                    action="../../php/DBManager/actionCourse.php?id_curso=<?php echo $row[0] ?>">
                                     <div class="d-flex flex-column">
-                                        <input type="text" id="titulo" name="titulo" class="w-100 mb-4" placeholder="Titulo" value="<?php echo $row[1] ?>">
-                                        <textarea class="mb-4 p-2" name="descripcion" id="descrip" cols="30" rows="10" style="resize: none;" placeholder="Descripción"><?php echo $row[2] ?></textarea>
-                                        <input class="mb-4" type="file" name="archivo" accept="image/*" onchange="previewImage(event, '#imgPreview')">
+                                        <input type="text" id="titulo" name="titulo" class="w-100 mb-4" placeholder="Titulo"
+                                            value="<?php echo $row[1] ?>">
+                                        <textarea class="mb-4 p-2" name="descripcion" id="descrip" cols="30" rows="10"
+                                            style="resize: none;" placeholder="Descripción"><?php echo $row[2] ?></textarea>
+                                        <input class="mb-4" type="file" name="archivo" accept="image/*"
+                                            onchange="previewImage(event, '#imgPreview')">
                                         <input type="submit" class="w-25 btn btn-success" value="Editar">
                                     </div>
-                                    
+
                                 </form>
 
                             </div>

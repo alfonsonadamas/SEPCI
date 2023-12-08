@@ -46,6 +46,14 @@ if ($sesion) {
                                 <div class="sb-nav-link-icon"></div>
                                 Buzón de denuncias
                             </a>
+                            <a class="nav-link" href="complaintAcept.php">
+                                <div class="sb-nav-link-icon"></div>
+                                Denuncias Aceptadas
+                            </a>
+                            <a class="nav-link" href="complaintCancel.php">
+                                <div class="sb-nav-link-icon"></div>
+                                Denuncias Canceladas
+                            </a>
                             <div class="sb-sidenav-menu-heading">Inicio</div>
                             <a class="nav-link" href="Carrusel.php">
                                 <div class="sb-nav-link-icon"></div>
@@ -85,38 +93,45 @@ if ($sesion) {
                             <li class="breadcrumb-item active">Inicio/Editar Cursos</li>
                         </ol>
                         <div class="card mb-4">
-                            
+
                             <?php
-                                include_once '../../php/DBManager/endPointEachCourses.php';
-                                while ($row = $data->fetch_assoc() ) {
-                            ?>
-                            <div class=" d-flex m-3 border-bottom pb-2">
-                                <img  src=" ../../pdf/Courses/<?php echo $row['root_course']; ?>"  alt="" width="120" height="120"> 
-                                <div class="d-flex flex-row align-items-center justify-content-between w-100">
-                                    <div class=" p-1 ms-3 me-3">
-                                        <h3><?php echo $row['course_name'] ?></h3>
-                                        <p><?php echo $row['course_descrip']  ?></p>
+                            include_once '../../php/DBManager/endPointEachCourses.php';
+                            while ($row = $data->fetch_assoc()) {
+                                ?>
+                                <div class=" d-flex m-3 border-bottom pb-2">
+                                    <img src=" ../../pdf/Courses/<?php echo $row['root_course']; ?>" alt="" width="120"
+                                        height="120">
+                                    <div class="d-flex flex-row align-items-center justify-content-between w-100">
+                                        <div class=" p-1 ms-3 me-3">
+                                            <h3>
+                                                <?php echo $row['course_name'] ?>
+                                            </h3>
+                                            <p>
+                                                <?php echo $row['course_descrip'] ?>
+                                            </p>
+                                        </div>
+                                        <div class="d-flex">
+                                            <a href="../Panel/EditarCursos.php?id_curso=<?php echo $row['id_course'] ?>"
+                                                class="btn btn-warning me-3">Editar</a>
+                                            <a href="../../php/DBManager/deleteCourse.php?id_curso=<?php echo $row['id_course'] ?>"
+                                                class="btn btn-danger">Eliminar</a>
+                                        </div>
+
                                     </div>
-                                    <div class="d-flex">
-                                        <a href="../Panel/EditarCursos.php?id_curso=<?php echo $row['id_course'] ?>" class="btn btn-warning me-3">Editar</a>
-                                        <a href="../../php/DBManager/deleteCourse.php?id_curso=<?php echo $row['id_course'] ?>" class="btn btn-danger">Eliminar</a>
-                                    </div>
-                                    
+
                                 </div>
 
-                            </div>
-                            
-                        <?php
+                                <?php
                             }
-                            
-                        ?>
-                            
+
+                            ?>
+
                             <div class="d-flex justify-content-center mb-4">
                                 <a href="../Panel/AñadirCurso.php" class="btn btn-success">+ | Añadir</a>
                             </div>
-                            
+
                         </div>
-                        
+
                     </div>
             </div>
         </div>

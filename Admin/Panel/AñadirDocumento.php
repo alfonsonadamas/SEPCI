@@ -46,6 +46,14 @@ if ($sesion) {
                                 <div class="sb-nav-link-icon"></div>
                                 Buzón de denuncias
                             </a>
+                            <a class="nav-link" href="complaintAcept.php">
+                                <div class="sb-nav-link-icon"></div>
+                                Denuncias Aceptadas
+                            </a>
+                            <a class="nav-link" href="complaintCancel.php">
+                                <div class="sb-nav-link-icon"></div>
+                                Denuncias Canceladas
+                            </a>
                             <div class="sb-sidenav-menu-heading">Inicio</div>
                             <a class="nav-link" href="QuienesSomos.php">
                                 <div class="sb-nav-link-icon"></div>
@@ -109,7 +117,7 @@ if ($sesion) {
                                         </div>
                                     </div>
                                 </form>
-                            </seccion>
+                                </seccion>
                         </div>
                     </div>
                 </main>

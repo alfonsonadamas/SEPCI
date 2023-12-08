@@ -46,6 +46,14 @@ if ($sesion) {
                                 <div class="sb-nav-link-icon"></div>
                                 Buzón de denuncias
                             </a>
+                            <a class="nav-link" href="complaintAcept.php">
+                                <div class="sb-nav-link-icon"></div>
+                                Denuncias Aceptadas
+                            </a>
+                            <a class="nav-link" href="complaintCancel.php">
+                                <div class="sb-nav-link-icon"></div>
+                                Denuncias Canceladas
+                            </a>
                             <div class="sb-sidenav-menu-heading">Inicio</div>
                             <a class="nav-link" href="Carrusel.php">
                                 <div class="sb-nav-link-icon"></div>
@@ -94,7 +102,8 @@ if ($sesion) {
                                             </div>
                                             <div class="columna">
                                                 <label for="name">Titulo:</label>
-                                                <input type="text" name="titulo" id="document-name" value="<?php echo $_REQUEST['titulo']; ?>">
+                                                <input type="text" name="titulo" id="document-name"
+                                                    value="<?php echo $_REQUEST['titulo']; ?>">
                                             </div>
                                             <div class="archivos">
                                                 <p class="text">Archivo:</p>
@@ -108,12 +117,13 @@ if ($sesion) {
                                             </div>
                                             <div class="columna">
                                                 <input type="hidden" name="id" value="<?php echo $_REQUEST['id'] ?>">
-                                                <button type="submit" class="btn_send" name="Editar" value="guardar">Guardar</button>
+                                                <button type="submit" class="btn_send" name="Editar"
+                                                    value="guardar">Guardar</button>
                                             </div>
                                         </div>
                                     </div>
                                 </form>
-                            </seccion>
+                                </seccion>
                         </div>
                     </div>
                 </main>

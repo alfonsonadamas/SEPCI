@@ -46,6 +46,14 @@ if ($sesion) {
                                 <div class="sb-nav-link-icon"></div>
                                 Buzón de denuncias
                             </a>
+                            <a class="nav-link" href="complaintAcept.php">
+                                <div class="sb-nav-link-icon"></div>
+                                Denuncias Aceptadas
+                            </a>
+                            <a class="nav-link" href="complaintCancel.php">
+                                <div class="sb-nav-link-icon"></div>
+                                Denuncias Canceladas
+                            </a>
                             <div class="sb-sidenav-menu-heading">Inicio</div>
                             <a class="nav-link" href="Carrusel.php">
                                 <div class="sb-nav-link-icon"></div>
@@ -88,28 +96,34 @@ if ($sesion) {
                             <div class="container-fluid d-flex justify-content-around align-items-start">
                                 <div class="d-flex align-items-center flex-column mt-4">
                                     <h4 class="mb-4">Previsualización de icono</h4>
-                                    <img class="border border-2 border-secondary p-1" id="imgPreview" width="120" height="120" src="../../img/imagen_preview.png">
+                                    <img class="border border-2 border-secondary p-1" id="imgPreview" width="120"
+                                        height="120" src="../../img/imagen_preview.png">
                                 </div>
-                                <form class="w-50 mt-4"  method="POST" enctype="multipart/form-data" role="form" action="../../php/DBManager/addCourse.php">
+                                <form class="w-50 mt-4" method="POST" enctype="multipart/form-data" role="form"
+                                    action="../../php/DBManager/addCourse.php">
                                     <div class="d-flex flex-column">
-                                        <input type="text" id="titulo" name="titulo" class="w-100 mb-4 p-2" placeholder="Titulo" required>
-                                        <textarea class="mb-4 p-2" required name="descripcion" id="descrip" cols="30" rows="10" style="resize: none;" placeholder="Descripción"></textarea>
-                                        <input class="mb-4" type="file" required name="archivo" accept="image/*" onchange="previewImage(event, '#imgPreview')">
+                                        <input type="text" id="titulo" name="titulo" class="w-100 mb-4 p-2"
+                                            placeholder="Titulo" required>
+                                        <textarea class="mb-4 p-2" required name="descripcion" id="descrip" cols="30"
+                                            rows="10" style="resize: none;" placeholder="Descripción"></textarea>
+                                        <input class="mb-4" type="file" required name="archivo" accept="image/*"
+                                            onchange="previewImage(event, '#imgPreview')">
                                         <div>
                                             <input type="radio" name="tipo" id="url" value="url" onclick="mostrarActivo()">
                                             <label for="url">Link</label>
                                         </div>
                                         <div>
-                                            <input type="radio" name="tipo" id="documento" value="documento" onclick="mostrarActivo()">
+                                            <input type="radio" name="tipo" id="documento" value="documento"
+                                                onclick="mostrarActivo()">
                                             <label for="documento">Documento</label>
                                         </div>
 
                                         <input type="url" class="d-none" id="url-input" name="contenido_link" value="">
                                         <input type="file" class="d-none" id="file-input" name="contenido_file" value="">
-                                        
+
                                         <input type="submit" class="w-25 btn btn-success mb-4 mt-4" value="Añadir">
                                     </div>
-                                    
+
                                 </form>
 
                             </div>

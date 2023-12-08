@@ -46,6 +46,14 @@ if ($sesion) {
                                 <div class="sb-nav-link-icon"></div>
                                 Buzón de denuncias
                             </a>
+                            <a class="nav-link" href="complaintAcept.php">
+                                <div class="sb-nav-link-icon"></div>
+                                Denuncias Aceptadas
+                            </a>
+                            <a class="nav-link" href="complaintCancel.php">
+                                <div class="sb-nav-link-icon"></div>
+                                Denuncias Canceladas
+                            </a>
                             <div class="sb-sidenav-menu-heading">Inicio</div>
                             <a class="nav-link" href="Carrusel.php">
                                 <div class="sb-nav-link-icon"></div>
@@ -85,30 +93,30 @@ if ($sesion) {
                             <li class="breadcrumb-item active">Inicio/Editar Carrusel</li>
                         </ol>
                         <div class="card mb-4">
-                            
+
                             <?php
 
                             ?>
                             <div class=" d-flex flex-column align-items-center w-100 mt-5 border-bottom">
-                                <img class="img-fluid"  src="../../img/carrusel.png" alt="" > 
+                                <img class="img-fluid" src="../../img/carrusel.png" alt="">
                                 <div class=" d-flex flex-column align-items-center justify-content-between mb-3">
                                     <div class=" p-1 ms-3 me-3">
                                         <h3>Imagen 1</h3>
-                                        
+
                                     </div>
                                     <div class="d-flex">
                                         <a href="" class="btn btn-warning me-3">Editar</a>
                                         <a href="" class="btn btn-danger">Eliminar</a>
                                     </div>
-                                    
+
                                 </div>
 
                             </div>
-                            
+
                             <div class="d-flex justify-content-center mt-5 mb-5">
                                 <a href="" class="btn btn-success">Añadir | +</a>
                             </div>
-                            
+
                         </div>
                         <?php
 

@@ -45,6 +45,14 @@ if ($sesion) {
                                 <div class="sb-nav-link-icon"></div>
                                 Buzón de denuncias
                             </a>
+                            <a class="nav-link" href="complaintAcept.php">
+                                <div class="sb-nav-link-icon"></div>
+                                Denuncias Aceptadas
+                            </a>
+                            <a class="nav-link" href="complaintCancel.php">
+                                <div class="sb-nav-link-icon"></div>
+                                Denuncias Canceladas
+                            </a>
                             <div class="sb-sidenav-menu-heading">Inicio</div>
                             <a class="nav-link" href="SliderCRUD.php">
                                 <div class="sb-nav-link-icon"></div>
@@ -124,12 +132,7 @@ if ($sesion) {
                                         <?php
                                         include_once '../../php/DBManager/endPointComplain.php';
                                         while ($row = $data->fetch_assoc()) {
-                                            /*if ($row['evidence'] != null) {
-                                                $ruta = "#";
-                                            } else {
-                                                $ruta = '../../pdf/Complains/' . $row['evidence'];
-                                                //$img = 
-                                            }*/
+
                                             ?>
                                             <tr>
                                                 <td>
@@ -160,12 +163,14 @@ if ($sesion) {
                                                     <?php echo $row['date'] ?>
                                                 </td>
                                                 <td>
-                                                    <a style="cursor: pointer" href="">
+                                                    <a style="cursor: pointer"
+                                                        href="../../php/DBManager/actionComplaintAcept.php?id=<?php echo $row['id_complaint'] ?>">
                                                         <img src="../../img/aceptar.png">
                                                     </a>
                                                 </td>
                                                 <td>
-                                                    <a style="cursor: pointer" href="">
+                                                    <a style="cursor: pointer"
+                                                        href="../../php/DBManager/actionComplaintCancel.php?id=<?php echo $row['id_complaint'] ?>">
                                                         <img src="../../img/cancelar.png">
                                                     </a>
                                                 </td>
