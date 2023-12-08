@@ -59,3 +59,37 @@ function mostrarActivo() {
     document.getElementById("file-input").classList.remove("d-none");
   }
 }
+
+function mostrarActivo2() {
+  const url = document.getElementById("url");
+  const documento = document.getElementById("documento");
+  if (url.checked) {
+    document.getElementById("input-archivo").classList.add("d-none");
+    document.getElementById("link-video").classList.add("d-flex");
+    document.getElementById("link-video").classList.remove("d-none");
+  } else if (documento.checked) {
+    document.getElementById("input-archivo").classList.remove("d-none");
+    document.getElementById("input-archivo").classList.add("d-flex");
+    document.getElementById("link-video").classList.add("d-none");
+  }
+}
+
+function previewImageDocs(event, querySelector) {
+  //Recuperamos el input que desencadeno la acción
+  const input = event.target;
+
+  //Recuperamos la etiqueta img donde cargaremos la imagen
+  $imgPreview = document.querySelector(querySelector);
+
+  // Verificamos si existe una imagen seleccionada
+  if (!input.files.length) return;
+
+  //Recuperamos el archivo subido
+  file = input.files[0];
+
+  //Creamos la url
+  objectURL = URL.createObjectURL(file);
+
+  //Modificamos el atributo src de la etiqueta img
+  $imgPreview.src = objectURL;
+}
