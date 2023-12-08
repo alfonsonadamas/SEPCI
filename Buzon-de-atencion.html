@@ -44,7 +44,12 @@
       <h1>Denuncias en materia de ética pública o conflicto de interés</h1>
     </div>
     <section class="seccion">
-      <form method="POST" action="" enctype="multipart/form-data" role="form">
+      <form
+        method="POST"
+        action="php/DBManager/actionAddComplain.php"
+        enctype="multipart/form-data"
+        role="form"
+      >
         <div class="contenedor">
           <div class="conten_input">
             <div class="swtich-container">
@@ -59,27 +64,33 @@
             </div>
             <div class="columna">
               <label for="name">Nombre: </label>
-              <input type="text" name="name" id="celdaTexto" />
+              <input type="text" name="name" id="celdaTexto" required />
             </div>
             <div class="columna">
               <label for="email">Correo Electronico: </label>
-              <input type="text" name="email" id="celdaTexto2" />
+              <input type="text" name="email" id="celdaTexto2" required />
             </div>
             <div class="columna">
               <label for="phone">Telefono: </label>
-              <input type="text" name="phone" />
+              <input type="text" name="phone" required />
             </div>
             <div class="columna">
               <label for="name_Denounced">Nombre del Denunciado: </label>
-              <input type="text" name="name_Denounced" />
+              <input type="text" name="name_Denounced" required />
             </div>
             <div class="columna">
               <label for="post_Denounced">Cargo del Denunciado: </label>
-              <input type="text" name="post_Denounced" />
+              <input type="text" name="post_Denounced" required />
             </div>
             <div class="columna">
               <label for="approach">Planteamiento claro y sucinto: </label>
-              <textarea name="succint" id="" cols="30" rows="10"></textarea>
+              <textarea
+                name="succint"
+                id=""
+                cols="30"
+                rows="10"
+                required
+              ></textarea>
             </div>
 
             <div class="archivos">

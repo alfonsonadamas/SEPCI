@@ -46,6 +46,14 @@ if ($sesion) {
                             <div class="sb-nav-link-icon"></div>
                             Buzón de denuncias
                         </a>
+                        <a class="nav-link" href="complaintAcept.php">
+                            <div class="sb-nav-link-icon"></div>
+                            Denuncias Aceptadas
+                        </a>
+                        <a class="nav-link" href="complaintCancel.php">
+                            <div class="sb-nav-link-icon"></div>
+                            Denuncias Canceladas
+                        </a>
                         <div class="sb-sidenav-menu-heading">Inicio</div>
                         <a class="nav-link" href="SliderCRUD.php">
                             <div class="sb-nav-link-icon"></div>
@@ -65,7 +73,7 @@ if ($sesion) {
                             Editar Documentos
                         </a>
                         <div class="sb-sidenav-menu-heading">Cursos</div>
-                        <a class="nav-link" href="Cursos.php">
+                        <a class="nav-link" href="charts.html">
                             <div class="sb-nav-link-icon"></div>
                             Editar Cursos
                         </a>
@@ -98,7 +106,7 @@ if ($sesion) {
                                 <?php
                                     include_once '../../php/DBManager/endPointSlider.php';
                                     while ($row = $data->fetch_assoc()) {
-                                ?>
+                                        ?>
                                 <form action="../../php/DBManager/actionSlider.php?id=<?php echo $row['id_slider']; ?>"
                                     method="POST" enctype="multipart/form-data">
                                     <div class="card2">
@@ -113,8 +121,8 @@ if ($sesion) {
                                     </div>
                                 </form>
                                 <?php
-                                    }    
-                                ?>
+                                    }
+                                    ?>
                             </div>
                         </div>
                     </div>

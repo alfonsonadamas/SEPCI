@@ -4,16 +4,25 @@ include 'DBManager.php';
 
 $db = new DBManager();
 
-$fullName = $_POST['name'];
-$mail = $_POST['email'];
+if (isset($_POST['name'])) {
+    $fullName = $_POST['name'];
+} else {
+    $fullName = "";
+}
+
+if (isset($_POST['email'])) {
+    $mail = $_POST['email'];
+} else {
+    $mail = "";
+}
+
 $telPhone = $_POST['phone'];
 $denunced = $_POST['name_Denounced'];
 $post = $_POST['post_Denounced'];
 $succint = $_POST['succint'];
+$title = $_POST['post_Denounced'];
 
-$titulo = $_POST['titulo'];
-
-$id = $db->signFileInicio($titulo);
+$id = $db->insertComplaint($fullName, $mail, $telPhone, $denunced, $title, $succint);
 
 $limite_kb = 20000;
 if ($_FILES["archivo"]["type"] == "application/pdf" && $_FILES["archivo"]["size"] <= $limite_kb * 1024) {
@@ -25,14 +34,20 @@ if ($_FILES["archivo"]["type"] == "application/pdf" && $_FILES["archivo"]["size"
     if (!file_exists($rootCM)) {
         $resultado = @move_uploaded_file($_FILES["archivo"]["tmp_name"], $rootCM);
         if ($resultado) { // Si la funcion @move_uploaded_file copio exitosamente la imagen procede a guardar la ruta y los datos en la base de datos
-            $db -> insertComplaint($fullName, $mail,$telPhone,$denunced,$post,$succint, 1);
-            header('location: ../../Buzon-de-atencion.html');
+            $db->updateComplaint($id . '/' . $_FILES["archivo"]["name"], $id);
+            echo '<script type="text/javascript">
+                alert("Su denuncia ha sido enviada, se le comunicara el estado de la denuncia realizada lo mas pronto posible");
+                window.location.href="../../Buzon-de-atencion.html";
+            </script>';
         } else {
             echo "No se guardo archivo";
         }
     }
 } else {
-    echo "Archivo no permitido o pesado";
+    echo '<script type="text/javascript">
+            alert("Su denuncia ha sido enviada, se le comunicara el estado de la denuncia realizada lo mas pronto posible");
+            window.location.href="../../Buzon-de-atencion.html";
+        </script>';
 }
 
 ?>

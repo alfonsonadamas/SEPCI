@@ -46,6 +46,14 @@ if ($sesion) {
                                 <div class="sb-nav-link-icon"></div>
                                 Buzón de denuncias
                             </a>
+                            <a class="nav-link" href="complaintAcept.php">
+                                <div class="sb-nav-link-icon"></div>
+                                Denuncias Aceptadas
+                            </a>
+                            <a class="nav-link" href="complaintCancel.php">
+                                <div class="sb-nav-link-icon"></div>
+                                Denuncias Canceladas
+                            </a>
                             <div class="sb-sidenav-menu-heading">Inicio</div>
                             <a class="nav-link" href="QuienesSomos.php">
                                 <div class="sb-nav-link-icon"></div>
@@ -83,9 +91,10 @@ if ($sesion) {
                         <div class="card mb-4">
                             <div class="contenedor">
                                 <div class="conten_input">
-                                    <form method="POST" enctype="multipart/form-data" role="form" action="../../php/DBManager/actionSlider.php?id=<?php echo $_REQUEST['id'];?>">
+                                    <form method="POST" enctype="multipart/form-data" role="form"
+                                        action="../../php/DBManager/actionSlider.php?id=<?php echo $_REQUEST['id']; ?>">
                                         <div class="image">
-                                            <img src="<?php echo '../../img/Carrusel/'. $_REQUEST['root']; ?>" alt="">
+                                            <img src="<?php echo '../../img/Carrusel/' . $_REQUEST['root']; ?>" alt="">
                                         </div>
                                         <div class="archivos">
                                             <h4 class="text">Imagen: </h4>
@@ -94,11 +103,13 @@ if ($sesion) {
                                                     Arrastra y suelta un archivo aquí o haz clic para seleccionar
                                                     uno.
                                                 </p>
-                                                <input type="file" id="archivo" name="archivo" accept="image/png, image/jpg, image/jpeg" required>
+                                                <input type="file" id="archivo" name="archivo"
+                                                    accept="image/png, image/jpg, image/jpeg" required>
                                             </div>
                                         </div>
                                         <div class="columna">
-                                            <button type="submit" class="btn_send"  name="Editar" value="Editar">Editar</button>
+                                            <button type="submit" class="btn_send" name="Editar"
+                                                value="Editar">Editar</button>
                                         </div>
                                     </form>
                                 </div>

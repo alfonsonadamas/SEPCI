@@ -46,6 +46,14 @@ if ($sesion) {
                                 <div class="sb-nav-link-icon"></div>
                                 Buzón de denuncias
                             </a>
+                            <a class="nav-link" href="complaintAcept.php">
+                                <div class="sb-nav-link-icon"></div>
+                                Denuncias Aceptadas
+                            </a>
+                            <a class="nav-link" href="complaintCancel.php">
+                                <div class="sb-nav-link-icon"></div>
+                                Denuncias Canceladas
+                            </a>
                             <div class="sb-sidenav-menu-heading">Inicio</div>
                             <a class="nav-link" href="SliderCRUD.php">
                                 <div class="sb-nav-link-icon"></div>
@@ -87,28 +95,33 @@ if ($sesion) {
                         <div class="card mb-4">
                             <div class="container">
                                 <?php
-                                    include_once '../../php/DBManager/endPointDocuments.php';
-                                    while ($row = $data->fetch_assoc()) {
-                                ?>
-                                <div class="card">
-                                    <a class="archivo" target="_blank" href="<?php echo '../../pdf/Inicio/'.$row['root']; ?>">
-                                        <img src="../../img/pdf.png" width="48px" height="48px">
-                                    </a>
-                                    <!--<img src="../../img/pdf.png" width="48px" height="48px"> -->
-                                    <div class="contenido">
-                                        <h3><?php echo $row['name']; ?></h3>
-                                        <div class="botones">
-                                            <div class="button-container">
-                                                <a href='DocumentosIndex.php?id=<?php echo $row['id_file']; ?>&titulo=<?php echo $row['name']; ?>'>Editar</a>
-                                            </div>
-                                            <div class="button-container">
-                                                <a href='../../php/DBManager/actionDocuments.php?id=<?php echo $row['id_file']; ?>&Eliminar=1'>Eliminar</a>
+                                include_once '../../php/DBManager/endPointDocuments.php';
+                                while ($row = $data->fetch_assoc()) {
+                                    ?>
+                                    <div class="card">
+                                        <a class="archivo" target="_blank"
+                                            href="<?php echo '../../pdf/Inicio/' . $row['root']; ?>">
+                                            <img src="../../img/pdf.png" width="48px" height="48px">
+                                        </a>
+                                        <!--<img src="../../img/pdf.png" width="48px" height="48px"> -->
+                                        <div class="contenido">
+                                            <h3>
+                                                <?php echo $row['name']; ?>
+                                            </h3>
+                                            <div class="botones">
+                                                <div class="button-container">
+                                                    <a
+                                                        href='DocumentosIndex.php?id=<?php echo $row['id_file']; ?>&titulo=<?php echo $row['name']; ?>'>Editar</a>
+                                                </div>
+                                                <div class="button-container">
+                                                    <a
+                                                        href='../../php/DBManager/actionDocuments.php?id=<?php echo $row['id_file']; ?>&Eliminar=1'>Eliminar</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <?php
-                                    }
+                                    <?php
+                                }
                                 ?>
                                 <div class="card2"> <!--Mandar al form de añadir-->
                                     <a href="AñadirDocumento.php">

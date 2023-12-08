@@ -41,7 +41,7 @@
             <div class="contenedor_menu">
                 <nav>
                     <a class="active" href="index.php">Inicio</a>
-                    <a href="Capacitate.php">Capacitate</a>
+                    <a href="Capacitate.html">Capacitate</a>
                     <a href="Documentos.html">Documentos</a>
                     <a href="Buzon-de-atencion.html">Buzón de Atención</a>
                     <a href="Contacto.html">Contacto</a>
@@ -61,15 +61,15 @@
         </div>
         <div class="carousel-inner">
             <?php
-      include_once 'php/DBManager/endPointSlider.php';
-      while ($row = $data->fetch_assoc()) {
-        ?>
+            include_once 'php/DBManager/endPointSlider.php';
+            while ($row = $data->fetch_assoc()) {
+                ?>
             <div class="carousel-item active">
                 <img src="<?php echo 'img/Carrusel/' . $row['root_sliderImage']; ?>" class="d-block w-100" alt="..." />
             </div>
             <?php
-      }
-      ?>
+            }
+            ?>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
             data-bs-slide="prev">
@@ -92,10 +92,10 @@
             <div class="sub"></div>
             <div class="qsomos_info">
                 <?php
-        include_once 'php/DBManager/endPointAboutUs.php';
-        $row = $data->fetch_row();
-        echo $row[1];
-        ?>
+                include_once 'php/DBManager/endPointAboutUs.php';
+                $row = $data->fetch_row();
+                echo $row[1];
+                ?>
             </div>
             <div class="qsomos_boton">
                 <a href="<?php echo 'pdf/About Us/' . $row[2]; ?>" target="_blank">Ver Mas</a>
@@ -112,41 +112,43 @@
         <div class="miembrosImpr">
             <div class="container1">
                 <?php
-        include_once 'php/DBManager/endPointMembersFrom.php';
-        while ($row = $data->fetch_assoc()) {
-          $color = '';
+                include_once 'php/DBManager/endPointMembersFrom.php';
+                while ($row = $data->fetch_assoc()) {
+                    $color = '';
 
-          switch ($row['rol']) {
-            case 'Presidencia':
-              $color = '#1b396a'; // Color para 'Precidencia'
-              break;
-            case 'Presidencia (Suplente)':
-              $color = '#1b396a'; // Color para 'Precidencia'
-              break;
-            case 'Persona Asesora':
-              $color = '#be9650'; // Color para 'Persona Asesora'
-              break;
-            case 'Persona Consejera':
-              $color = '#be9650'; // Color para 'Persona Consejera'
-              break;
-            default:
-              $color = '#741731'; // Color predeterminado para miembros
-          }
-          ?>
+                    switch ($row['rol']) {
+                        case 'Presidencia':
+                            $color = '#1b396a'; // Color para 'Precidencia'
+                            break;
+                        case 'Presidencia (Suplente)':
+                            $color = '#1b396a'; // Color para 'Precidencia'
+                            break;
+                        case 'Persona Asesora':
+                            $color = '#be9650'; // Color para 'Persona Asesora'
+                            break;
+                        case 'Persona Consejera':
+                            $color = '#be9650'; // Color para 'Persona Consejera'
+                            break;
+                        default:
+                            $color = '#741731'; // Color predeterminado para miembros
+                    }
+                    ?>
                 <a href="#" data-bs-toggle="modal" data-bs-target="#myModal"
                     data-nombre="<?php echo $row['names'] . ' ' . $row['middle_name'] . ' ' . $row['last_name']; ?>"
-                    data-cargo="<?php echo $row['rol']; ?>" data-correo="<?php echo $row['mail']; ?>">
+                    data-cargo="<?php echo $row['rol']; ?>" data-correo="<?php echo $row['mail']; ?>"
+                    data-imagen="<?php echo "img/Integrantes" . "/" . $row["root_image"]; ?> ">
 
                     <div class="carta" style="background-color: <?php echo $color; ?>;">
-                        <img src="img/usu.png" alt="">
+                        <br>
+                        <img src="<?php echo "img/Integrantes" . "/" . $row["root_image"]; ?>" alt="">
                         <br>
                         <div class="Nombres">
                             <h3>
                                 <?php echo $row['names'];
-                  echo ' ';
-                  echo $row['middle_name'];
-                  echo ' ';
-                  echo $row['last_name']; ?>
+                                    echo ' ';
+                                    echo $row['middle_name'];
+                                    echo ' ';
+                                    echo $row['last_name']; ?>
                             </h3>
                         </div>
                         <div class="Nombres2">
@@ -158,8 +160,8 @@
                 </a>
 
                 <?php
-        }
-        ?>
+                }
+                ?>
             </div>
         </div>
     </main>
@@ -168,21 +170,22 @@
         <h2>DOCUMENTOS DEL SEPCI</h2>
     </div>
 
-
-    <div class="contenedor-pdfs">
+    <div class="contenedor_pdftodo d-flex ">
         <?php
-    include_once 'php/DBManager/endPointDocuments.php';
-    while ($row = $data->fetch_assoc()) {
-      ?>
-        <a href="<?php echo 'pdf/Inicio/' . $row['root']; ?>" class="pdf" target="_blank">
-            <img src="img/pdf.png" alt="PDF 1">
-            <h3>
-                <?php echo $row['name']; ?>
-            </h3>
-        </a>
+        include_once 'php/DBManager/endPointDocuments.php';
+        while ($row = $data->fetch_assoc()) {
+            ?>
+        <div class="contenedor-pdfs">
+            <a href="<?php echo 'pdf/Inicio/' . $row['root']; ?>" class="pdf" target="_blank">
+                <img src="img/pdf.png" alt="PDF 1">
+                <h3>
+                    <?php echo $row['name']; ?>
+                </h3>
+            </a>
+        </div>
         <?php
-    }
-    ?>
+        }
+        ?>
     </div>
 
     <footer class="footer">
@@ -203,7 +206,7 @@
                 <p>
                     <strong>Enlaces</strong><br />
                     <a href="inex.php">Inicio</a><br />
-                    <a href="Capacitate.php">Capacitate</a><br />
+                    <a href="Capacitate.html">Capacitate</a><br />
                     <a href="Documentos.html">Documentos</a><br />
                     <a href="Buzon-de-atencion.html">Buzon de atencion</a><br />
                     <a href="Contacto.html">Contacto</a>
@@ -235,9 +238,10 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-2">
-                        <img class="imagen-recuadrov" src="img/usu.png" alt="Director">
+                        <img class="imagen-recuadrov" src="img/Omar Aguilar Garcia.jpg" alt="Director">
                     </div>
                 </div>
+                <br>
                 <form>
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre:</label>
@@ -252,8 +256,10 @@
                         <p id="correo"></p>
                     </div>
                     <div class="mb-3">
-                        <label for="funcion" class="form-label">Función:</label>
-                        <p id="funcion">Aqui van las funciones de cada uno de los miembros</p>
+                        <label for="funcion" class="form-label">Funcion que Ejerce:</label>
+                        <div class="button_funcion">
+                            <a href="#" id="redireccionarBtn" target="_blank">Función</a>
+                        </div>
                     </div>
                 </form>
             </div>

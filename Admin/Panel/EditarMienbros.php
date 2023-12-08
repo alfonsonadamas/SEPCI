@@ -47,6 +47,14 @@ if ($sesion) {
                             <div class="sb-nav-link-icon"></div>
                             Buzón de denuncias
                         </a>
+                        <a class="nav-link" href="complaintAcept.php">
+                            <div class="sb-nav-link-icon"></div>
+                            Denuncias Aceptadas
+                        </a>
+                        <a class="nav-link" href="complaintCancel.php">
+                            <div class="sb-nav-link-icon"></div>
+                            Denuncias Canceladas
+                        </a>
                         <div class="sb-sidenav-menu-heading">Inicio</div>
                         <a class="nav-link" href="SliderCRUD.php">
                             <div class="sb-nav-link-icon"></div>
@@ -120,8 +128,17 @@ if ($sesion) {
                                                 value="<?php echo $row[4]; ?>" />
                                         </div>
                                         <div class="columna">
-                                            <label for="post_Denounced">Imagen: </label>
-                                            <input type="text" name="image" value="<?php echo $row[5]; ?>"></input>
+                                            <label for="imagen">Imagen: </label>
+                                            <div class="archivos">
+                                                <div id="dropzone">
+                                                    <p>
+                                                        Arrastra y suelta un archivo aquí o haz clic para seleccionar
+                                                        uno.
+                                                    </p>
+                                                    <input type="file" id="archivo" name="imagen"
+                                                        accept="image/png, image/jpg, image/jpeg" />
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="columna">
                                             <button type="submit" class="btn_send">Enviar</button>

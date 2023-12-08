@@ -73,14 +73,14 @@ class DBManager
         }
     }
 
-    public function insertComplaint($fullName, $mail, $telNumber, $fullNameA, $positionA, $succint, $status)
+    public function insertComplaint($fullName, $mail, $telNumber, $fullNameA, $positionA, $succint)
     {
         $link = $this->open();
 
-        $query = "INSERT INTO complaints (full_name, mail, tel_number, full_nameA, positionA, succint, status) VALUES (?,?,?,?,?,?,?,?)";
+        $query = "INSERT INTO complaints (full_name, mail, tel_number, full_nameA, positionA, succint, date, status) VALUES (?,?,?,?,?,?,curdate(),0)";
 
         $sql = mysqli_prepare($link, $query) or die("Error adding complain");
-        $sql->bind_param("ssssssss", $fullName, $mail, $telNumber, $fullNameA, $positionA, $succint, $evidence);
+        $sql->bind_param("ssssss", $fullName, $mail, $telNumber, $fullNameA, $positionA, $succint);
         $sql->execute();
 
         $id = mysqli_insert_id($link);
@@ -265,6 +265,42 @@ class DBManager
         $row = $result->fetch_row();
         return $row[0];
     }
+
+    public function showComplaints()
+    {
+        $link = $this->open();
+
+        $query = "SELECT full_name, mail, tel_number, full_nameA, positionA, succint, evidence, date, id_complaint  FROM complaints WHERE status=0";
+        $result = $link->query($query);
+
+        $this->close($link);
+
+        return $result;
+    }
+
+    public function showComplaintsAcept()
+    {
+        $link = $this->open();
+
+        $query = "SELECT full_name, mail, tel_number, full_nameA, positionA, succint, evidence, date, id_complaint  FROM complaints WHERE status=1";
+        $result = $link->query($query);
+
+        $this->close($link);
+
+        return $result;
+    }
+
+    public function showComplaintsCancel()
+    {
+        $link = $this->open();
+
+        $query = "SELECT full_name, mail, tel_number, full_nameA, positionA, succint, evidence, date, id_complaint  FROM complaints WHERE status=2";
+        $result = $link->query($query);
+
+        $this->close($link);
+
+        return $result;
+    }
     //////////////////////    --------> UPDATE querys <--------  //////////////////////
     public function updateAboutUs($id, $info, $root)
     {
@@ -278,6 +314,45 @@ class DBManager
 
         $this->close($link);
     }
+
+    public function updateComplaint($rootEvidence, $id_complaint)
+    {
+        $link = $this->open();
+
+        $sql = "UPDATE complaints SET evidence=? WHERE id_complaint=?";
+
+        $query = mysqli_prepare($link, $sql) or die("Error at update info complaint");
+        $query->bind_param("ss", $rootEvidence, $id_complaint);
+        $query->execute();
+
+        $this->close($link);
+    }
+
+    public function updateCompliintAcept($id_complaint)
+    {
+        $link = $this->open();
+
+        $sql = "UPDATE complaints SET status=1 WHERE id_complaint=?";
+
+        $query = mysqli_prepare($link, $sql) or die("Error at update info complaint");
+        $query->bind_param("s", $id_complaint);
+        $query->execute();
+
+        $this->close($link);
+    }
+
+    public function updateCompliintCancel($id_complaint)
+    {
+        $link = $this->open();
+
+        $sql = "UPDATE complaints SET status=2 WHERE id_complaint=?";
+
+        $query = mysqli_prepare($link, $sql) or die("Error at update info complaint");
+        $query->bind_param("s", $id_complaint);
+        $query->execute();
+
+        $this->close($link);
+    }
     // Editar miembros desde el Administrador
     public function updateEditMembers($id, $name, $middle_name, $last_name, $mail)
     {
@@ -287,6 +362,19 @@ class DBManager
 
         $query = mysqli_prepare($link, $sql) or die("Error at update info about us");
         $query->bind_param("sssss", $name, $middle_name, $last_name, $mail, $id);
+        $query->execute();
+
+        $this->close($link);
+    }
+
+    public function updateEditMembersImage($id, $name, $middle_name, $last_name, $mail, $root_image)
+    {
+        $link = $this->open();
+
+        $sql = "UPDATE members SET names=?, middle_name=?, last_name=?, mail=?, root_image=? WHERE id_members=?";
+
+        $query = mysqli_prepare($link, $sql) or die("Error at update member");
+        $query->bind_param("ssssss", $name, $middle_name, $last_name, $mail, $root_image, $id);
         $query->execute();
 
         $this->close($link);

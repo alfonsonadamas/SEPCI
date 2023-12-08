@@ -46,6 +46,14 @@ if ($sesion) {
                             <div class="sb-nav-link-icon"></div>
                             Buzón de denuncias
                         </a>
+                        <a class="nav-link" href="complaintAcept.php">
+                            <div class="sb-nav-link-icon"></div>
+                            Denuncias Aceptadas
+                        </a>
+                        <a class="nav-link" href="complaintCancel.php">
+                            <div class="sb-nav-link-icon"></div>
+                            Denuncias Canceladas
+                        </a>
                         <div class="sb-sidenav-menu-heading">Inicio</div>
                         <a class="nav-link" href="SliderCRUD.php">
                             <div class="sb-nav-link-icon"></div>
@@ -96,7 +104,7 @@ if ($sesion) {
                                             $row = $data->fetch_row(); ?>
                                         <textarea name="descripcion" class="form-control" aria-label="With textarea"
                                             placeholder="" required style="height: 450px;"><?php echo $row[1]; ?>
-                                                </textarea>
+                                                        </textarea>
                                     </div>
                                     <div class="qsomos_s1">
                                         <div class="qsomos_boton">

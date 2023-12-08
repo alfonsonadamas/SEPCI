@@ -25,6 +25,9 @@
   align-items: center;
   width: 100%;
 }
+.curso {
+  margin-bottom: 90px;
+}
 .cursos h1 {
   color: #741731;
   font-family: "Roboto", sans-serif;
