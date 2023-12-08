@@ -99,7 +99,7 @@ if ($sesion) {
                                 while ($row = $data->fetch_assoc()) {
                                     ?>
                                     <div class="card">
-                                        <img src="usu.png" alt="">
+                                        <img src="../../img/Integrantes/<?php echo $row['root_image'] ?>" alt="">
                                         <div class="contenido">
                                             <h3>
                                                 <?php echo $row['rol'] ?>

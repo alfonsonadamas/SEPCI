@@ -107,26 +107,28 @@ if ($sesion) {
                                         <div class="conten_input">
                                             <div class="columna">
                                                 <label for="name">Nombre: </label>
-                                                <input type="text" name="name" id="celdaTexto"
+                                                <input type="text" class="input" name="name" id="celdaTexto"
                                                     value="<?php echo $row[0]; ?>" />
                                             </div>
                                             <div class="columna">
                                                 <label for="phone">Apellido Paterno: </label>
-                                                <input type="text" name="middle" value="<?php echo $row[1]; ?>" />
+                                                <input type="text" class="input" name="middle"
+                                                    value="<?php echo $row[1]; ?>" />
                                             </div>
                                             <div class="columna">
                                                 <label for="name_Denounced">Apellido Materno: </label>
-                                                <input type="text" name="last" value="<?php echo $row[2]; ?>" />
+                                                <input type="text" class="input" name="last"
+                                                    value="<?php echo $row[2]; ?>" />
                                             </div>
                                             <div class="columna">
                                                 <label for="email">Correo Electronico: </label>
-                                                <input type="text" name="mail" id="celdaTexto2"
+                                                <input type="text" class="input" name="mail" id="celdaTexto2"
                                                     value="<?php echo $row[3]; ?>" />
                                             </div>
                                             <div class="columna">
                                                 <label for="email">Rol: </label>
-                                                <input type="text" name="rol" disabled="disabled" id="celdaTexto2"
-                                                    value="<?php echo $row[4]; ?>" />
+                                                <input type="text" class="input" name="rol" disabled="disabled"
+                                                    id="celdaTexto2" value="<?php echo $row[4]; ?>" />
                                             </div>
                                             <div class="columna">
                                                 <label for="imagen">Imagen: </label>
