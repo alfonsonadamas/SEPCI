@@ -95,6 +95,7 @@ if ($sesion) {
                         <div class="card mb-4">
                             <section class="seccion">
                                 <?php
+                                //conexion
                                 include_once '../../php/DBManager/endPointEachMembers.php';
                                 $obj = new member();
                                 $data = $obj->showMember($_REQUEST['id']);
