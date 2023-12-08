@@ -42,14 +42,23 @@ if ($sesion) {
                 <div class="sb-sidenav-menu">
                     <div class="nav">
                         <div class="sb-sidenav-menu-heading">Denuncias</div>
+
                         <a class="nav-link" href="index.php">
                             <div class="sb-nav-link-icon"></div>
                             Buzón de denuncias
                         </a>
-                        <div class="sb-sidenav-menu-heading">Inicio</div>
-                        <a class="nav-link" href="Carrusel.php">
+                        <a class="nav-link" href="complaintAcept.php">
                             <div class="sb-nav-link-icon"></div>
-                            Editar Carrusel
+                            Denuncias Aceptadas
+                        </a>
+                        <a class="nav-link" href="complaintCancel.php">
+                            <div class="sb-nav-link-icon"></div>
+                            Denuncias Canceladas
+                        </a>
+                        <div class="sb-sidenav-menu-heading">Inicio</div>
+                        <a class="nav-link" href="SliderCRUD.php">
+                            <div class="sb-nav-link-icon"></div>
+                            Carrusel
                         </a>
                         <a class="nav-link" href="QuienesSomos.php">
                             <div class="sb-nav-link-icon"></div>
@@ -59,8 +68,7 @@ if ($sesion) {
                             <div class="sb-nav-link-icon"></div>
                             Editar Miembros
                         </a>
-                        <a class="nav-link collapsed" href="EditarDocumentos.php" data-bs-toggle="collapse"
-                            data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                        <a class="nav-link" href="EditarDocumentos.php">
                             <div class="sb-nav-link-icon"></div>
                             Editar Documentos
                         </a>
@@ -91,9 +99,7 @@ if ($sesion) {
                     </ol>
                     <div class="card mb-4">
                         <h3>Prevención de actuación bajo conflictos de interés</h3>
-                        <div>
-                            <a class="btn btn-success me-3" href="">Editar Caratula</a>
-                        </div>
+
                         <div class="d-flex flex-nowrap m-4 ">
 
                             <?php 
@@ -144,9 +150,7 @@ if ($sesion) {
 
                         </div>
                         <h3>Mecanismo de denuncias</h3>
-                        <div>
-                            <a class="btn btn-success me-3" href="">Editar Caratula</a>
-                        </div>
+
                         <h4>Acoso y Hostigamiento Sexual</h4>
                         <div class="d-flex flex-nowrap m-4 ">
 
@@ -237,9 +241,7 @@ if ($sesion) {
 
                         </div>
                         <h3>Valor o principio del mes</h3>
-                        <div>
-                            <a class="btn btn-success me-3" href="">Editar Caratula</a>
-                        </div>
+
                         <div class="d-flex flex-nowrap m-4 ">
                             <?php 
                                     include_once '../../php/DBManager/selectDocumentsSectionThree.php';
@@ -283,9 +285,7 @@ if ($sesion) {
 
                         </div>
                         <h3>Etica Pública</h3>
-                        <div>
-                            <a class="btn btn-success me-3" href="">Editar Caratula</a>
-                        </div>
+
                         <h4>Codigo de Etica de la Administración Pública Federal</h4>
                         <div class="d-flex flex-nowrap m-4 ">
                             <?php 
@@ -436,9 +436,7 @@ if ($sesion) {
 
                         </div>
                         <h3>Declaración Patrimonial</h3>
-                        <div>
-                            <a class="btn btn-success me-3" href="">Editar Caratula</a>
-                        </div>
+
                         <div class="d-flex flex-nowrap m-4 ">
                             <?php 
                                     include_once '../../php/DBManager/selectDocumentsSectionFive.php';
@@ -488,12 +486,60 @@ if ($sesion) {
 
                         </div>
                         <h3>Codigo de conducta</h3>
-                        <div>
-                            <a class="btn btn-success me-3" href="">Editar Caratula</a>
-                        </div>
+
                         <div class="d-flex flex-nowrap m-4 ">
                             <?php 
                                     include_once '../../php/DBManager/selectDocumentsSectionSix.php';
+                                    while ($row = $data->fetch_assoc()) {
+                                ?>
+                            <div class="d-flex flex-column align-items-center m-4">
+
+                                <?php 
+                                        
+                                            if($row['root'] != null){
+
+                                            
+                                        ?>
+                                <a href="../../pdf/Documents/<?php echo $row['root'] ?>" target="_blank"><img
+                                        src="../../img/pdf.png" alt="" width="100"></a>
+                                <p class="col-sm"><?php echo $row['name'] ?></p>
+                                <div>
+                                    <a href="editDocumentos.php?idDocument=<?php echo $row['id_document']; ?>"
+                                        class="btn btn-warning me-3">Editar</a>
+                                    <a href="../../php/DBManager/endPoitnDocDel.php?id_doc=<?php echo $row['id_document']; ?>"
+                                        class="btn btn-danger ">Eliminar</a>
+                                </div>
+                                <?php 
+                                            }else{
+                                               ?>
+                                <iframe width="450" height="250"
+                                    src="https://www.youtube.com/embed/<?php echo $row['video'] ?>"
+                                    title="<?php echo $row['name'] ?>" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen></iframe>
+                                <div>
+                                    <a href="editDocumentos.php?idDocument=<?php echo $row['id_document']; ?>"
+                                        class="btn btn-warning me-3">Editar</a>
+                                    <a href="../../php/DBManager/endPoitnDocDel.php?id_doc=<?php echo $row['id_document']; ?>"
+                                        class="btn btn-danger ">Eliminar</a>
+                                </div>
+                                <?php
+                                            }
+                                               ?>
+
+
+                            </div>
+                            <?php
+                                    }
+                                ?>
+
+
+                        </div>
+
+                        <h3>Otros Documentos</h3>
+                        <div class="d-flex flex-nowrap m-4 ">
+                            <?php 
+                                    include_once '../../php/DBManager/selectDocumentsSectionSeven.php';
                                     while ($row = $data->fetch_assoc()) {
                                 ?>
                             <div class="d-flex flex-column align-items-center m-4">

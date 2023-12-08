@@ -4,7 +4,7 @@ class DBManager
 
     private function open()
     {
-        $link = mysqli_connect("127.0.0.1", "root", null, "sepci_copia") or die('Error connecting to Data Base');
+        $link = mysqli_connect("127.0.0.1", "root", null, "sepci") or die('Error connecting to Data Base');
         return $link;
     }
 
@@ -541,6 +541,15 @@ class DBManager
         public function selectDocumentsSectionSix(){
             $link = $this->open();
             $sql = "SELECT * FROM documents WHERE section = '6'";
+            $query = mysqli_prepare($link, $sql) or die("Error");
+            $query -> execute();
+            $result = mysqli_stmt_get_result($query);
+            return $result;
+        }
+
+        public function selectDocumentsSectionSeven(){
+            $link = $this->open();
+            $sql = "SELECT * FROM documents WHERE section = '7'";
             $query = mysqli_prepare($link, $sql) or die("Error");
             $query -> execute();
             $result = mysqli_stmt_get_result($query);

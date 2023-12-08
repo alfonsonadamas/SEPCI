@@ -41,6 +41,7 @@ if ($sesion) {
                 <div class="sb-sidenav-menu">
                     <div class="nav">
                         <div class="sb-sidenav-menu-heading">Denuncias</div>
+
                         <a class="nav-link" href="index.php">
                             <div class="sb-nav-link-icon"></div>
                             Buzón de denuncias
@@ -70,11 +71,15 @@ if ($sesion) {
                             <div class="sb-nav-link-icon"></div>
                             Editar Documentos
                         </a>
-
                         <div class="sb-sidenav-menu-heading">Cursos</div>
                         <a class="nav-link" href="Cursos.php">
                             <div class="sb-nav-link-icon"></div>
                             Editar Cursos
+                        </a>
+                        <div class="sb-sidenav-menu-heading">Documentos</div>
+                        <a class="nav-link" href="Documentos.php">
+                            <div class="sb-nav-link-icon"></div>
+                            Editar Documentos
                         </a>
                     </div>
                 </div>

@@ -6,6 +6,7 @@
     <link rel="icon" href="img/logo-SEPCI.png" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Capacitate</title>
 
 
@@ -31,8 +32,8 @@
             <div class="contenedor_menu">
                 <nav>
                     <a href="index.php">Inicio</a>
-                    <a class="active" href="Capacitate.html">Capacitate</a>
-                    <a href="Documentos.html">Documentos</a>
+                    <a class="active" href="Capacitate.php">Capacitate</a>
+                    <a href="Documentos.php">Documentos</a>
                     <a href="Buzon-de-atencion.html">Buzón de Atención</a>
                     <a href="Contacto.html">Contacto</a>
                 </nav>
@@ -98,11 +99,11 @@
             <div class="text">
                 <p>
                     <strong>Enlaces</strong><br />
-                    <a href="Inicio.html">Inicio</a><br />
-                    <a href="Capacitate.html">Capacitate</a><br />
-                    <a href="Documentos.html">Documentos</a><br />
-                    <a href="Buzon-de-atencion.html">Buzon de atencion</a><br />
-                    <a href="Contacto.html">Contacto</a>
+                    <a href="index.php">Inicio</a><br />
+                    <a href="Capacitate.php">Capacitate</a><br />
+                    <a href="Documentos.php">Documentos</a><br />
+                    <a href="Buzon-de-atencion.html">Buzón de Atención</a><br />
+                    <a href="Contacto.html">Contacto</a><br />
                 </p>
             </div>
             <div class="contenedor__contac">

@@ -42,14 +42,23 @@ if ($sesion) {
                 <div class="sb-sidenav-menu">
                     <div class="nav">
                         <div class="sb-sidenav-menu-heading">Denuncias</div>
+
                         <a class="nav-link" href="index.php">
                             <div class="sb-nav-link-icon"></div>
                             Buzón de denuncias
                         </a>
-                        <div class="sb-sidenav-menu-heading">Inicio</div>
-                        <a class="nav-link" href="Carrusel.php">
+                        <a class="nav-link" href="complaintAcept.php">
                             <div class="sb-nav-link-icon"></div>
-                            Editar Carrusel
+                            Denuncias Aceptadas
+                        </a>
+                        <a class="nav-link" href="complaintCancel.php">
+                            <div class="sb-nav-link-icon"></div>
+                            Denuncias Canceladas
+                        </a>
+                        <div class="sb-sidenav-menu-heading">Inicio</div>
+                        <a class="nav-link" href="SliderCRUD.php">
+                            <div class="sb-nav-link-icon"></div>
+                            Carrusel
                         </a>
                         <a class="nav-link" href="QuienesSomos.php">
                             <div class="sb-nav-link-icon"></div>
@@ -59,8 +68,7 @@ if ($sesion) {
                             <div class="sb-nav-link-icon"></div>
                             Editar Miembros
                         </a>
-                        <a class="nav-link collapsed" href="EditarDocumentos.php" data-bs-toggle="collapse"
-                            data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                        <a class="nav-link" href="EditarDocumentos.php">
                             <div class="sb-nav-link-icon"></div>
                             Editar Documentos
                         </a>

@@ -41,8 +41,8 @@
             <div class="contenedor_menu">
                 <nav>
                     <a class="active" href="index.php">Inicio</a>
-                    <a href="Capacitate.html">Capacitate</a>
-                    <a href="Documentos.html">Documentos</a>
+                    <a href="Capacitate.php">Capacitate</a>
+                    <a href="Documentos.php">Documentos</a>
                     <a href="Buzon-de-atencion.html">Buzón de Atención</a>
                     <a href="Contacto.html">Contacto</a>
                 </nav>
@@ -205,11 +205,11 @@
             <div class="text">
                 <p>
                     <strong>Enlaces</strong><br />
-                    <a href="inex.php">Inicio</a><br />
-                    <a href="Capacitate.html">Capacitate</a><br />
-                    <a href="Documentos.html">Documentos</a><br />
-                    <a href="Buzon-de-atencion.html">Buzon de atencion</a><br />
-                    <a href="Contacto.html">Contacto</a>
+                    <a href="index.php">Inicio</a><br />
+                    <a href="Capacitate.php">Capacitate</a><br />
+                    <a href="Documentos.php">Documentos</a><br />
+                    <a href="Buzon-de-atencion.html">Buzón de Atención</a><br />
+                    <a href="Contacto.html">Contacto</a><br />
                 </p>
             </div>
             <div class="contenedor__contac">
