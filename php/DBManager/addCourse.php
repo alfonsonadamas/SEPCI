@@ -13,6 +13,7 @@ if (isset($_FILES['archivo']) && !empty($_FILES['archivo']['tmp_name'])) {
     if (is_uploaded_file($_FILES['archivo']['tmp_name']) && $_FILES['archivo']["error"] === 0) {
         $limite_kb = 20000;
         $ruta = '../../pdf/Courses/1'.'/'.$_FILES['archivo']['name'];
+        $rutaArch = '../../pdf/Courses/1'.'/'.$_FILES['contenido_file']['name'];
          
         if ($_FILES["archivo"]["type"]=="image/x-icon" && $_FILES["archivo"]["size"] <= $limite_kb * 1024) { //se verifica que el archivo ingresado sea el permitido y que no exceda el limite de peso
              
@@ -22,7 +23,7 @@ if (isset($_FILES['archivo']) && !empty($_FILES['archivo']['tmp_name'])) {
                 $resultado = @move_uploaded_file($_FILES["archivo"]["tmp_name"], $ruta);
                 if ($resultado) { // Si la funcion @move_uploaded_file copio exitosamente el archivo procede a guardar la ruta y los datos en la base de datos
                     if (isset($_FILES['contenido_file']) && !empty($_FILES['contenido_file']['tmp_name'])) {
-                        @move_uploaded_file($_FILES["contenido_file"]["tmp_name"], $ruta);
+                        @move_uploaded_file($_FILES["contenido_file"]["tmp_name"], $rutaArch);
                         $db->addCourse( $titulo, $info, '1'.'/'.$_FILES['archivo']['name'],'document', '1'.'/'.$_FILES['contenido_file']['name']);
                         header('location: ../../Admin/Panel/Cursos.php');
                     }else{
@@ -36,7 +37,7 @@ if (isset($_FILES['archivo']) && !empty($_FILES['archivo']['tmp_name'])) {
                 $resultado = @move_uploaded_file($_FILES["archivo"]["tmp_name"], '../../pdf/Courses/1'.'/'.$numero_aleatorio.$_FILES['archivo']['name']);
                 if ($resultado) { // Si la funcion @move_uploaded_file copio exitosamente el archivo procede a guardar la ruta y los datos en la base de datos
                     if (isset($_FILES['contenido_file']) && !empty($_FILES['contenido_file']['tmp_name'])) {
-                        @move_uploaded_file($_FILES["contenido_file"]["tmp_name"], $ruta);
+                        @move_uploaded_file($_FILES["contenido_file"]["tmp_name"], $rutaArch);
                         $db->addCourse( $titulo, $info, '1'.'/'.$numero_aleatorio.$_FILES['archivo']['name'], 'document', '1'.'/'.$_FILES['contenido_file']['name']);
                         header('location: ../../Admin/Panel/Cursos.php');
                     }else{

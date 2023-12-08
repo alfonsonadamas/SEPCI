@@ -133,6 +133,46 @@ class DBManager
         return $result;
     }
 
+    public function showCourse($id)
+    {
+        $link = $this->open();
+
+        $query = "SELECT * FROM courses WHERE id_course = $id";
+        $result = $link->query($query);
+
+        $this->close($link);
+
+        return $result;
+    }
+
+
+
+    public function showCouseIcon($id)
+    {
+        $link = $this -> open();
+
+            $query="SELECT root_course FROM courses WHERE id_course = $id";
+            $result = $link -> query($query);
+
+            $this -> close($link);
+
+            $row = $result->fetch_row();
+            return $row[0];
+    }
+
+    public function showCourseFile($id)
+    {
+        $link = $this -> open();
+
+            $query="SELECT contenido FROM courses WHERE id_course = $id";
+            $result = $link -> query($query);
+
+            $this -> close($link);
+
+            $row = $result->fetch_row();
+            return $row[0];
+    }
+
     public function showAboutUs()
     {
         $link = $this->open();
@@ -300,11 +340,186 @@ class DBManager
         $query->bind_param("ss", $root, $id_img);
         $query->execute();
 
-        $this->close($link);
-    }
-    //////////////////////    --------> DELETE querys <--------  //////////////////////
+            $this->close($link);
+        }
 
-    public function deleteFileInicio($id_file)
+    public function updateCourse($id, $nombre, $desc, $root, $tipo, $contenido){
+        $link = $this->open();
+        $sql = "UPDATE courses SET course_name=?, course_descrip=?, root_course=?, tipo=?, contenido=? WHERE id_course=?";
+        $query = mysqli_prepare($link, $sql) or die("Error at login");
+        $query -> bind_param("ssssss", $nombre, $desc, $root, $tipo, $contenido, $id);
+        $query -> execute();
+
+        $this->close($link);
+
+    }
+
+    public function updateCourseInfo($id, $nombre, $desc){
+        $link = $this->open();
+        $sql = "UPDATE courses SET course_name=?, course_descrip=? WHERE id_course=?";
+        $query = mysqli_prepare($link, $sql) or die("Error at login");
+        $query -> bind_param("sss", $nombre, $desc, $id);
+        $query -> execute();
+
+        $this->close($link);
+
+    }
+        //////////////////////    --------> DELETE querys <--------  //////////////////////
+
+
+        public function deleteCourse($id){
+            $link = $this->open();
+            $id = $_REQUEST['id_curso'];
+            $sql = "DELETE FROM courses WHERE id_course = $id";
+            $query = mysqli_prepare($link, $sql) or die("Error at login");
+            $query -> execute();
+
+            $this->close($link);
+        }
+
+
+        public function selectDocumentsSectionOne(){
+            $link = $this->open();
+            $sql = "SELECT * FROM documents WHERE section = '1'";
+            $query = mysqli_prepare($link, $sql) or die("Error");
+            $query -> execute();
+            $result = mysqli_stmt_get_result($query);
+            return $result;
+        }
+
+        public function selectDocumentsSectionTwoA(){
+            $link = $this->open();
+            $sql = "SELECT * FROM documents WHERE section = '2A'";
+            $query = mysqli_prepare($link, $sql) or die("Error");
+            $query -> execute();
+            $result = mysqli_stmt_get_result($query);
+            return $result;
+        }
+
+        public function selectDocumentsSectionTwoB(){
+            $link = $this->open();
+            $sql = "SELECT * FROM documents WHERE section = '2B'";
+            $query = mysqli_prepare($link, $sql) or die("Error");
+            $query -> execute();
+            $result = mysqli_stmt_get_result($query);
+            return $result;
+        }
+
+        public function selectDocumentsSectionThree(){
+            $link = $this->open();
+            $sql = "SELECT * FROM documents WHERE section = '3'";
+            $query = mysqli_prepare($link, $sql) or die("Error");
+            $query -> execute();
+            $result = mysqli_stmt_get_result($query);
+            return $result;
+        }
+
+        public function selectDocumentsSectionFourA(){
+            $link = $this->open();
+            $sql = "SELECT * FROM documents WHERE section = '4A'";
+            $query = mysqli_prepare($link, $sql) or die("Error");
+            $query -> execute();
+            $result = mysqli_stmt_get_result($query);
+            return $result;
+        }
+
+        public function selectDocumentsSectionFourB(){
+            $link = $this->open();
+            $sql = "SELECT * FROM documents WHERE section = '4B'";
+            $query = mysqli_prepare($link, $sql) or die("Error");
+            $query -> execute();
+            $result = mysqli_stmt_get_result($query);
+            return $result;
+        }
+
+        public function selectDocumentsSectionFourC(){
+            $link = $this->open();
+            $sql = "SELECT * FROM documents WHERE section = '4B'";
+            $query = mysqli_prepare($link, $sql) or die("Error");
+            $query -> execute();
+            $result = mysqli_stmt_get_result($query);
+            return $result;
+        }
+
+        public function selectDocumentsSectionFive(){
+            $link = $this->open();
+            $sql = "SELECT * FROM documents WHERE section = '5'";
+            $query = mysqli_prepare($link, $sql) or die("Error");
+            $query -> execute();
+            $result = mysqli_stmt_get_result($query);
+            return $result;
+        }
+
+        public function selectDocumentsSectionSix(){
+            $link = $this->open();
+            $sql = "SELECT * FROM documents WHERE section = '6'";
+            $query = mysqli_prepare($link, $sql) or die("Error");
+            $query -> execute();
+            $result = mysqli_stmt_get_result($query);
+            return $result;
+        }
+
+        public function selectDoc($id){
+            $link = $this->open();
+            $sql = "SELECT root FROM documents WHERE id_document = $id";
+            $result = $link -> query($sql);
+
+            $this -> close($link);
+
+            $row = $result->fetch_row();
+            return $row[0];
+        }
+
+        public function selectDocName($id){
+            $link = $this->open();
+            $sql = "SELECT name FROM documents WHERE id_document = $id";
+            $result = $link -> query($sql);
+
+            $this -> close($link);
+
+            $row = $result->fetch_row();
+            return $row[0];
+        }
+
+        public function selectVideo($id){
+            $link = $this->open();
+            $sql = "SELECT video FROM documents WHERE id_document = $id";
+            $result = $link -> query($sql);
+
+            $this -> close($link);
+
+            $row = $result->fetch_row();
+            return $row[0];
+        }
+        public function updateDoc($id, $root, $title){
+            $link = $this->open();
+            $sql = "UPDATE documents SET root = ?, name = ? WHERE id_document = ?";
+            $query = mysqli_prepare($link, $sql) or die("Error");
+            $query -> bind_param("sss", $root, $title ,$id);
+            $query -> execute();
+            $this->close($link);
+
+        }
+
+        public function updateDocVideo($id, $title, $video){
+            $link = $this->open();
+            $sql = "UPDATE documents SET root = null, name = ?, video = ? WHERE id_document = ?";
+            $query = mysqli_prepare($link, $sql) or die("Error");
+            $query -> bind_param("sss", $title,$video,$id);
+            $query -> execute();
+            $this->close($link);
+
+        }
+
+        public function deleteDoc($id){
+            $link = $this->open();
+            $sql = "DELETE FROM documents WHERE id_document = $id";
+            $query = mysqli_prepare($link, $sql) or die("Error");
+            $query -> execute();
+            $this->close($link);
+        }
+
+        public function deleteFileInicio($id_file)
     {
         $link = $this->open();
 
@@ -329,5 +544,10 @@ class DBManager
 
         $this->close($link);
     }
-}
+    }
+
+
+    
+    
+
 ?>
