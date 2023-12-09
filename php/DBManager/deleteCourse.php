@@ -5,7 +5,9 @@
 
     $db = new DBMAnager();
 
-    $rutaArchivo = $db->showFileCourse($id);
+    $rutaIcono = $db->showCouseIcon($id);
+    $rutaArchivo = $db->showCourseFile($id);
+    unlink('../../pdf/Courses'.'/'.$rutaIcono);
     unlink('../../pdf/Courses'.'/'.$rutaArchivo);
 
     $db->deleteCourse($id);

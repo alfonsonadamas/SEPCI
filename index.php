@@ -41,8 +41,8 @@
             <div class="contenedor_menu">
                 <nav>
                     <a class="active" href="index.php">Inicio</a>
-                    <a href="Capacitate.html">Capacitate</a>
-                    <a href="Documentos.html">Documentos</a>
+                    <a href="Capacitate.php">Capacitate</a>
+                    <a href="Documentos.php">Documentos</a>
                     <a href="Buzon-de-atencion.html">Buzón de Atención</a>
                     <a href="Contacto.html">Contacto</a>
                 </nav>
@@ -64,10 +64,10 @@
             include_once 'php/DBManager/endPointSlider.php';
             while ($row = $data->fetch_assoc()) {
                 ?>
-                <div class="carousel-item active">
-                    <img src="<?php echo 'img/Carrusel/' . $row['root_sliderImage']; ?>" class="d-block w-100" alt="..." />
-                </div>
-                <?php
+            <div class="carousel-item active">
+                <img src="<?php echo 'img/Carrusel/' . $row['root_sliderImage']; ?>" class="d-block w-100" alt="..." />
+            </div>
+            <?php
             }
             ?>
         </div>
@@ -133,33 +133,33 @@
                             $color = '#741731'; // Color predeterminado para miembros
                     }
                     ?>
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#myModal"
-                        data-nombre="<?php echo $row['names'] . ' ' . $row['middle_name'] . ' ' . $row['last_name']; ?>"
-                        data-cargo="<?php echo $row['rol']; ?>" data-correo="<?php echo $row['mail']; ?>"
-                        data-imagen="<?php echo "img/Integrantes" . "/" . $row["root_image"]; ?> ">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#myModal"
+                    data-nombre="<?php echo $row['names'] . ' ' . $row['middle_name'] . ' ' . $row['last_name']; ?>"
+                    data-cargo="<?php echo $row['rol']; ?>" data-correo="<?php echo $row['mail']; ?>"
+                    data-imagen="<?php echo "img/Integrantes" . "/" . $row["root_image"]; ?> ">
 
-                        <div class="carta" style="background-color: <?php echo $color; ?>;">
-                            <br>
-                            <img src="<?php echo "img/Integrantes" . "/" . $row["root_image"]; ?>" alt="">
-                            <br>
-                            <div class="Nombres">
-                                <h3>
-                                    <?php echo $row['names'];
+                    <div class="carta" style="background-color: <?php echo $color; ?>;">
+                        <br>
+                        <img src="<?php echo "img/Integrantes" . "/" . $row["root_image"]; ?>" alt="">
+                        <br>
+                        <div class="Nombres">
+                            <h3>
+                                <?php echo $row['names'];
                                     echo ' ';
                                     echo $row['middle_name'];
                                     echo ' ';
                                     echo $row['last_name']; ?>
-                                </h3>
-                            </div>
-                            <div class="Nombres2">
-                                <h5>
-                                    <?php echo $row['rol']; ?>
-                                </h5>
-                            </div>
+                            </h3>
                         </div>
-                    </a>
+                        <div class="Nombres2">
+                            <h5>
+                                <?php echo $row['rol']; ?>
+                            </h5>
+                        </div>
+                    </div>
+                </a>
 
-                    <?php
+                <?php
                 }
                 ?>
             </div>
@@ -175,15 +175,15 @@
         include_once 'php/DBManager/endPointDocuments.php';
         while ($row = $data->fetch_assoc()) {
             ?>
-            <div class="contenedor-pdfs">
-                <a href="<?php echo 'pdf/Inicio/' . $row['root']; ?>" class="pdf" target="_blank">
-                    <img src="img/pdf.png" alt="PDF 1">
-                    <h3>
-                        <?php echo $row['name']; ?>
-                    </h3>
-                </a>
-            </div>
-            <?php
+        <div class="contenedor-pdfs">
+            <a href="<?php echo 'pdf/Inicio/' . $row['root']; ?>" class="pdf" target="_blank">
+                <img src="img/pdf.png" alt="PDF 1">
+                <h3>
+                    <?php echo $row['name']; ?>
+                </h3>
+            </a>
+        </div>
+        <?php
         }
         ?>
     </div>
@@ -205,11 +205,11 @@
             <div class="text">
                 <p>
                     <strong>Enlaces</strong><br />
-                    <a href="inex.php">Inicio</a><br />
-                    <a href="Capacitate.html">Capacitate</a><br />
-                    <a href="Documentos.html">Documentos</a><br />
-                    <a href="Buzon-de-atencion.html">Buzon de atencion</a><br />
-                    <a href="Contacto.html">Contacto</a>
+                    <a href="index.php">Inicio</a><br />
+                    <a href="Capacitate.php">Capacitate</a><br />
+                    <a href="Documentos.php">Documentos</a><br />
+                    <a href="Buzon-de-atencion.html">Buzón de Atención</a><br />
+                    <a href="Contacto.html">Contacto</a><br />
                 </p>
             </div>
             <div class="contenedor__contac">
@@ -271,6 +271,6 @@
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
-    </script>
+</script>
 
 </html>

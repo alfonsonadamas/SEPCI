@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-11-2023 a las 19:43:34
+-- Tiempo de generación: 09-12-2023 a las 00:55:59
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.28
 
@@ -66,12 +66,70 @@ CREATE TABLE `complaints` (
 --
 
 INSERT INTO `complaints` (`id_complaint`, `full_name`, `mail`, `tel_number`, `full_nameA`, `positionA`, `succint`, `evidence`, `date`, `status`) VALUES
-(1, '', '', '4434730754', 'Servando ', 'Profesor', 'Me dijo tonto', 'rootNueva', '2023-11-21', 0),
-(2, 'Diego Ambriz', 'l20120077@morelia.tecnm.mx', '4434730754', 'Servando ', 'Profesor', 'Me dijo tonto', NULL, '2023-11-21', 0),
-(3, 'Diego Ambriz', 'l20120077@morelia.tecnm.mx', '4434730754', 'Servando ', 'Profesor', 'Me dijo tonto', '3/Abril-Recomendaciones-cinematograficas.pdf', '2023-11-21', 0),
+(1, '', '', '4434730754', 'Servando ', 'Profesor', 'Me dijo tonto', 'rootNueva', '2023-11-21', 2),
+(2, 'Diego Ambriz', 'l20120077@morelia.tecnm.mx', '4434730754', 'Servando ', 'Profesor', 'Me dijo tonto', NULL, '2023-11-21', 1),
+(3, 'Diego Ambriz', 'l20120077@morelia.tecnm.mx', '4434730754', 'Servando ', 'Profesor', 'Me dijo tonto', '3/Abril-Recomendaciones-cinematograficas.pdf', '2023-11-21', 1),
 (4, 'Diego Ambriz', 'l20120077@morelia.tecnm.mx', '4434730754', 'Servando ', 'Profesor', 'tonto', '4/Informe Anual de Actividades 2022.pdf', '2023-11-21', 0),
-(5, 'name', 'mail', 'tel', 'nameA', 'posA', 'succint', 'root', '2023-11-21', 0),
-(6, 'name', 'mail', 'tel', 'nameA', 'posA', 'succint', 'root', '2023-11-22', 0);
+(5, 'name', 'mail', 'tel', 'nameA', 'posA', 'succint', 'root', '2023-11-21', 2),
+(6, 'name', 'mail', 'tel', 'nameA', 'posA', 'succint', 'root', '2023-11-22', 1),
+(7, '', '', '3245769087', 'Andres', 'Alunmo', 'no se ', NULL, '2023-11-22', 1),
+(8, 'Alejandro', 'alejadro@gmail.com', '9876542345', 'Servando', 'Profesor', 'No le sabe', '8/M00-SC-AC-026_PROC.pdf', '2023-11-22', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `courses`
+--
+
+CREATE TABLE `courses` (
+  `id_course` int(11) NOT NULL,
+  `course_name` varchar(50) NOT NULL,
+  `course_descrip` text NOT NULL,
+  `root_course` varchar(30) NOT NULL,
+  `tipo` varchar(11) NOT NULL,
+  `contenido` varchar(45) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `courses`
+--
+
+INSERT INTO `courses` (`id_course`, `course_name`, `course_descrip`, `root_course`, `tipo`, `contenido`) VALUES
+(31, 'Curso 1', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris laoreet urna magna, vel tempus dolor pulvinar at. Etiam dui nunc, varius sed ante a, varius ullamcorper arcu. Nunc gravida felis neque, a sollicitudin magna tempor vel. Phasellus est lorem, convallis in varius sollicitudin, mattis quis magna. Cras feugiat libero sit amet nisl bibendum, ac porttitor metus ornare. Duis bibendum aliquam augue, a sagittis nisi fermentum nec. ', '1/9teacher.ico', 'link', 'https://www.morelia.tecnm.mx/#/');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `documents`
+--
+
+CREATE TABLE `documents` (
+  `id_document` int(11) NOT NULL,
+  `name` varchar(250) NOT NULL,
+  `root` varchar(250) DEFAULT NULL,
+  `section` varchar(10) NOT NULL,
+  `video` varchar(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `documents`
+--
+
+INSERT INTO `documents` (`id_document`, `name`, `root`, `section`, `video`) VALUES
+(2, '¿Qué es un conflicto de interes?', '1/GU_A_PARA_LA_IDENTIFICACI_N_Y_GESTI_N_DE_CONFLICTOS_DE_INTERESES (1).PDF', '1', 'BmCy1KXvjyE'),
+(3, 'Protocolo para la prevencion del hostigamiento y acoso sexual', '1/ANEXO_1_Protocolo_HSyAS.pdf', '2A', ''),
+(4, 'Pronunciamiento cero tolerancia', '1/PRONUNCIAMIENTO_CERO_TOLERANCIA.pdf', '2A', ''),
+(5, 'Protocolo para la discriminación', '1/Protocolo_Discriminaci_n.pdf', '2B', NULL),
+(6, 'Atencion de denuncias sobre actos u omisiones en contra de las normas éticas', '1/M00-SC-AC-026_PROC.pdf', '2B', ''),
+(7, 'Sopa de Letras', '1/Sopa-de-Letras-Princios-y-Valores.pdf', '3', ''),
+(8, 'Eti-Peliculas', '1/Abril-Recomendaciones-cinematograficas.pdf', '3', ''),
+(9, 'Eti-Lecturas', '1/Abril-Recomendaciones-literarias.pdf', '3', ''),
+(10, 'Codigo de Etica de la Administración Pública Federal', '1/SFP-CE-2022_Codigo_de_Etica.pdf', '4A', ''),
+(11, 'Codigo de Etica de la APF', NULL, '4B', 'EXonq434Zng'),
+(13, 'Los principios y valores del servicio publico', NULL, '4C', 'BmCy1KXvjyE'),
+(14, 'Declaración Patrimonial', NULL, '5', 'LgUf56QJLP0'),
+(15, 'Codigo de conducta', '1/PRINCIPAL _M00-CC-01_Codigo_de_Conducta_del_TecNM.pdf', '6', NULL),
+(16, 'Prontuario para el uso de lenguaje incluyente', '1/PRONTUARIO_LenguajeIncluyente.pdf', '7', NULL);
 
 -- --------------------------------------------------------
 
@@ -131,8 +189,7 @@ CREATE TABLE `files` (
 --
 
 INSERT INTO `files` (`id_file`, `id_docsec`, `name`, `root`, `page_section`, `document_type`) VALUES
-(1, NULL, 'Informe Anual de Actividades', '1/Informe Anual de Actividades 2022.pdf', 1, 1),
-(8, NULL, '', 'tmp', 1, 1);
+(1, NULL, 'Informe Anual de Actividades', '1/Fichas 20_10_23.pdf', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -209,9 +266,7 @@ CREATE TABLE `slider` (
 --
 
 INSERT INTO `slider` (`id_slider`, `root_sliderImage`) VALUES
-(9, '9/codEtics.png'),
-(10, '10/carrusel.png'),
-(11, '11/conflictosInt.png');
+(5, '10/carrusel.png');
 
 -- --------------------------------------------------------
 
@@ -231,23 +286,24 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_user`, `name`, `mail`, `password`) VALUES
-(1, 'ITM-Admin01', 'romanch422@gmail.com', 'f865b53623b121fd34ee5426c792e5c33af8c227');
+(1, 'ITM-Admin01', 'romanch422@gmail.com', 'f865b53623b121fd34ee5426c792e5c33af8c227'),
+(2, 'ITM-Admin02', 'gallardoalfonso01@gmail.com', 'f7c3bc1d808e04732adf679965ccc34ca7ae3441');
 
 --
 -- Índices para tablas volcadas
 --
 
 --
--- Indices de la tabla `about_us_info`
+-- Indices de la tabla `courses`
 --
-ALTER TABLE `about_us_info`
-  ADD PRIMARY KEY (`id_aboutus`);
+ALTER TABLE `courses`
+  ADD PRIMARY KEY (`id_course`);
 
 --
--- Indices de la tabla `complaints`
+-- Indices de la tabla `documents`
 --
-ALTER TABLE `complaints`
-  ADD PRIMARY KEY (`id_complaint`);
+ALTER TABLE `documents`
+  ADD PRIMARY KEY (`id_document`);
 
 --
 -- Indices de la tabla `document_section`
@@ -299,16 +355,16 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT de la tabla `about_us_info`
+-- AUTO_INCREMENT de la tabla `courses`
 --
-ALTER TABLE `about_us_info`
-  MODIFY `id_aboutus` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `courses`
+  MODIFY `id_course` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
--- AUTO_INCREMENT de la tabla `complaints`
+-- AUTO_INCREMENT de la tabla `documents`
 --
-ALTER TABLE `complaints`
-  MODIFY `id_complaint` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+ALTER TABLE `documents`
+  MODIFY `id_document` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `document_section`
@@ -326,7 +382,7 @@ ALTER TABLE `document_type`
 -- AUTO_INCREMENT de la tabla `files`
 --
 ALTER TABLE `files`
-  MODIFY `id_file` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_file` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `members`
@@ -344,13 +400,13 @@ ALTER TABLE `page_section`
 -- AUTO_INCREMENT de la tabla `slider`
 --
 ALTER TABLE `slider`
-  MODIFY `id_slider` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_slider` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas

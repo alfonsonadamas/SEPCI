@@ -6,7 +6,7 @@ class Course{
 
         $db = new DBMAnager();
 
-        $data = $db->showEachCourse($id);
+        $data = $db->showCourse($id);
 
         return $data;
     }
